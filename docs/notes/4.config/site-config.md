@@ -195,3 +195,11 @@ export const navBarConfig: NavBarConfig = {
 *   `Links` 和 `My` 是一级菜单项。
 *   `Links` 菜单下包含 `GitHub`, `Bilibili`, `Gitee` 三个二级子菜单，它们都是外部链接。
 *   `My` 菜单下包含 `About`, `Friends`, `Anime`, `Diary` 四个二级子菜单，它们使用了预设链接 (`LinkPreset`)。
+
+
+#### 添加你的ICP备案号
+```typescript
+icp: "填写ICP备案号",
+	icpEnable: false,
+```
+首先将`icpEnable`设置为`true`,修改你的备案号就可以了!
