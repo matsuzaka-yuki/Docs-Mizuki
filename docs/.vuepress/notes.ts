@@ -50,6 +50,7 @@ const Note = defineNoteConfig({
         'profile-config/',
         'navbar-config/',
         'other-config/',
+        'umami-config/',
       ]
     },
         {
