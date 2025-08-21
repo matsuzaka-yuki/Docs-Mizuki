@@ -62,6 +62,7 @@ const Note = defineNoteConfig({
         'md/',
         'file/', // 相当于 '/config/site-config/'
         'folder/',
+        'chart/',
       ]
     },
     {
