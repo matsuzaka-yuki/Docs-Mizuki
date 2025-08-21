@@ -1,8 +1,10 @@
 ---
-title: 图表
+title: Mermaid图表
 createTime: 2025/08/21 13:26:53
 permalink: /press/chart/
 ---
+
+我们可以使用mermaid语法来在文章中绘制图表
 ```
     ```mermaid
     graph TD

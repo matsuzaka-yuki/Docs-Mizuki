@@ -75,6 +75,7 @@ const Note = defineNoteConfig({
         'diary/',
         'friends/',
         'anime/',
+        'gallery/',
      ] 
     },
     
