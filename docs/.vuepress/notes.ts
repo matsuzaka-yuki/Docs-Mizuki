@@ -51,6 +51,7 @@ const Note = defineNoteConfig({
         'navbar-config/',
         'other-config/',
         'umami-config/',
+        'footer-config/',
       ]
     },
         {
@@ -76,6 +77,7 @@ const Note = defineNoteConfig({
         'friends/',
         'anime/',
         'gallery/',
+        'other/',
      ] 
     },
     
