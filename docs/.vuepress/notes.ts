@@ -35,9 +35,9 @@ const Note = defineNoteConfig({
       prefix: '/guide', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
       collapsed: false, // 是否默认折叠
       items: [
-        'intro/', // 相当于 '/guide/intro/'
-        'get-started/',
-        'deployment/',
+        { text: '介绍', link: 'intro/', icon: 'ri:information-line' },
+        { text: '快速开始', link: 'get-started/', icon: 'ri:rocket-line' },
+        { text: '部署', link: 'deployment/', icon: 'ri:server-line' },
       ],
     },
     {
@@ -46,12 +46,12 @@ const Note = defineNoteConfig({
       prefix: '/config/', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
       collapsed: true, // 是否默认折叠
       items: [
-        'site-config/', // 相当于 '/config/site-config/'
-        'profile-config/',
-        'navbar-config/',
-        'other-config/',
-        'umami-config/',
-        'footer-config/',
+        { text: '站点配置', link: 'site-config/', icon: 'ri:global-line' },
+        { text: '个人资料配置', link: 'profile-config/', icon: 'ri:user-settings-line' },
+        { text: '导航栏配置', link: 'navbar-config/', icon: 'ri:menu-line' },
+        { text: '其他配置', link: 'other-config/', icon: 'ri:settings-6-line' },
+        { text: 'Umami配置', link: 'umami-config/', icon: 'ri:bar-chart-line' },
+        { text: '页脚配置', link: 'footer-config/', icon: 'ri:layout-bottom-line' },
       ]
     },
         {
@@ -60,10 +60,10 @@ const Note = defineNoteConfig({
       prefix: '/press/', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
       collapsed: true, // 是否默认折叠
       items: [
-        'md/',
-        'file/', // 相当于 '/config/site-config/'
-        'folder/',
-        'chart/',
+        { text: 'Markdown', link: 'md/', icon: 'ri:markdown-line' },
+        { text: '文件', link: 'file/', icon: 'ri:file-text-line' },
+        { text: '文件夹', link: 'folder/', icon: 'ri:folder-line' },
+        { text: '图表', link: 'chart/', icon: 'ri:pie-chart-line' },
       ]
     },
     {
@@ -72,12 +72,12 @@ const Note = defineNoteConfig({
      prefix: '/special/', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
      collapsed: true, // 是否默认折叠
      items: [
-        'about/',
-        'diary/',
-        'friends/',
-        'anime/',
-        'gallery/',
-        'other/',
+        { text: '关于', link: 'about/', icon: 'ri:information-line' },
+        { text: '日记', link: 'diary/', icon: 'ri:book-line' },
+        { text: '友链', link: 'friends/', icon: 'ri:links-line' },
+        { text: '动漫', link: 'anime/', icon: 'ri:tv-line' },
+        { text: '画廊', link: 'gallery/', icon: 'ri:image-line' },
+        { text: '其他', link: 'other/', icon: 'ri:more-line' },
      ] 
     },
     
@@ -87,16 +87,16 @@ const Note = defineNoteConfig({
       prefix: '/transfer/', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
       collapsed: true, // 是否默认折叠
       items: [
-        'gridea-import/', // 相当于 '/transfer/gridea-import/'
-        'halo-to-mizuki/',
-        'hexo-to-mizuki/',
-        'html-import/',
-        'hugo-to-mizuki/',
-        'jekyll-to-mizuki/',
-        'markdown-import/',
-        'typecho-to-mizuki/',
-        'wordpress-to-mizuki/',
-        'zblog-import/',
+        { text: 'Gridea导入', link: 'gridea-import/', icon: 'ri:download-cloud-line' },
+        { text: 'Halo迁移', link: 'halo-to-mizuki/', icon: 'ri:exchange-line' },
+        { text: 'Hexo迁移', link: 'hexo-to-mizuki/', icon: 'ri:exchange-line' },
+        { text: 'HTML导入', link: 'html-import/', icon: 'ri:html5-line' },
+        { text: 'Hugo迁移', link: 'hugo-to-mizuki/', icon: 'ri:exchange-line' },
+        { text: 'Jekyll迁移', link: 'jekyll-to-mizuki/', icon: 'ri:exchange-line' },
+        { text: 'Markdown导入', link: 'markdown-import/', icon: 'ri:markdown-line' },
+        { text: 'Typecho迁移', link: 'typecho-to-mizuki/', icon: 'ri:exchange-line' },
+        { text: 'WordPress迁移', link: 'wordpress-to-mizuki/', icon: 'ri:wordpress-line' },
+        { text: 'Z-Blog导入', link: 'zblog-import/', icon: 'ri:download-cloud-line' },
       ]
     },
   ],

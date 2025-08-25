@@ -102,6 +102,10 @@ export const siteConfig: SiteConfig = {
       url: "",          // 可选：原作品或作者页面链接
     },
   },
+
+navbar: {
+		transparentMode: "semifull", // 导航栏透明模式："semi" 半透明加圆角，"full" 完全透明，"semifull" 动态透明
+	},
 ```
 
 #### 横幅配置详解
@@ -196,10 +200,3 @@ export const navBarConfig: NavBarConfig = {
 *   `Links` 菜单下包含 `GitHub`, `Bilibili`, `Gitee` 三个二级子菜单，它们都是外部链接。
 *   `My` 菜单下包含 `About`, `Friends`, `Anime`, `Diary` 四个二级子菜单，它们使用了预设链接 (`LinkPreset`)。
 
-
-#### 添加你的ICP备案号
-```typescript
-icp: "填写ICP备案号",
-	icpEnable: false,
-```
-首先将`icpEnable`设置为`true`,修改你的备案号就可以了!
