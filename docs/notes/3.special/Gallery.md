@@ -1,71 +1,94 @@
 ---
-title: 图库页面
+title: 相册页面
 createTime: 2025/08/17 17:21:41
 permalink: /special/gallery/
 ---
+# 相册使用指南
 
-**图库页面修改教程**
+## 概述
 
-Mizuka 主题提供了内置的图库页面，用于展示个人收藏的图片，类似于社交媒体的相册功能。
+相册功能允许您通过简单的文件夹结构展示和管理照片集合。系统会自动扫描相册文件夹，无需手动配置每张照片。
 
-## 日记页面结构
+## 相册结构
 
-图库页面位于 `src/pages/gallery.astro` 文件中。页面的核心是一个图库数据数组：
+每个相册由以下部分组成：
 
-```typescript
-const galleryData = {
-	data: [
-		{
-			id: 1,
-			title: "Anime",
-			description:
-				"Anime is a genre of Japanese animation that features vibrant colors, complex characters, and imaginative worlds.",
-			coverImage: "/images/gallery/anime/pc/2.jpg",
-			createdAt: "2025-08-20",
-			tags: ["Anime", "Character", "Scene"],
-			images: [
-				"/images/gallery/anime/pe/1.webp",
-				"/images/gallery/anime/pe/2.jpg",
-				"/images/gallery/anime/pe/3.jpg",
-				"/images/gallery/anime/pe/4.jpg",
-				"/images/gallery/anime/pc/1.jpg",
-				"/images/gallery/anime/pc/2.jpg",
-				"/images/gallery/anime/pc/3.jpg",
-				"/images/gallery/anime/pc/4.jpg",
-			],
-		},
-		// 更多日记...
-	],
-};
+- **相册列表页**：显示所有相册的概览
+- **相册详情页**：展示单个相册的所有照片
+
+## 如何访问相册
+
+1. 在网站导航栏中点击"相册"链接
+2. 或直接访问 `/albums` 路径
+
+## 相册配置（基于文件夹）
+
+相册现在基于文件系统结构自动生成，无需手动定义每张照片。
+
+### 文件夹结构
+
+```
+public/
+└── images/
+    └── albums/
+        ├── 旅行相册/
+        │   ├── cover.jpg       # 封面图片（必需）
+        │   ├── info.json       # 相册信息（必需）
+        │   ├── photo1.jpg      # 相册照片
+        │   ├── photo2.png      # 相册照片
+        │   └── ...
+        ├── 家庭聚会/
+        │   ├── cover.jpg
+        │   ├── info.json
+        │   └── ...
+        └── ...
 ```
 
-## 添加新日记
+### 相册信息文件 (info.json)
 
-要添加新的图库条目，请向 `galleryDataData` 数组添加新的对象：
+每个相册文件夹必须包含一个 `info.json` 文件，定义相册的基本信息：
 
-1. 复制现有日记对象作为模板
-2. 修改 `id` 为唯一值（递增数字）
-3. 更新 `title` 为您的图库标题
-4. 更新 `description` 为您的图库描述
-5. 设置 `createdAt` 为 ISO 8601 格式的日期时间
-6. 如有图片，在 `images` 数组中添加图片路径
-7. 更新 `tags` 数组为您的图库标签
+```json
+{
+  "title": "旅行相册",           // 相册标题（必需）
+  "description": "2025年夏季旅行", // 相册描述（可选）
+  "date": "2025-07-15",        // 相册日期（可选，默认为文件夹创建日期）
+  "tags": ["旅行", "夏季"],      // 相册标签（可选）
+  "layout": "grid",            // 布局方式："grid"或"masonry"（可选，默认为"grid"）
+  "columns": 3                 // 列数（可选，默认为3）
+}
+```
 
-## 图库属性说明
+### 照片标签
 
-每个图库对象包含以下属性：
+您可以通过在文件名中添加标签来为照片添加元数据，格式为：
 
-- `id`：唯一标识符（数字）
-- `title`：图库标题（文本）
-- `description`：图库描述（文本）
-- `createdAt`：发布日期（ISO 8601 格式）
-- `images`：图片路径数组（可选，相对于 public 目录）
-- `tags`：标签数组（可选）
+```
+照片名称[标签1,标签2].jpg
+```
 
-## 图库图片
+例如：
+- `海滩日落[风景,日落].jpg` - 这张照片会自动添加"风景"和"日落"标签
+- `家庭合影[家人,节日].png` - 这张照片会自动添加"家人"和"节日"标签
 
-要为图库添加图片：
+## 布局选项
 
-1. 将图片文件放置在 `public/assets/images/` 目录下
-2. 在图库对象的 `images` 数组中添加图片文件名
-3. 建议使用 WebP 格式的图片以获得最佳性能。
+相册支持两种布局方式，可在 `info.json` 中设置：
+
+1. **网格布局 (grid)(图片高度需要一致)**：
+   - 整齐的网格排列
+   - 可通过 `columns` 属性设置列数（2-4列）
+   - 适合统一尺寸的照片
+
+2. **瀑布流布局 (masonry)(推荐)**：
+   - 照片按原始比例显示，高度不一
+   - 自动适应不同尺寸的照片
+   - 适合混合尺寸的照片集合
+
+## 照片查看功能
+
+相册内置了照片查看功能：
+
+- 点击任意照片可以全屏查看
+- 支持缩放、平移和滑动浏览
+- 自动适应屏幕尺寸
