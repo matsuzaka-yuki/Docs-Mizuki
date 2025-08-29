@@ -55,13 +55,3 @@ shareId: "一串字母数字组合"
 
 
 
-## 添加统计脚本
-
-回到[Websites](https://cloud.umami.is/settings/websites)点击你的网站后面的 **Edit** 然后在上面找到 **Tracking code** 在下面会显示和MainGridLayout.astro（第357行）差不多的内容，替换即可
-
-src/layouts/MainGridLayout.astro（第357行）
-```astro
-<script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_UMAMI_WEBSITE_ID" slot="head"></script>
-</Layout>
-```
-
