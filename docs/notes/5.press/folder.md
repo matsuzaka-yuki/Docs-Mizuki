@@ -185,8 +185,9 @@ src/content/posts/my-complex-post/
 在文章中引用图片时，可以直接使用相对路径：
 
 ```markdown
-![图片描述](./image1.png)
+![图片描述](image1.png)
 ```
+注意像这样直接填写文件的名字,这样才能让RSS正常构建图片的路径
 
 ## 创建多篇文章
 
