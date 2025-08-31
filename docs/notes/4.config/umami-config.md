@@ -65,3 +65,16 @@ src/layouts/MainGridLayout.astro（第357行）
 </Layout>
 ```
 
+## 答疑解惑
+
+为啥访问量显示0/显示Error
+
+### 显示Error
+
+Umami的地区选错了
+- Umami有两个地区：us和eu，如果你填错了，就会显示Error
+- Umami给的域名是cloud开头，但是config文件里可别填cloud，就填你注册的时候选择的地区
+
+### 浏览量和访问量都是0
+Umami对接失败
+- 请检查是否有在**MainGridLayout.astro**添加官方统计脚本
