@@ -6,6 +6,7 @@ permalink: /press/file/
 # 直接在posts目录创建文章
 
 这是在Mizuka博客系统中创建文章的两种方法之一。这种方法适用于简单的文章，不需要管理大量图片资源的情况。
+单文件方案会导致RSS无法正常构建图片的路径(指本地,如果你使用图床那么不会有这个问题),如果你需要使用rss功能请使用文件夹写作方案
 
 ## 创建文章
 
@@ -30,6 +31,7 @@ image:
   url: 'https://example.com/image.jpg'
   alt: '图片描述'
 pubDate: 2025-01-20
+series: "Markdown"
 ---
 ```
 
@@ -46,6 +48,7 @@ frontmatter支持的字段包括：
 - `pubDate`：文章发布日期（与published类似）
 - `date`：文章创建日期
 - `draft`：是否为草稿，true表示草稿，false表示正式发布
+- `series`：文章系列，用于组织文章,多个文章添加一样的系列可以做导航
 
 ### 内容分类
 - `tags`：文章标签数组，用于标记文章主题
@@ -58,7 +61,7 @@ frontmatter支持的字段包括：
 - `sourceLink`：文章源链接，通常指向GitHub仓库或原始来源
 
 ### 图片设置
-- `image`：文章封面图片
+- `image`：文章封面图片(单文件方案会导致RSS无法正常构建图片的路径,如果你需要使用rss功能请使用文件夹写作方案)
   - `url`：图片URL地址
   - `alt`：图片替代文本
 

@@ -102,6 +102,10 @@ export const siteConfig: SiteConfig = {
       url: "",          // 可选：原作品或作者页面链接
     },
   },
+
+navbar: {
+		transparentMode: "semifull", // 导航栏透明模式："semi" 半透明加圆角，"full" 完全透明，"semifull" 动态透明
+	},
 ```
 
 #### 横幅配置详解
@@ -195,3 +199,4 @@ export const navBarConfig: NavBarConfig = {
 *   `Links` 和 `My` 是一级菜单项。
 *   `Links` 菜单下包含 `GitHub`, `Bilibili`, `Gitee` 三个二级子菜单，它们都是外部链接。
 *   `My` 菜单下包含 `About`, `Friends`, `Anime`, `Diary` 四个二级子菜单，它们使用了预设链接 (`LinkPreset`)。
+

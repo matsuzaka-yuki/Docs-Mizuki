@@ -34,6 +34,7 @@ image:
   url: './cover.jpg'
   alt: '文章封面'
 pubDate: 2025-01-20
+series: "Markdown"
 ---
 ```
 
@@ -50,6 +51,7 @@ frontmatter支持的字段包括：
 - `pubDate`：文章发布日期（与published类似）
 - `date`：文章创建日期
 - `draft`：是否为草稿，true表示草稿，false表示正式发布
+- `series`：文章系列，用于组织文章,多个文章添加一样的系列可以做导航
 
 ### 内容分类
 - `tags`：文章标签数组，用于标记文章主题
@@ -183,8 +185,9 @@ src/content/posts/my-complex-post/
 在文章中引用图片时，可以直接使用相对路径：
 
 ```markdown
-![图片描述](./image1.png)
+![图片描述](image1.png)
 ```
+注意像这样直接填写文件的名字,这样才能让RSS正常构建图片的路径
 
 ## 创建多篇文章
 

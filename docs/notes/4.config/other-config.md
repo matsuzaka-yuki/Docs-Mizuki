@@ -272,3 +272,31 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 	},
 };
 ```
+
+
+### 樱花特效配置
+
+```typescript
+export const sakuraConfig: SakuraConfig = {
+	enable: true, // 默认关闭樱花特效
+	sakuraNum: 21, // 樱花数量
+	limitTimes: 2, // 樱花越界限制次数，-1为无限循环
+	size: {
+		min: 0.5, // 樱花最小尺寸倍数
+		max: 1.1, // 樱花最大尺寸倍数
+	},
+	speed: {
+		horizontal: {
+			min: -1.7, // 水平移动速度最小值
+			max: -1.2, // 水平移动速度最大值
+		},
+		vertical: {
+			min: 1.5, // 垂直移动速度最小值
+			max: 2.2, // 垂直移动速度最大值
+		},
+		rotation: 0.03, // 旋转速度
+	},
+	zIndex: 100, // 层级，确保樱花在合适的层级显示
+```
+
+我们可以在`sakuraConfig`中配置樱花特效
