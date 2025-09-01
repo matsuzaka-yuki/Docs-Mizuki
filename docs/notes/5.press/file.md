@@ -1,6 +1,6 @@
 ---
 title: 单文件方案
-createTime: 2025/08/17 20:29:52
+createTime: 2025/09/01 20:29:52
 permalink: /press/file/
 ---
 # 直接在posts目录创建文章
@@ -31,7 +31,6 @@ image:
   url: 'https://example.com/image.jpg'
   alt: '图片描述'
 pubDate: 2025-01-20
-series: "Markdown"
 ---
 ```
 
@@ -48,7 +47,6 @@ frontmatter支持的字段包括：
 - `pubDate`：文章发布日期（与published类似）
 - `date`：文章创建日期
 - `draft`：是否为草稿，true表示草稿，false表示正式发布
-- `series`：文章系列，用于组织文章,多个文章添加一样的系列可以做导航
 
 ### 内容分类
 - `tags`：文章标签数组，用于标记文章主题
