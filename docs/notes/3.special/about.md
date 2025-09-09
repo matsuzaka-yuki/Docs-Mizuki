@@ -6,11 +6,11 @@ permalink: /special/about/
 
 **关于页面修改教程**
 
-Mizuka 主题的关于页面内容存储在 Markdown 文件中，您可以轻松地自定义页面内容。
+Mizuki 主题的关于页面内容存储在 Markdown 文件中，您可以轻松地自定义页面内容。
 
 ## 关于页面结构
 
-关于页面的内容位于 `src/content/spec/about.md` 文件中。该文件使用 Markdown 格式编写，支持标准 Markdown 语法以及 Mizuka 主题扩展的语法。
+关于页面的内容位于 `src/content/spec/about.md` 文件中。该文件使用 Markdown 格式编写，支持标准 Markdown 语法以及 Mizuki 主题扩展的语法。
 
 ## 修改页面内容
 
@@ -23,7 +23,7 @@ Mizuka 主题的关于页面内容存储在 Markdown 文件中，您可以轻松
 
 ## 支持的 Markdown 扩展语法
 
-Mizuka 主题支持多种 Markdown 扩展语法：
+Mizuki 主题支持多种 Markdown 扩展语法：
 
 ### 1. GitHub 卡片
 

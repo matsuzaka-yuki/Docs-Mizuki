@@ -63,7 +63,7 @@ links: [
 
 ### 图标选择
 
-Mizuka 使用 Iconify 图标库，支持多种图标集：
+Mizuki 使用 Iconify 图标库，支持多种图标集：
 
 - `fa6-brands`：Font Awesome 6 品牌图标
 - `mdi`：Material Design Icons

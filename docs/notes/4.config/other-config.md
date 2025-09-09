@@ -6,7 +6,7 @@ permalink: /config/other-config/
 
 **其他配置说明**
 
-除了站点、导航栏和个人资料配置外，Mizuka 还提供了其他几种配置选项，包括许可证、代码块和评论系统。
+除了站点、导航栏和个人资料配置外，Mizuki 还提供了其他几种配置选项，包括许可证、代码块和评论系统。
 
 ## 许可证配置
 
@@ -37,7 +37,7 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 ```
 
 - `theme`：代码块的语法高亮主题
-  - 建议使用深色主题，因为 Mizuka 主题目前仅支持深色背景
+  - 建议使用深色主题，因为 Mizuki 主题目前仅支持深色背景
   - 可选主题包括：`github-dark`、`dracula`、`one-dark` 等
 
 ## 评论系统配置

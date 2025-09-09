@@ -30,7 +30,7 @@ export const navBarConfig: NavBarConfig = {
 
 ### 预设链接
 
-Mizuka 提供了多个预设链接，可以直接使用：
+Mizuki 提供了多个预设链接，可以直接使用：
 
 - `LinkPreset.Home`：首页链接
 - `LinkPreset.Archive`：归档页面链接
