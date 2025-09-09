@@ -63,6 +63,7 @@ const Note = defineNoteConfig({
         { text: 'Markdown', link: 'md/', icon: 'ri:markdown-line' },
         { text: '文件', link: 'file/', icon: 'ri:file-text-line' },
         { text: '文件夹', link: 'folder/', icon: 'ri:folder-line' },
+        { text: '文章加密(可选)', link: 'key/', icon: 'ri:key-line' },
         { text: '图表', link: 'chart/', icon: 'ri:pie-chart-line' },
       ]
     },
