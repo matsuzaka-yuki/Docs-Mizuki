@@ -47,6 +47,8 @@ const Note = defineNoteConfig({
       collapsed: true, // 是否默认折叠
       items: [
         { text: '站点配置', link: 'site-config/', icon: 'ri:global-line' },
+        { text: '看板娘配置', link: 'pio/', icon: 'ri:robot-line' },
+        { text: '页脚配置', link: 'footer-config/', icon: 'ri:layout-bottom-line' },
         { text: '个人资料配置', link: 'profile-config/', icon: 'ri:user-settings-line' },
         { text: '导航栏配置', link: 'navbar-config/', icon: 'ri:menu-line' },
         { text: '其他配置', link: 'other-config/', icon: 'ri:settings-6-line' },
