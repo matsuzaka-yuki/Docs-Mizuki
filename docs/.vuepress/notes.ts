@@ -32,7 +32,7 @@ const Note = defineNoteConfig({
     {
       text: '从这里开始',
       icon: 'ri:book-open-line',
-      prefix: '/guide', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
+      prefix: '/guide/', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
       collapsed: false, // 是否默认折叠
       items: [
         { text: '介绍', link: 'intro/', icon: 'ri:information-line' },
@@ -53,7 +53,6 @@ const Note = defineNoteConfig({
         { text: '导航栏配置', link: 'navbar-config/', icon: 'ri:menu-line' },
         { text: '其他配置', link: 'other-config/', icon: 'ri:settings-6-line' },
         { text: 'Umami配置', link: 'umami-config/', icon: 'ri:bar-chart-line' },
-        { text: '页脚配置', link: 'footer-config/', icon: 'ri:layout-bottom-line' },
       ]
     },
         {

@@ -12,49 +12,33 @@
 
 import { defineThemeConfig } from 'vuepress-theme-plume'
 import navbar from './navbar'
+import navbarEn from './navbar-en'
 import notes from './notes'
+import notesEn from './notes-en'
 
 /**
  * @see https://theme-plume.vuejs.press/config/basic/
  */
 export default defineThemeConfig({
-  logo: '/mizuki.png', // 站点 Logo
-  appearance: true,  // 配置 深色模式
+  // 多语言配置 - 导航栏和笔记
+  locales: {
+    '/': {
+      navbar,
+      notes,
+    },
+    '/en/': {
+      navbar: navbarEn,
+      notes: notesEn,
+    }
+  },
 
-  social: [
-    { icon: 'github', link: 'https://github.com/matsuzaka-yuki/Mizuki'},
-  ],
   // navbarSocialInclude: ['github'], // 允许显示在导航栏的 social 社交链接
   // aside: true, // 页内侧边栏， 默认显示在右侧
   // outline: [2, 3], // 页内大纲， 默认显示 h2, h3
 
-  /**
-   * 文章版权信息
-   * @see https://theme-plume.vuejs.press/guide/features/copyright/
-   */
-  copyright: false,
-
   // prevPage: true,   // 是否启用上一页链接
   // nextPage: true,   // 是否启用下一页链接
   // createTime: true, // 是否显示文章创建时间
-
-  /* 站点页脚 */
-  footer: false, // 是否启用页脚
-
-  /**
-   * @see https://theme-plume.vuejs.press/config/basic/#profile
-   */
-  profile: {
-    avatar: 'https://theme-plume.vuejs.press/plume.png',
-    name: 'Mizuki',
-    description: '一个基于Astro的博客主题',
-    // circle: true,
-    // location: '',
-    //organization: 'left',
-  },
-
-  navbar,
-  notes,
 
   /**
    * 公告板

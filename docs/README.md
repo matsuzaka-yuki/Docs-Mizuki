@@ -17,7 +17,7 @@ config:
         -
           theme: brand
           text: 快速开始 →
-          link: /guide/get-started/
+          link: /guide/intro/
         -
           theme: alt
           text: 在Github上查看 →

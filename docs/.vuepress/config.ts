@@ -19,6 +19,20 @@ export default defineUserConfig({
   title: 'Mizuki主题官方文档',
   description: '一个基于Astro的博客主题',
 
+  // 多语言配置
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+      title: 'Mizuki主题官方文档',
+      description: '一个基于Astro的博客主题'
+    },
+    '/en/': {
+      lang: 'en-US',
+      title: 'Mizuki Theme',
+      description: 'An Astro-based blog theme'
+    }
+  },
+
   head: [
     // 配置站点图标
     ['link', { rel: 'icon', type: 'image/png', href: 'https://gitee.com/fufan1025/blog_img/raw/master/icon.png' }],
@@ -41,6 +55,40 @@ export default defineUserConfig({
     // lastUpdated: true,
     // contributors: true,
     // changelog: false,
+
+    /* 多语言配置 */
+    locales: {
+      '/': {
+        selectLanguageName: '简体中文',
+      },
+      '/en/': {
+        selectLanguageName: 'English',
+      }
+    },
+
+    /* 站点Logo */
+    logo: '/mizuki.png',
+    
+    /* 深色模式 */
+    appearance: true,
+
+    /* 社交链接 */
+    social: [
+      { icon: 'github', link: 'https://github.com/matsuzaka-yuki/Mizuki'},
+    ],
+
+    /* 版权信息 */
+    copyright: false,
+
+    /* 站点页脚 */
+    footer: false,
+
+    /* 个人资料 */
+    profile: {
+      avatar: 'https://theme-plume.vuejs.press/plume.png',
+      name: 'Mizuki',
+      description: '一个基于Astro的博客主题',
+    },
 
     /**
      * 博客
@@ -94,11 +142,17 @@ export default defineUserConfig({
      * Shiki 代码高亮
      * @see https://theme-plume.vuejs.press/config/plugins/code-highlight/
      */
-    // codeHighlighter: {
-    //   twoslash: true, // 启用 twoslash
-    //   whitespace: true, // 启用 空格/Tab 高亮
-    //   lineNumbers: true, // 启用行号
-    // },
+    codeHighlighter: {
+      twoslash: false, // 禁用 twoslash 避免错误
+      whitespace: false, // 禁用 空格/Tab 高亮
+      lineNumbers: true, // 启用行号
+      // 添加更多语言支持
+      languages: [
+        'javascript', 'typescript', 'vue', 'html', 'css', 'scss', 'json',
+        'markdown', 'bash', 'shell', 'powershell', 'yaml', 'yml', 'xml',
+        'astro', 'jsx', 'tsx', 'python', 'java', 'go', 'rust', 'php'
+      ]
+    },
 
     /* 文章字数统计、阅读时间，设置为 false 则禁用 */
     // readingTime: true,
