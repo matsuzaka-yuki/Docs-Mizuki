@@ -13,9 +13,8 @@ Site configuration is located in the `siteConfig` object within the `src/config.
 
 ### Basic Information
 
-### Basic Information
 
-```typescript
+```typescripts
 
 // Define site language
 const SITE_LANG = "zh_CN"; // Language code, e.g.: 'en', 'zh_CN', 'ja', etc.
