@@ -160,7 +160,7 @@ To create a secondary collapsible menu, you need to add a custom link object con
 
 **Example:**
 
-```typescript:/c:/Users/Administrator/Desktop/mizuki/src/config.ts
+```typescript
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
@@ -205,3 +205,15 @@ In the above example:
 *   `Links` and `My` are first-level menu items.
 *   The `Links` menu contains three second-level submenus: `GitHub`, `Bilibili`, and `Gitee`, all of which are external links.
 *   The `My` menu contains four second-level submenus: `About`, `Friends`, `Anime`, and `Diary`, which use preset links (`LinkPreset`).
+
+### Website domain configuration
+
+To configure the website domain, you need to set it in the `astro.config.mjs` file:
+
+```typescript
+export default defineConfig({
+	site: "https://mizuki.mysqil.com/",
+})
+```
+
+This simply specifies the website's URL. The `site` property is used by Astro for various purposes, such as generating correct URLs in website pages and RSS feeds.
