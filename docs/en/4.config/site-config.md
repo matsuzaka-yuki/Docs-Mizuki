@@ -217,3 +217,12 @@ export default defineConfig({
 ```
 
 This simply specifies the website's URL. The `site` property is used by Astro for various purposes, such as generating correct URLs in website pages and RSS feeds.
+
+
+### Display Social Media Sharing Images (OpenGraph)
+
+You need to configure the activation of OpenGraph (OG) in the `src/config.ts` file.
+
+```typescript
+generateOgImages: true, // Enable the function of generating OpenGraph images
+```

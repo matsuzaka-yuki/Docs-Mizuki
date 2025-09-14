@@ -216,3 +216,12 @@ export default defineConfig({
 ```
 
 这只是指定网站的 URL。site属性被 Astro 用于多种用途，比如在网站页面和 RSS 订阅源中生成正确的 URL。
+
+
+### 展示社交媒体分享图片(OG)
+
+你需要在 `src/config.ts` 文件中配置OG的开启。
+
+```typescript
+generateOgImages: true, // 启用生成OpenGraph图片功能
+```
