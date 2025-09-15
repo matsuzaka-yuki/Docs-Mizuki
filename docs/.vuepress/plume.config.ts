@@ -13,8 +13,10 @@
 import { defineThemeConfig } from 'vuepress-theme-plume'
 import navbar from './navbar'
 import navbarEn from './navbar-en'
+import navbarJa from './navbar-ja'
 import notes from './notes'
 import notesEn from './notes-en'
+import notesJa from './notes-ja'
 
 /**
  * @see https://theme-plume.vuejs.press/config/basic/
@@ -29,6 +31,10 @@ export default defineThemeConfig({
     '/en/': {
       navbar: navbarEn,
       notes: notesEn,
+    },
+    '/ja/': {
+      navbar: navbarJa,
+      notes: notesJa,
     }
   },
 

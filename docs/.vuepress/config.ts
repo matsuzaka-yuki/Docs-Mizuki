@@ -30,6 +30,11 @@ export default defineUserConfig({
       lang: 'en-US',
       title: 'Mizuki Theme',
       description: 'An Astro-based blog theme'
+    },
+    '/ja/': {
+      lang: 'ja-JP',
+      title: 'Mizukiテーマ',
+      description: 'Astroベースのブログテーマ'
     }
   },
 
@@ -63,6 +68,9 @@ export default defineUserConfig({
       },
       '/en/': {
         selectLanguageName: 'English',
+      },
+      '/ja/': {
+        selectLanguageName: '日本語',
       }
     },
 
