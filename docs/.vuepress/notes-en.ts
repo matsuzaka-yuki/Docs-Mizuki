@@ -37,6 +37,7 @@ const NoteEn = defineNoteConfig({
         { text: 'Footer Config', link: 'footer-config/', icon: 'ri:layout-bottom-line' },
         { text: 'Profile Config', link: 'profile-config/', icon: 'ri:user-settings-line' },
         { text: 'Navbar Config', link: 'navbar-config/', icon: 'ri:menu-line' },
+        { text: 'Custom Font Config', link: 'custom-font/', icon: 'ri:font-size' },
         { text: 'Other Config', link: 'other-config/', icon: 'ri:settings-6-line' },
         { text: 'Umami Config', link: 'umami-config/', icon: 'ri:bar-chart-line' },
       ]

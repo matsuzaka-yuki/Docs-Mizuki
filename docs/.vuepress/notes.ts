@@ -51,6 +51,7 @@ const Note = defineNoteConfig({
         { text: '页脚配置', link: 'footer-config/', icon: 'ri:layout-bottom-line' },
         { text: '个人资料配置', link: 'profile-config/', icon: 'ri:user-settings-line' },
         { text: '导航栏配置', link: 'navbar-config/', icon: 'ri:menu-line' },
+        { text: '自定义字体配置', link: 'custom-font/', icon: 'ri:font-size' },
         { text: '其他配置', link: 'other-config/', icon: 'ri:settings-6-line' },
         { text: 'Umami配置', link: 'umami-config/', icon: 'ri:bar-chart-line' },
       ]
