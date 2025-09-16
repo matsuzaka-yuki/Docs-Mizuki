@@ -4,161 +4,156 @@ createTime: 2025/08/17 17:21:41
 permalink: /en/config/site-config/
 ---
 
+**サイト設定手順**
 
-**Site Configuration Instructions**
+サイト設定は`src/config.ts`ファイル内の`siteConfig`オブジェクトにあり、ブログの基本情報とグローバル設定を制御します。
 
-Site configuration is located in the `siteConfig` object within the `src/config.ts` file, which controls the basic information and global settings of the blog.
+## 設定項目の詳細説明
 
-## Detailed Explanation of Configuration Items
-
-### Basic Information
-
+### 基本情報
 
 ```typescripts
-
-// Define site language
-const SITE_LANG = "zh_CN"; // Language code, e.g.: 'en', 'zh_CN', 'ja', etc.
-
+// サイト言語を定義
+const SITE_LANG = "zh_CN"; // 言語コード、例: 'en', 'zh_CN', 'ja'など
 
 export const siteConfig: SiteConfig = {
-  title: "Mizuki",        // Website title
-  subtitle: "One demo website",  // Website subtitle
-  lang: SITE_LANG,         // No configuration required; it will be set automatically based on SITE_LANG
+  title: "Mizuki",        // ウェブサイトのタイトル
+  subtitle: "デモウェブサイト",  // ウェブサイトのサブタイトル
+  lang: SITE_LANG,         // 設定不要。SITE_LANGに基づいて自動設定されます
 }
 ```
 
-- `title`: The main title of the website, displayed on the browser tab and page header
-- `subtitle`: The subtitle of the website, usually displayed below the homepage banner
-- `lang`: The default language of the website, which affects date formatting, translation, and other functions
+- `title`: ウェブサイトの主題名で、ブラウザのタブとページヘッダーに表示されます
+- `subtitle`: ウェブサイトのサブタイトルで、通常はホームページのバナーの下に表示されます
+- `lang`: ウェブサイトのデフォルト言語で、日付のフォーマットや翻訳などの機能に影響します
 
-### Theme Color
+### テーマカラー
 
 ```typescript
   themeColor: {
-    hue: 210,     // Hue value of the theme color, range 0-360
-    fixed: false, // Whether to hide the theme color selector for visitors
+    hue: 210,     // テーマカラーの色相値、範囲0-360
+    fixed: false, // 訪問者のテーマカラー選択ツールを非表示にするかどうか
   },
 ```
 
-- `hue`: The hue value of the theme color, which can be any value between 0 and 360
-  - Red: 0
-  - Cyan: 200
-  - Teal: 250
-  - Pink: 345
-- `fixed`: When set to `true`, visitors will not be able to change the theme color
+- `hue`: テーマカラーの色相値で、0から360の間の任意の値を指定できます
+  - 赤: 0
+  - シアン: 200
+  - ティール: 250
+  - ピンク: 345
+- `fixed`: `true`に設定すると、訪問者はテーマカラーを変更できなくなります
 
-### Translation Settings
+### 翻訳設定
 
 ```typescript
   translate: {
-    enable: true,              // Whether to enable the translation function
-    service: "client.edge",   // Translation service; currently only "client.edge" is supported
-    defaultLanguage: getTranslateLanguageFromConfig(SITE_LANG), // Default translation language
-    showSelectTag: false,      // Whether to display the language selection dropdown menu
-    autoDiscriminate: true,    // Whether to automatically detect the user's language
-    ignoreClasses: ["ignore", "banner-title", "banner-subtitle"], // CSS class names to be ignored during translation
-    ignoreTags: ["script", "style", "code", "pre"], // HTML tags to be ignored during translation
+    enable: true,              // 翻訳機能を有効にするかどうか
+    service: "client.edge",   // 翻訳サービス。現在は"client.edge"のみサポート
+    defaultLanguage: getTranslateLanguageFromConfig(SITE_LANG), // デフォルトの翻訳言語
+    showSelectTag: false,      // 言語選択ドロップダウンメニューを表示するかどうか
+    autoDiscriminate: true,    // ユーザーの言語を自動検出するかどうか
+    ignoreClasses: ["ignore", "banner-title", "banner-subtitle"], // 翻訳時に無視するCSSクラス名
+    ignoreTags: ["script", "style", "code", "pre"], // 翻訳時に無視するHTMLタグ
   },
 ```
 
-### Banner Settings
+### バナー設定
 
-Banner settings control the display of the top banner on the homepage:
+バナー設定はホームページのトップバナーの表示を制御します:
 
 ```typescript
   banner: {
-    enable: true,  // Whether to enable the banner
-    src: {         // Banner image path
-      desktop: [   // Array of images for desktop devices
+    enable: true,  // バナーを有効にするかどうか
+    src: {         // バナー画像のパス
+      desktop: [   // デスクトップデバイス用の画像配列
         "assets/desktop-banner/1.webp",
         "assets/desktop-banner/2.webp",
-        // Multiple images are supported, and carousel will be enabled automatically
+        // 複数の画像をサポートし、自動的にカルーセルが有効になります
       ],
-      mobile: [    // Array of images for mobile devices
+      mobile: [    // モバイルデバイス用の画像配列
         "assets/mobile-banner/1.webp",
         "assets/mobile-banner/2.webp",
-        // Dedicated images for mobile devices
+        // モバイルデバイス専用の画像
       ],
     },
-    position: "center", // Image alignment, supporting 'top', 'center', 'bottom'
+    position: "center", // 画像の配置、'top'、'center'、'bottom'をサポート
     
     carousel: {
-      enable: true,    // Enable carousel function (when there are multiple images)
-      interval: 1,     // Carousel interval time (in seconds)
+      enable: true,    // カルーセル機能を有効にする（複数の画像がある場合）
+      interval: 1,     // カルーセルの間隔時間（秒単位）
     },
     
     homeText: {
-      enable: true,    // Display custom text on the homepage
-      title: "Mizuki", // Main title of the homepage banner
-      subtitle: [      // Array of subtitles, supporting multiple texts
-        "One demo website",
-        "Carousel Text1",
-        "Carousel Text2",
+      enable: true,    // ホームページにカスタムテキストを表示するかどうか
+      title: "Mizuki", // ホームページバナーの主題名
+      subtitle: [      // サブタイトルの配列、複数のテキストをサポート
+        "デモウェブサイト",
+        "カルーセルテキスト1",
+        "カルーセルテキスト2",
       ],
       typewriter: {
-        enable: true,     // Enable typewriter effect
-        speed: 100,       // Typing speed (in milliseconds)
-        deleteSpeed: 50,  // Deletion speed (in milliseconds)
-        pauseTime: 2000,  // Pause time after full display (in milliseconds)
+        enable: true,     // タイプライター効果を有効にする
+        speed: 100,       // 入力速度（ミリ秒単位）
+        deleteSpeed: 50,  // 削除速度（ミリ秒単位）
+        pauseTime: 2000,  // 完全表示後のポーズ時間（ミリ秒単位）
       },
     },
     
     credit: {
-      enable: false,    // Display banner image source text
-      text: "Describe", // Source text
-      url: "",          // Optional: Link to the original work or author's page
+      enable: false,    // バナー画像の出典テキストを表示するかどうか
+      text: "説明", // 出典テキスト
+      url: "",          // オプション: 原作品または作者のページへのリンク
     },
   },
 
 navbar: {
-		transparentMode: "semifull", // Navbar transparency mode: "semi" (translucent with rounded corners), "full" (fully transparent), "semifull" (dynamic transparency)
+		transparentMode: "semifull", // ナビゲーションバーの透明度モード: "semi"（半透明で角丸）、"full"（完全透明）、"semifull"（動的透明度）
 	},
 ```
 
-#### Detailed Explanation of Banner Configuration
+#### バナー設定の詳細説明
 
-- **Image Path**: Relative to the `/src` directory; if starting with `/`, it is relative to the `/public` directory
-- **Carousel Function**: Automatically enabled when the length of the image array is greater than 1
-- **Responsive Design**: Different images can be used for desktop and mobile devices
-- **Typewriter Effect**: Subtitles support dynamic typewriter effect, with configurable speed and pause time
+- **画像パス**: `/src`ディレクトリを基準とします。`/`で始まる場合は`/public`ディレクトリを基準とします
+- **カルーセル機能**: 画像配列の長さが1より大きい場合に自動的に有効になります
+- **レスポンシブデザイン**: デスクトップとモバイルデバイスで異なる画像を使用できます
+- **タイプライター効果**: サブタイトルは動的なタイプライター効果をサポートし、速度とポーズ時間を設定できます
 
-### Table of Contents (TOC) Settings
+### 目次(TOC)設定
 
 ```typescript
   toc: {
-    enable: true, // Whether to enable the table of contents function
-    depth: 3,     // TOC depth, 1-6; 1 means only H1 headings are displayed
+    enable: true, // 目次機能を有効にするかどうか
+    depth: 3,     // TOCの深さ、1-6。1はH1見出しのみ表示を意味します
   },
 ```
 
-- `enable`: Set to `false` to disable the article table of contents function
-- `depth`: Controls the level depth of headings displayed in the table of contents
+- `enable`: `false`に設定すると、記事の目次機能が無効になります
+- `depth`: 目次に表示される見出しのレベル深度を制御します
 
+### ナビゲーションバーの二次折りたたみメニュー設定(`navBarConfig`)
 
-### Secondary Collapsible Menu Configuration for Navbar (`navBarConfig`)
+この設定はウェブサイトのナビゲーションバーの二次折りたたみメニューを制御するために使用されます。`src/config.ts`ファイルで検索して変更できます。
 
-This configuration is used to control the secondary collapsible menus in the website's navbar. You can find and modify it in the `src/config.ts` file.
-
-#### Main Configuration Items:
+#### 主な設定項目:
 
 *   **`links`**: `Array<Object>`
-    *   An array that defines each link in the navbar. Each link object can be a preset link (`LinkPreset`) or a custom link object.
-    *   Custom link objects support multi-level menus and include the following properties:
+    *   ナビゲーションバーの各リンクを定義する配列。各リンクオブジェクトはプリセットリンク(`LinkPreset`)またはカスタムリンクオブジェクトです。
+    *   カスタムリンクオブジェクトは多層メニューをサポートし、以下のプロパティを含みます:
         *   **`name`**: `string`
-            *   The displayed name of the menu item.
+            *   メニュー項目の表示名。
         *   **`url`**: `string`
-            *   The URL to which the menu item jumps when clicked.
-        *   **`children`**: `Array<Object>` (optional)
-            *   An array that defines the submenus of the current menu item. The structure of submenu items is similar to that of top-level menu items and can be nested further.
-            *   Each submenu item can also include properties such as `name`, `url`, and `external`.
-            *   **`external`**: `boolean` (optional)
-                *   If set to `true`, it indicates an external link, which will open in a new tab.
+            *   メニュー項目をクリックしたときにジャンプするURL。
+        *   **`children`**: `Array<Object>` (オプション)
+            *   現在のメニュー項目のサブメニューを定義する配列。サブメニュー項目の構造はトップレベルのメニュー項目と同様で、さらにネストできます。
+            *   各サブメニュー項目にも`name`、`url`、`external`などのプロパティを含めることができます。
+            *   **`external`**: `boolean` (オプション)
+                *   `true`に設定すると、外部リンクを示し、新しいタブで開きます。
 
-#### How to Create a Secondary Collapsible Menu:
+#### 二次折りたたみメニューの作成方法:
 
-To create a secondary collapsible menu, you need to add a custom link object containing the `children` property to the `navBarConfig.links` array. Each element in the `children` array will become a submenu of the current menu item.
+二次折りたたみメニューを作成するには、`navBarConfig.links`配列に`children`プロパティを含むカスタムリンクオブジェクトを追加する必要があります。`children`配列の各要素は、現在のメニュー項目のサブメニューになります。
 
-**Example:**
+**例:**
 
 ```typescript
 export const navBarConfig: NavBarConfig = {
@@ -166,13 +161,13 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		{
-			name: "Links", // Name of the first-level menu
-			url: "/links/", // Link of the first-level menu (optional; can be empty if there are only submenus)
+			name: "リンク", // 一級メニューの名前
+			url: "/links/", // 一級メニューのリンク（オプション。サブメニューのみの場合は空にできます）
 			children: [
 				{
-					name: "GitHub", // Name of the second-level menu
-					url: "https://github.com/matsuzaka-yuki/Mizuki", // Link of the second-level menu
-					external: true, // External link
+					name: "GitHub", // 二級メニューの名前
+					url: "https://github.com/matsuzaka-yuki/Mizuki", // 二級メニューのリンク
+					external: true, // 外部リンク
 				},
 				{
 					name: "Bilibili",
@@ -187,7 +182,7 @@ export const navBarConfig: NavBarConfig = {
 			],
 		},
 		{
-			name: "My",
+			name: "マイページ",
 			url: "/content/",
 			children: [
 				LinkPreset.About,
@@ -200,15 +195,15 @@ export const navBarConfig: NavBarConfig = {
 };
 ```
 
-In the above example:
+上記の例では:
 
-*   `Links` and `My` are first-level menu items.
-*   The `Links` menu contains three second-level submenus: `GitHub`, `Bilibili`, and `Gitee`, all of which are external links.
-*   The `My` menu contains four second-level submenus: `About`, `Friends`, `Anime`, and `Diary`, which use preset links (`LinkPreset`).
+*   `リンク`と`マイページ`は一級メニュー項目です。
+*   `リンク`メニューには3つの二級サブメニュー（`GitHub`、`Bilibili`、`Gitee`）が含まれており、いずれも外部リンクです。
+*   `マイページ`メニューには4つの二級サブメニュー（`About`、`Friends`、`Anime`、`Diary`）が含まれており、プリセットリンク（`LinkPreset`）を使用しています。
 
-### Website domain configuration
+### ウェブサイトのドメイン設定
 
-To configure the website domain, you need to set it in the `astro.config.mjs` file:
+ウェブサイトのドメインを設定するには、`astro.config.mjs`ファイルで設定する必要があります:
 
 ```typescript
 export default defineConfig({
@@ -216,13 +211,12 @@ export default defineConfig({
 })
 ```
 
-This simply specifies the website's URL. The `site` property is used by Astro for various purposes, such as generating correct URLs in website pages and RSS feeds.
+これは単にウェブサイトのURLを指定するものです。`site`プロパティは、ウェブサイトのページやRSSフィードで正しいURLを生成するためなど、さまざまな目的でAstroによって使用されます。
 
+### ソーシャルメディア共有画像(OpenGraph)の表示
 
-### Display Social Media Sharing Images (OpenGraph)
-
-You need to configure the activation of OpenGraph (OG) in the `src/config.ts` file.
+`src/config.ts`ファイルでOpenGraph(OG)の有効化を設定する必要があります。
 
 ```typescript
-generateOgImages: true, // Enable the function of generating OpenGraph images
+generateOgImages: true, // OpenGraph画像の生成機能を有効にする
 ```
