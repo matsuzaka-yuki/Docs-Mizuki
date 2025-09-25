@@ -71,9 +71,11 @@ const localAnimeList: AnimeItem[] = [
 最高のパフォーマンスを得るために、画像形式をWebPにしてください。
 
 
-**アニメページ変更チュートリアル (Bangumiデータソース)**
+
 
 ## Bangumiモードの有効化
+
+**アニメページ変更チュートリアル (Bangumiデータソース)**
 
 スイッチは`src/config.ts`ファイルにあります。
 ```typescript
