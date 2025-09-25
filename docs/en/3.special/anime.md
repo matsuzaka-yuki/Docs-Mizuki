@@ -4,16 +4,16 @@ createTime: 2025/09/01 17:21:41
 permalink: /en/special/anime/
 ---
 
-**Anime Page Modification Tutorial**
+**Anime Page Modification Tutorial (Local Data Source)**
 
-Mizuka theme provides a built-in anime page, allowing you to easily customize the displayed anime list.
+The Mizuka theme provides a built-in anime page, allowing you to easily customize the displayed anime list.
 
 ## Anime Page Structure
 
-The anime page is located in the `src/pages/anime.astro` file. The core of the page is an anime data array:
+The anime page is located in the `src/data/anime.ts` file. The core of the page is an anime data array:
 
 ```typescript
-const animeList = [
+const localAnimeList: AnimeItem[] = [
   {
 		title: "Lycoris Recoil",
 		status: "completed",
@@ -36,7 +36,7 @@ const animeList = [
 
 ## Modifying the Anime List
 
-To add, delete, or modify anime information, directly edit the `animeList` array:
+To add, delete, or modify anime information, directly edit the `AnimeItem` array:
 
 1. **Add Anime**: Copy an existing anime object and modify its properties
 2. **Modify Anime Information**: Directly modify the property values of an existing anime object
@@ -69,3 +69,21 @@ To add cover images for anime:
 2. Specify the image filename in the `cover` property of the anime object
 
 Ensure image format is WebP for best performance.
+
+
+**Anime Page Modification Tutorial (Bangumi Data Source)**
+
+## Enable Bangumi Mode
+
+The switch is located in the `src/config.ts` file.
+```typescript
+bangumi: {
+		userId: "your-bangumi-id", // Set your Bangumi user ID here, you can set it to "sai" for testing
+	},
+	anime: {
+		mode: "bangumi", // Anime page mode: "bangumi" uses Bangumi API, "local" uses local configuration
+	},
+```
+
+1. Replace "your-bangumi-id" in the brackets with your Bangumi user ID.
+2. Configure mode as "bangumi" to fetch anime data from the Bangumi API.
