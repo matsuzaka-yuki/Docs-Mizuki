@@ -4,16 +4,16 @@ createTime: 2025/09/01 17:21:41
 permalink: /special/anime/
 ---
 
-**番剧页面修改教程**
+**番剧页面修改教程(本地数据源)**
 
 Mizuka 主题提供了内置的番剧页面，您可以轻松地自定义显示的番剧列表。
 
 ## 番剧页面结构
 
-番剧页面位于 `src/pages/anime.astro` 文件中。页面的核心是一个番剧数据数组：
+番剧页面位于 `src/data/anime.ts` 文件中。页面的核心是一个番剧数据数组：
 
 ```typescript
-const animeList = [
+const localAnimeList: AnimeItem[] = [
   {
 		title: "莉可丽丝",
 		status: "completed",
@@ -36,7 +36,7 @@ const animeList = [
 
 ## 修改番剧列表
 
-要添加、删除或修改番剧信息，请直接编辑 `animeList` 数组：
+要添加、删除或修改番剧信息，请直接编辑 `AnimeItem` 数组：
 
 1. **添加番剧**：复制现有番剧对象并修改其属性
 2. **修改番剧信息**：直接修改现有番剧对象的属性值
@@ -69,3 +69,22 @@ const animeList = [
 2. 在番剧对象的 `cover` 属性中指定图片文件名
 
 确保图片格式为 WebP 以获得最佳性能。
+
+
+**番剧页面修改教程(Bangumi数据源)**
+
+## 开启Bangumi模式
+
+
+开关位于 `src/config.ts` 文件中。
+```typescript
+bangumi: {
+		userId: "your-bangumi-id", // 在此处设置你的Bangumi用户ID，可以设置为 "sai" 测试
+	},
+	anime: {
+		mode: "bangumi", // 番剧页面模式："bangumi" 使用Bangumi API，"local" 使用本地配置
+	},
+```
+
+1. 把括号中的 "your-bangumi-id" 替换为Bangumi用户ID。
+2. mode配置为"bangumi"，这样就能从Bangumi API获取番剧数据。
