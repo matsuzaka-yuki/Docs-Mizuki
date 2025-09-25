@@ -71,10 +71,11 @@ const localAnimeList: AnimeItem[] = [
 确保图片格式为 WebP 以获得最佳性能。
 
 
-**番剧页面修改教程(Bangumi数据源)**
+
 
 ## 开启Bangumi模式
 
+**番剧页面修改教程(Bangumi数据源)**
 
 开关位于 `src/config.ts` 文件中。
 ```typescript
