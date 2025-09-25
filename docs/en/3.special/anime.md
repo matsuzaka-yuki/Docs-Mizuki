@@ -71,9 +71,11 @@ To add cover images for anime:
 Ensure image format is WebP for best performance.
 
 
-**Anime Page Modification Tutorial (Bangumi Data Source)**
+
 
 ## Enable Bangumi Mode
+
+**Anime Page Modification Tutorial (Bangumi Data Source)**
 
 The switch is located in the `src/config.ts` file.
 ```typescript
