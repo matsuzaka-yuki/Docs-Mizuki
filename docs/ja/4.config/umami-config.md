@@ -3,6 +3,9 @@ title: Umamiアナリティクス設定ガイド
 createTime: 2025/08/21 12:36:33
 permalink: /ja/config/umami-config/
 ---
+
+> ⚠️ **注意：原旧バージョンの設定方法は廃止されました。チュートリアルおよび技術詳細については、[https://ycenzh.github.io/Astro/umami.html](https://ycenzh.github.io/Astro/umami.html) をご覧ください**
+
 **ナビゲーションバー設定ガイド**
 
 Umamiの設定項目は、`src/config.ts`ファイル内の`profileConfig`オブジェクトにあります。これらは、ソーシャル情報カードの下にウェブサイトの総訪問数を表示し、記事内に記事の訪問数を表示します。

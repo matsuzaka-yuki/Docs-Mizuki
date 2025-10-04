@@ -3,6 +3,9 @@ title: Umami访问量统计配置说明
 createTime: 2025/08/21 12:36:33
 permalink: /config/umami-config/
 ---
+
+> ⚠️ **注意：原旧版本配置方法已弃用，使用教程及技术细节请查看[https://ycenzh.github.io/Astro/umami.html](https://ycenzh.github.io/Astro/umami.html)**
+
 **导航栏配置说明**
 
 Umami的配置项在 `src/config.ts` 文件中的 `profileConfig` 对象，会在社交信息卡片下显示网站总访问量和文章中显示本文访问量。
