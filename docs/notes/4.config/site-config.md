@@ -45,19 +45,7 @@ export const siteConfig: SiteConfig = {
   - 粉色: 345
 - `fixed`：设置为 `true` 时，访客将无法更改主题色
 
-### 翻译设置
 
-```typescript
-  translate: {
-    enable: true,              // 是否启用翻译功能
-    service: "client.edge",   // 翻译服务，目前仅支持 client.edge
-    defaultLanguage: getTranslateLanguageFromConfig(SITE_LANG), // 默认翻译语言
-    showSelectTag: false,      // 是否显示语言选择下拉菜单
-    autoDiscriminate: true,    // 是否自动检测用户语言
-    ignoreClasses: ["ignore", "banner-title", "banner-subtitle"], // 忽略翻译的CSS类名
-    ignoreTags: ["script", "style", "code", "pre"], // 忽略翻译的HTML标签
-  },
-```
 
 ### 横幅设置
 

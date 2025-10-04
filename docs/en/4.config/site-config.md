@@ -43,19 +43,7 @@ export const siteConfig: SiteConfig = {
   - ピンク: 345
 - `fixed`: `true`に設定すると、訪問者はテーマカラーを変更できなくなります
 
-### 翻訳設定
 
-```typescript
-  translate: {
-    enable: true,              // 翻訳機能を有効にするかどうか
-    service: "client.edge",   // 翻訳サービス。現在は"client.edge"のみサポート
-    defaultLanguage: getTranslateLanguageFromConfig(SITE_LANG), // デフォルトの翻訳言語
-    showSelectTag: false,      // 言語選択ドロップダウンメニューを表示するかどうか
-    autoDiscriminate: true,    // ユーザーの言語を自動検出するかどうか
-    ignoreClasses: ["ignore", "banner-title", "banner-subtitle"], // 翻訳時に無視するCSSクラス名
-    ignoreTags: ["script", "style", "code", "pre"], // 翻訳時に無視するHTMLタグ
-  },
-```
 
 ### バナー設定
 
