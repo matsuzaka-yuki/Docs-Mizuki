@@ -3,6 +3,9 @@ title: Umami Analytics Configuration Guide
 createTime: 2025/08/21 12:36:33
 permalink: /en/config/umami-config/
 ---
+
+> ‚ö†Ô∏è **Note: The original configuration method has been deprecated. For tutorials and technical details, please refer to [https://ycenzh.github.io/Astro/umami.html](https://ycenzh.github.io/Astro/umami.html)**
+
 **Navigation Bar Configuration Guide**
 
 Umami's configuration items are located in the `src/config.ts` file within the `profileConfig` object. They display the total website visits under the social information card and article visits within articles.
@@ -42,7 +45,7 @@ export const profileConfig: ProfileConfig = {
 
 ## Register Umami and Add Your Website
 
-Go to the [Umami official website](https://umami.is/) to register an account and select the **analytics node region** ‚Ü?add your website in [Websites](https://cloud.umami.is/settings/websites) ‚Ü?click **Edit** next to your website and then find **ShareURL** at the top and turn on the switch to get the following content:
+Go to the [Umami official website](https://umami.is/) to register an account and select the **analytics node region** ?add your website in [Websites](https://cloud.umami.is/settings/websites) ?click **Edit** next to your website and then find **ShareURL** at the top and turn on the switch to get the following content:
 
 ```
 https://cloud.umami.is/share/a-string-of-alphanumeric-characters/your-website-domain
