@@ -6,7 +6,7 @@ permalink: /en/special/diary/
 
 **Diary Page Modification Tutorial**
 
-Mizuka theme provides a built-in diary page for sharing life moments, similar to the short post function of social media.
+Mizuki theme provides a built-in diary page for sharing life moments, similar to the short post function of social media.
 
 ## Diary Page Structure
 
@@ -16,7 +16,7 @@ The diary page is located in the `src/pages/diary.astro` file. The core of the p
 const moments = [
   {
     id: 1,
-    content: "Share some nice/beautiful/gorgeous wallpapers�?,
+    content: "Share some nice/beautiful/gorgeous wallpapersã€?,
     date: "2025-01-15T10:30:00Z",
     images: ["assets/images/1.webp", "assets/images/banner.webp"],
   },
