@@ -6,11 +6,11 @@ permalink: /en/special/about/
 
 **About Page Modification Tutorial**
 
-The content of the About page in the Mizuka theme is stored in a Markdown file, allowing you to easily customize the page content.
+The content of the About page in the Mizuki theme is stored in a Markdown file, allowing you to easily customize the page content.
 
 ## About Page Structure
 
-The content of the About page is located in the `src/content/spec/about.md` file. This file is written in Markdown format and supports standard Markdown syntax as well as extended syntax from the Mizuka theme.
+The content of the About page is located in the `src/content/spec/about.md` file. This file is written in Markdown format and supports standard Markdown syntax as well as extended syntax from the Mizuki theme.
 
 ## Modifying Page Content
 
