@@ -6,7 +6,7 @@ permalink: /special/about/
 
 **关于页面修改教程**
 
-Mizuka 主题的关于页面内容存储在 Markdown 文件中，您可以轻松地自定义页面内容。
+Mizuki 主题的关于页面内容存储在 Markdown 文件中，您可以轻松地自定义页面内容。
 
 ## 关于页面结构
 
