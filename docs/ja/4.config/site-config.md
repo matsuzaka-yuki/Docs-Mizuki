@@ -1,7 +1,7 @@
 ---
 title: サイト設定ガイド
 createTime: 2025/08/17 17:21:41
-permalink: /config/site-config/
+permalink: /ja/config/site-config/
 ---
 
 **サイト設定ガイド**
