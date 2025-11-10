@@ -16,11 +16,12 @@ permalink: /config/site-config/
 
 // 定义站点语言
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
-
+const SITE_TIMEZONE =8;// 设置你的网站时区 from -12 to 12,如中国北京时间为UTC+8
 
 export const siteConfig: SiteConfig = {
   title: "Mizuki",        // 网站标题
   subtitle: "One demo website",  // 网站副标题
+  timeZone: SITE_TIMEZONE,// 不需要配置，会根据 SITE_TIMEZONE 自动设置
   lang: SITE_LANG,         // 不需要配置，会根据 SITE_LANG 自动设置
 }
 ```
