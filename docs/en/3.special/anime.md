@@ -6,7 +6,7 @@ permalink: /en/special/anime/
 
 **Anime Page Modification Tutorial (Local Data Source)**
 
-The Mizuka theme provides a built-in anime page, allowing you to easily customize the displayed anime list.
+The Mizuki theme provides a built-in anime page, allowing you to easily customize the displayed anime list.
 
 ## Anime Page Structure
 
