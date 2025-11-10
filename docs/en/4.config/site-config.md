@@ -1,7 +1,7 @@
 ---
 title: Site Configuration Guide
 createTime: 2025/08/17 17:21:41
-permalink: /config/site-config/
+permalink: en/config/site-config/
 ---
 
 **Site Configuration Guide**
