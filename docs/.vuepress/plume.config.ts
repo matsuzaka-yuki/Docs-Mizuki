@@ -50,12 +50,12 @@ export default defineThemeConfig({
    * 公告板
    * @see https://theme-plume.vuejs.press/guide/features/bulletin/
    */
-  bulletin: {
-    layout: 'top-right',
-    contentType: 'markdown',
-    title: '公告',
-    content: '这是Mizuki的官方文档,由Mizuki作者松坂有希维护,文章内容全部原创,禁止复制粘贴!如果你在使用主题有不会的可以来群1007524064交流!',
-  },
+  // bulletin: {
+  //   layout: 'top-right',
+  //   contentType: 'markdown',
+  //   title: '公告',
+  //   content: '这是Mizuki的官方文档,由Mizuki作者松坂有希维护,文章内容全部原创,禁止复制粘贴!如果你在使用主题有不会的可以来群1007524064交流!',
+  // },
 
   /* 过渡动画 @see https://theme-plume.vuejs.press/config/basic/#transition */
   transition: {
