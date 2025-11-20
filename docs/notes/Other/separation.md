@@ -504,18 +504,9 @@ git clone https://github.com/your-username/Mizuki-Content.git content
 
 ---
 
-## 📚 相关文档
-
-- [内容迁移指南](./CONTENT_MIGRATION.md) - 如何从单仓库迁移到分离模式
-- [内容仓库结构](./CONTENT_REPOSITORY.md) - 内容仓库的推荐结构
-- [主 README](../README.zh.md) - 项目总体说明
-
----
-
 ## 🤝 需要帮助?
 
 - 查看 [GitHub Issues](https://github.com/matsuzaka-yuki/Mizuki/issues)
-- 阅读 [完整文档](../README.zh.md)
 - 运行 `pnpm run check-env` 检查配置
 
 祝你使用愉快! 🎉
