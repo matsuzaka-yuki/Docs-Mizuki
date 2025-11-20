@@ -110,13 +110,6 @@ git push
 
 ---
 
-## 📚 详细文档
-
-需要更多配置选项? 查看:
-- [部署指南 - 完整说明](./DEPLOYMENT.md#内容仓库更新触发构建) - 包含 Webhook、定时构建等其他方案
-- [内容仓库配置指南](../Mizuki-Content/.github/workflows/README.md) - 工作流详细说明
-
----
 
 ## 💡 提示
 
