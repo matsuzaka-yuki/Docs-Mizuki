@@ -42,7 +42,7 @@ Mizuki 主题内置了一个专业的技能展示（Skills）页面，用于展�
 
 打开 `src/data/skills.ts`，你会看到类似下面的代码结构：
 
-```typescript
+```typescript title="src/data/skills.ts"
 export interface Skill {
 	id: string;
 	name: string;
@@ -125,7 +125,7 @@ export const skillsData: Skill[] = [
 
     修改后的 `skillsData` 数组会是这样：
 
-    ```typescript
+    ```typescript title="src/data/skills.ts"
     export const skillsData: Skill[] = [
       {
         id: "javascript",
@@ -232,7 +232,7 @@ export const skillsData: Skill[] = [
 
 要在导航栏中显示技能链接，请确保在 `src/config.ts` 的 `navBarConfig` 中包含了技能链接：
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
@@ -245,7 +245,7 @@ export const navBarConfig: NavBarConfig = {
 
 或者手动添加技能链接：
 
-```typescript
+```typescript  title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,

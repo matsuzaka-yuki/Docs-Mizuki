@@ -6,7 +6,7 @@ permalink: /Sidepanel/site-stats/
 
 ## 站点统计侧边栏配置说明
 这里补充一下站点统计侧边栏组件的配置说明，其他配置项请参考基础定位配置。
-```typescript
+```typescript title="src/config.ts"
 {
 		type: "site-stats",
 		enable: true,
@@ -42,7 +42,7 @@ permalink: /Sidepanel/site-stats/
 
 #### **1. 站点开始运行日期配置**
 
-```typescript
+```typescript title="src/config.ts"
 export const siteConfig: SiteConfig = {
     // ...其他配置...
     siteStartDate: "2023-01-01", // 站点开始运行日期，用于站点统计组件计算运行天数
@@ -89,7 +89,7 @@ export const siteConfig: SiteConfig = {
 
 #### 示例 1：基本站点统计配置
 
-```typescript
+```typescript title="src/config.ts"
 // 位置配置
 {
     type: "site-stats",
@@ -111,7 +111,7 @@ export const siteConfig: SiteConfig = {
 
 #### 示例 2：设置在左侧栏显示
 
-```typescript
+```typescript title="src/config.ts"
 {
     type: "site-stats",
     enable: true,
@@ -125,7 +125,7 @@ export const siteConfig: SiteConfig = {
 
 #### 示例 3：禁用站点统计组件
 
-```typescript
+```typescript title="src/config.ts"
 {
     type: "site-stats",
     enable: false, // 禁用站点统计组件

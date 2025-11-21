@@ -7,7 +7,7 @@ permalink: /Basic-Layout/layout/fullscreen/
 
 全屏布局配置位于 `src/config.ts` 文件中的 `fullscreenWallpaperConfig` 对象，控制博客的整体布局设置。
 
-```typescript
+```typescript title="src/config.ts"
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	src: {
 		desktop: [

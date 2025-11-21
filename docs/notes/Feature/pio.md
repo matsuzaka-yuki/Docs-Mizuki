@@ -8,7 +8,7 @@ permalink: /Feature/pio/
 看板娘配置文件位于 `src/config.ts` 文件中的 `pioConfig` 对象。
 :::
 可以按照需要开启或关闭看板娘功能。
-```typescript
+```typescript title="src/config.ts"
 // Pio 看板娘配置
 export const pioConfig: import("./types/config").PioConfig = {
 	enable: true, // 启用看板娘
@@ -52,7 +52,7 @@ export const pioConfig: import("./types/config").PioConfig = {
 - 在移动设备上启用 `hiddenOnMobile` 选项，以避免影响用户体验。
 - 对话内容可以根据个人喜好进行修改，使看板娘更加个性化。
 ### 示例配置
-```typescript
+```typescript title="src/config.ts"
 // Pio 看板娘配置
 export const pioConfig: import("./types/config").PioConfig = {
 	enable: true, // 启用看板娘

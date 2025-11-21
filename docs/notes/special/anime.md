@@ -46,9 +46,9 @@ Mizuki 主题内置了一个优雅的番剧（Anime）页面，支持两种数�
 
 ##### **2.1 配置文件设置**
 
-Bangumi 模式的配置是通过 `config.ts` 文件进行的，而不是环境变量。在 `config.ts` 中添加以下配置：
+Bangumi 模式的配置是通过 `src/config.ts` 文件进行的，而不是环境变量。在 `src/config.ts` 中添加以下配置：
 
-```typescript
+```typescript title="src/config.ts"
 // Bangumi 用户ID配置
 bangumi: {
   userId: "your-bangumi-id", // 在此处设置你的Bangumi用户ID，可以设置为 "sai" 测试
@@ -187,7 +187,7 @@ anime: {
 
     修改后的 `localAnimeList` 数组会是这样：
 
-    ```typescript
+    ```typescript title="src/data/anime.ts"
     const localAnimeList: AnimeItem[] = [
       {
         title: "Lycoris Recoil",
@@ -286,7 +286,7 @@ Bangumi 数据会自动从 API 获取，但你可以强制刷新：
 
 要在导航栏中显示番剧链接，请确保在 `src/config.ts` 的 `navBarConfig` 中包含了番剧链接：
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
@@ -299,7 +299,7 @@ export const navBarConfig: NavBarConfig = {
 
 或者手动添加番剧链接：
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,

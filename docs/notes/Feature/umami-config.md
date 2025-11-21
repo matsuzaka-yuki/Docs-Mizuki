@@ -37,7 +37,7 @@ Umami 是一个开源的网站分析工具，具有以下特点：
 
 打开 `src/config.ts` 文件，找到 `umamiConfig` 配置项：
 
-```typescript
+```typescript title="src/config.ts"
 export const umamiConfig = {
   enabled: false, // 是否启用 Umami 统计
   apiKey: "api_XXXXXXXXXX", // 你的 API 密钥
@@ -84,7 +84,7 @@ scripts: `
 
 以下是一个完整的配置示例：
 
-```typescript
+```typescript tite="src/config.ts"
 export const umamiConfig = {
   enabled: true,
   apiKey: "api_a1b2c3d4e5f6g7h8i9j0",

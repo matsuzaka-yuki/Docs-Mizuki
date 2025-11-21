@@ -6,7 +6,7 @@ permalink: /Basic-Layout/Profile/
 ## 个人资料配置说明
 个人资料配置位于 `src/config.ts` 文件中的 `profile` 对象，控制博客侧边栏的个人资料显示设置。
 
-```typescript
+```typescript title="src/config.ts"
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.webp", 
 	name: "Matsuzaka Yuki",

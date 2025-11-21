@@ -8,7 +8,7 @@ permalink: /Article-layout/copyright/
 
 版权信息配置位于 `src/config.ts` 文件中的 `license` 对象，控制博客文章底部的版权信息显示设置。
 
-```typescript
+```typescript title="src/config.ts"
 export const licenseConfig: LicenseConfig = {
 	enable: true,
 	name: "CC BY-NC-SA 4.0",

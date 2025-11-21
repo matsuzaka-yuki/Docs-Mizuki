@@ -126,7 +126,7 @@ npx serve dist -p 8080
 3. 上传 `.vuepress/dist` 文件夹内容
 4. 配置简单的 Web 服务器：
 
-```nginx
+```nginx title="nginx.conf"
 server {
     listen 80;
     server_name your-domain.com;
@@ -180,7 +180,7 @@ chmod +x build-and-deploy.sh
 
 在 `astro.config.mjs` 中添加优化配置：
 
-```javascript
+```javascript title="astro.config.mjs"
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({

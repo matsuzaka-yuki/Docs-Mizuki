@@ -6,7 +6,7 @@ permalink: /Sidepanel/categories/
 
 ## 分类侧边栏配置说明
 这里补充一下分类侧边栏组件的配置说明，其他配置项请参考基础定位配置。
-```typescript
+```typescript title="src/config.ts"
 {
 		type: "categories",
 		enable: true,
@@ -29,7 +29,7 @@ permalink: /Sidepanel/categories/
 
 #### **1. 折叠阈值 (`collapseThreshold`)**
 
-```typescript
+```typescript title="src/config.ts"
 responsive: {
     collapseThreshold: 5,
 },
@@ -73,7 +73,7 @@ responsive: {
     *   **想禁用折叠功能**：虽然没有直接的 `disableCollapse` 开关，但将 `collapseThreshold` 设置为一个极小的负数（如 `-1`）通常可以达到同样的效果，因为分类总数永远不会小于 `-1`，所以组件会一直保持展开状态。
 
 **配置示例（总是展开）**:
-```typescript
+```typescript title="src/config.ts"
 {
     type: "categories",
     enable: true,
@@ -98,7 +98,7 @@ responsive: {
 
 在 Markdown 文章的 frontmatter 中添加 `categories` 字段：
 
-```yaml
+```yaml title="content/posts/vuejs-guide.md"
 ---
 title: "Vue.js 入门指南"
 date: 2023-01-01
@@ -111,7 +111,7 @@ tags: ["Vue", "JavaScript", "前端框架"]
 
 支持多级分类，使用数组表示层级关系：
 
-```yaml
+```yaml title="content/posts/vue3-composition-api.md"
 ---
 title: "Vue 3 Composition API 详解"
 date: 2023-01-02
@@ -126,7 +126,7 @@ tags: ["Vue 3", "Composition API", "响应式"]
 
 #### 示例 1：基本分类配置
 
-```typescript
+```typescript title="src/config.ts"
 // 位置配置
 {
     type: "categories",
@@ -144,7 +144,7 @@ tags: ["Vue 3", "Composition API", "响应式"]
 
 #### 示例 2：禁用折叠功能
 
-```typescript
+```typescript title="src/config.ts"
 {
     type: "categories",
     enable: true,
@@ -161,7 +161,7 @@ tags: ["Vue 3", "Composition API", "响应式"]
 
 #### 示例 3：设置在右侧栏显示
 
-```typescript
+```typescript title="src/config.ts"
 {
     type: "categories",
     enable: true,

@@ -6,7 +6,7 @@ permalink: /Article-layout/Twikoo/
 # Twikoo 评论系统配置说明
 Twikoo 评论系统配置位于 `src/config.ts` 文件中的 `commentConfig` 对象，控制博客的评论系统显示设置。
 
-```typescript
+```typescript title="src/config.ts"
 export const commentConfig: CommentConfig = {
 	enable: false, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
 	twikoo: {

@@ -6,7 +6,7 @@ permalink: /Sidepanel/announcement/
 
 ## 公告侧边栏配置说明
 这里补充一下公告侧边栏组件的配置说明，其他配置项请参考基础定位配置。
-```typescript
+```typescript title="src/config.ts"
 {
 		type: "announcement",
 		enable: true,
@@ -40,7 +40,7 @@ permalink: /Sidepanel/announcement/
 
 公告组件的内容不是在 `sidebarLayoutConfig` 中配置的，而是在 `announcementConfig` 对象中配置。下面是公告内容的详细配置示例：
 
-```typescript
+```typescript title="src/config.ts"
 export const announcementConfig: AnnouncementConfig = {
 	title: "Announcement", // 公告标题
 	content: "Welcome to my blog! This is a sample announcement.", // 公告内容
@@ -114,7 +114,7 @@ export const announcementConfig: AnnouncementConfig = {
 
 #### 示例 1：基本公告配置
 
-```typescript
+```typescript title="src/config.ts"
 // 位置配置
 {
     type: "announcement",
@@ -127,6 +127,7 @@ export const announcementConfig: AnnouncementConfig = {
 },
 
 // 内容配置
+```typescript title="src/config.ts"
 export const announcementConfig: AnnouncementConfig = {
     title: "网站公告",
     content: "欢迎访问我的博客！这里会分享技术文章和生活感悟。",
@@ -142,7 +143,7 @@ export const announcementConfig: AnnouncementConfig = {
 
 #### 示例 2：活动公告配置
 
-```typescript
+```typescript title="src/config.ts"
 export const announcementConfig: AnnouncementConfig = {
     title: "限时活动",
     content: "本站正在进行技术分享活动，欢迎投稿参与！",
@@ -158,7 +159,7 @@ export const announcementConfig: AnnouncementConfig = {
 
 #### 示例 3：更新通知配置
 
-```typescript
+```typescript title="src/config.ts"
 export const announcementConfig: AnnouncementConfig = {
     title: "网站更新",
     content: "博客已更新至 v2.0 版本，新增了标签分类功能和夜间模式。",

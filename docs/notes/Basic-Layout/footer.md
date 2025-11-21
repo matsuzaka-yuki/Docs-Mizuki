@@ -5,7 +5,7 @@ permalink: /Basic-Layout/footer/
 ---
 # 页脚配置说明
 页脚配置位于 `src/config.ts` 文件中的 `footerConfig` 对象，控制博客底部页脚的显示设置。
-```typescript
+```typescript title="src/config.ts"
 export const footerConfig: FooterConfig = {
 	enable: false, 
 	customHtml: "", 
@@ -30,6 +30,16 @@ customHtml: "",
      - 例如：`<p>备案号：<a href="https://beian.miit.gov.cn/">粤ICP备2023000000号</a></p>`
 #### **3. FooterConfig.html 文件**
 - `FooterConfig.html` 文件用于存放自定义的页脚内容。
+
+::: file-tree
+
+- Mizuki
+  - src
+    - config.ts
+    - FooterConfig.html
+
+:::
+
   - 该文件默认位于 `src/FooterConfig.html`。
   - 若 `customHtml` 留空，页脚内容将从该文件中读取。
   - 若 `customHtml` 填写 HTML 内容，页脚将显示自定义的 HTML 内容。

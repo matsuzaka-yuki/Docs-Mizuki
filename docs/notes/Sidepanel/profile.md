@@ -6,7 +6,7 @@ permalink: /Sidepanel/profile/
 
 ## 个人资料侧边栏配置说明
 这里补充一下个人资料侧边栏组件的配置说明，其他配置项请参考基础定位配置。
-```typescript
+```typescript title="src/config.ts"
 {
 		type: "profile",
 		enable: true,
@@ -40,7 +40,7 @@ permalink: /Sidepanel/profile/
 
 个人资料组件的内容不是在 `sidebarLayoutConfig` 中配置的，而是在 `profileConfig` 对象中配置。下面是个人资料内容的详细配置示例：
 
-```typescript
+```typescript title="src/config.ts"
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.webp", // 头像路径
 	name: "Matsuzaka Yuki", // 名称
@@ -68,6 +68,7 @@ export const profileConfig: ProfileConfig = {
 	],
 };
 ```
+
 
 #### **1. 头像配置 (`avatar`)**
 
@@ -137,7 +138,7 @@ export const profileConfig: ProfileConfig = {
 
 #### 示例 1：基本个人资料配置
 
-```typescript
+```typescript title="src/config.ts"
 // 位置配置
 {
     type: "profile",
@@ -175,7 +176,8 @@ export const profileConfig: ProfileConfig = {
 
 #### 示例 2：禁用打字机效果，添加更多链接
 
-```typescript
+
+```typescript title="src/config.ts"
 export const profileConfig: ProfileConfig = {
     avatar: "/assets/avatar.webp",
     name: "李四",

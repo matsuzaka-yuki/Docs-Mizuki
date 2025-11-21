@@ -163,12 +163,16 @@ pubDate: 2025-01-20
 
 你可以在`src/content/posts/`目录下创建多个Markdown文件，每个文件代表一篇文章。例如：
 
-```
-src/content/posts/
-├── my-first-post.md
-├── my-second-post.md
-└── my-third-post.md
-```
+::: file-tree
+
+- src
+  - content
+    - posts
+      - my-first-post.md
+      - my-second-post.md
+      - my-third-post.md
+
+:::
 
 每篇文章都是一个独立的Markdown文件，文件名将被用作文章的URL路径。
 

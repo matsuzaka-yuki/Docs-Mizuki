@@ -8,7 +8,7 @@ permalink: /Feature/MusicPlayer/
 
 MusicPlayer配置位于 `src/config.ts` 文件中的 `musicPlayerConfig` 对象，控制博客的音乐播放器显示设置。
 
-```typescript
+```typescript title="src/config.ts"
 export const musicPlayerConfig: MusicPlayerConfig = {
 	enable: true, // 启用音乐播放器功能
 	mode: "meting", // 音乐播放器模式，可选 "local" 或 "meting"
@@ -137,7 +137,7 @@ local: {
 
 本地配置文件位于`/src/components/widget/MusicPlayer.svelte`，你可以在其中添加或修改本地音乐文件的列表,请注意相对路径还是绝对路径的问题。
 
-```typescript
+```typescript title="src/components/widget/MusicPlayer.svelte"
 const localPlaylist = [
 	{
 		id: 1,
@@ -200,7 +200,7 @@ const localPlaylist = [
 ### 更多的配置
 在播放器组件中，还有更多的状态变量可以根据需要进行调整和使用,依然位于`/src/components/widget/MusicPlayer.svelte`,这个是音乐播放器的核心源代码文件,适合高级用户使用!
 
-```typescript
+```typescript title="src/components/widget/MusicPlayer.svelte"
 let meting_type = musicPlayerConfig.type ?? "playlist";
 let isPlaying = false;
 let isExpanded = false;
@@ -293,7 +293,7 @@ let currentSong = {
 
 #### **4. 播放模式控制**
 
-*   **`isShuffled: boolean`**
+*   **`isShuffled: boolean(更新中)`**
     *   **作用**: 控制是否启用随机播放模式。
     *   **值**:
         *   `true`: 启用随机播放。下一首歌曲将从播放列表中随机选择。

@@ -7,7 +7,7 @@ permalink: /Article-layout/codeblock/
 
 代码块配置位于 `src/config.ts` 文件中的 `expressiveCodeConfig` 对象，控制博客文章内代码块的显示设置。
 
-```typescript
+```typescript title="src/config.ts"
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	// 注意：某些样式（如背景颜色）已被覆盖，请参阅 astro.config.mjs 文件。
 	// 请选择深色主题，因为此博客主题目前仅支持深色背景

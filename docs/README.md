@@ -61,5 +61,4 @@ config:
         title: Markdown 增强
         icon: 📝
         details: 支持 Markdown 语法，支持 代码块分组、提示容器、任务列表、数学公式、代码演示等        
-        
 ---

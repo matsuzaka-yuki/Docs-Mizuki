@@ -19,7 +19,7 @@ Mizuki 主题支持自定义字体配置，让您可以自定义站点的字体�
 
 在主题配置中添加以下字体配置：
 
-```typescript
+```typescript title="src/config.ts"
 // 字体配置
 font: {
 	// 注意：自定义字体需要在 src/styles/main.css 中引入字体文件
@@ -68,17 +68,26 @@ font: {
 
 将您的字体文件（推荐使用 TTF 格式）放置在项目目录中，例如：
 
-```
-public/fonts/
-├── ZenMaruGothic-Medium.ttf
-└── 萝莉体 第二版.ttf
-```
+::: file-tree
+
+- Mizuki
+  - public
+    - fonts
+      - ZenMaruGothic-Medium.ttf
+      - 萝莉体 第二版.ttf
+  - src
+    - styles
+      - main.css
+  - .vuepress
+    - config.ts
+
+:::
 
 ### 2. 引入字体文件
 
 在 `src/styles/main.css`（或类似的样式文件）中引入字体：
 
-```css
+```css title="src/styles/main.css"
 /* 英文字体 */
 @font-face {
   font-family: "ZenMaruGothic-Medium";
@@ -98,9 +107,9 @@ public/fonts/
 
 ### 3. 配置主题
 
-在 `.vuepress/config.ts` 或 `.vuepress/plume.config.ts` 中添加字体配置：
+在 `src/config.ts` 中添加字体配置：
 
-```typescript
+```typescript title="src/config.ts"
 export default defineThemeConfig({
   // 其他配置...
   font: {

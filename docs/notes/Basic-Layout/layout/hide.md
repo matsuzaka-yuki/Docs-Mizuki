@@ -7,7 +7,7 @@ permalink: /Basic-Layout/layout/hide/
 **无图布局配置说明**
 无图布局配置位于 `src/config.ts` 文件中的 `wallpaperMode` 对象，控制博客的整体布局设置。
 
-```typescript
+```typescript title="src/config.ts"
 wallpaperMode: {
 		// 默认壁纸模式：banner=顶部横幅，fullscreen=全屏壁纸，none=无壁纸
 		defaultMode: "banner",

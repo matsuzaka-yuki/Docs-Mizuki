@@ -11,7 +11,7 @@ permalink: /guide/deploy/Github/
 ### 部署到 github.io 网址
 在 `astro.config.mjs` 中配置文件设置 `site` 和 `base` 选项。
 
-```astro.config.mjs
+```astro.config.mjs title="astro.config.mjs"
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({

@@ -6,160 +6,94 @@ permalink: /Sidepanel/global/
 ## 全局侧边栏位置配置说明
 全局侧边栏位置配置位于 `src/config.ts` 文件中的 `sidepanelGlobalConfig` 对象，控制博客的侧边栏显示位置。
 
-```typescript
-/**
- * 侧边栏布局配置
- * 用于控制侧边栏组件的显示、排序、动画和响应式行为
- * sidebar: 控制组件在左侧栏和右侧栏,注意移动端是不会显示右侧栏的内容(unilateral模式除外),在设置了right属性的时候请确保你使用双侧(both)布局
- */
+```typescript title="src/config.ts"
 export const sidebarLayoutConfig: SidebarLayoutConfig = {
-	// 侧边栏位置：单侧(unilateral)或双侧(both)
 	position: "both",
 
-	// 侧边栏组件配置列表
 	components: [
 		{
-			// 组件类型：用户资料组件
 			type: "profile",
-			// 是否启用该组件
 			enable: true,
-			// 组件显示顺序（数字越小越靠前）
 			order: 1,
-			// 组件位置："top" 表示固定在顶部
 			position: "top",
-			// 所在侧边栏
 			sidebar: "left",
-			// CSS 类名，用于应用样式和动画
 			class: "onload-animation",
-			// 动画延迟时间（毫秒），用于错开动画效果
 			animationDelay: 0,
 		},
 		{
-			// 组件类型：公告组件
 			type: "announcement",
-			// 是否启用该组件（现在通过统一配置控制）
 			enable: true,
-			// 组件显示顺序
 			order: 2,
-			// 组件位置："top" 表示固定在顶部
 			position: "top",
-			// 所在侧边栏
 			sidebar: "left",
-			// CSS 类名
 			class: "onload-animation",
-			// 动画延迟时间
 			animationDelay: 50,
 		},
 		{
-			// 组件类型：分类组件
 			type: "categories",
-			// 是否启用该组件
 			enable: true,
-			// 组件显示顺序
 			order: 3,
-			// 组件位置："sticky" 表示粘性定位，可滚动
 			position: "sticky",
-			// 所在侧边栏
 			sidebar: "left",
-			// CSS 类名
 			class: "onload-animation",
-			// 动画延迟时间
 			animationDelay: 150,
-			// 响应式配置
 			responsive: {
-				// 折叠阈值：当分类数量超过5个时自动折叠
 				collapseThreshold: 5,
 			},
 		},
 		{
-			// 组件类型：标签组件
 			type: "tags",
-			// 是否启用该组件
 			enable: true,
-			// 组件显示顺序
 			order: 5,
-			// 组件位置："sticky" 表示粘性定位
 			position: "top",
-			// 所在侧边栏
 			sidebar: "left",
-			// CSS 类名
 			class: "onload-animation",
-			// 动画延迟时间
 			animationDelay: 250,
-			// 响应式配置
 			responsive: {
-				// 折叠阈值：当标签数量超过20个时自动折叠
 				collapseThreshold: 20,
 			},
 		},
 		{
-			// 组件类型：站点统计组件
 			type: "site-stats",
-			// 是否启用该组件
 			enable: true,
-			// 组件显示顺序
 			order: 5,
-			// 组件位置
 			position: "top",
-			// 所在侧边栏
 			sidebar: "right",
-			// CSS 类名
 			class: "onload-animation",
-			// 动画延迟时间
 			animationDelay: 200,
 		},
 		{
-			// 组件类型：日历组件(移动端不显示)
 			type: "calendar",
-			// 是否启用该组件
 			enable: true,
-			// 组件显示顺序
 			order: 6,
-			// 组件位置
 			position: "top",
-			// 所在侧边栏
 			sidebar: "right",
-			// CSS 类名
 			class: "onload-animation",
-			// 动画延迟时间
 			animationDelay: 250,
 		},
 	],
 
-	// 默认动画配置
 	defaultAnimation: {
-		// 是否启用默认动画
 		enable: true,
-		// 基础延迟时间（毫秒）
 		baseDelay: 0,
-		// 递增延迟时间（毫秒），每个组件依次增加的延迟
 		increment: 50,
 	},
 
-	// 响应式布局配置
 	responsive: {
-		// 断点配置（像素值）
 		breakpoints: {
-			// 移动端断点：屏幕宽度小于768px
 			mobile: 768,
-			// 平板端断点：屏幕宽度小于1280px
 			tablet: 1280,
-			// 桌面端断点：屏幕宽度小于1280px
 			desktop: 1280,
 		},
-		// 不同设备的布局模式
-		//hidden:不显示侧边栏(桌面端)   drawer:抽屉模式(移动端不显示)   sidebar:显示侧边栏
 		layout: {
-			// 移动端：抽屉模式
 			mobile: "sidebar",
-			// 平板端：显示侧边栏
 			tablet: "sidebar",
-			// 桌面端：显示侧边栏
 			desktop: "sidebar",
 		},
 	},
 };
 ```
+
 ## 侧边栏布局配置教程
 `sidebarLayoutConfig` 对象用于全面控制博客侧边栏的布局结构、组件排列、动画效果和响应式行为，支持单侧或双侧侧边栏配置，是定制博客布局的核心配置项。
 
@@ -210,7 +144,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 
 ### 二、常用组件配置示例解析
 #### 1. 个人资料组件（`type: "profile"`）
-```typescript
+```typescript title="src/config.ts"
 {
   type: "profile",
   enable: true,
@@ -224,7 +158,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 - 配置说明：左侧栏顶部显示个人资料，启用动画，无延迟（第一个加载）。
 
 #### 2. 分类组件（`type: "categories"`）
-```typescript
+```typescript title="src/config.ts"
 {
   type: "categories",
   enable: true,
@@ -241,7 +175,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 - 配置说明：左侧栏粘性定位显示分类，动画延迟 150ms，分类数量＞5 时自动折叠（点击可展开）。
 
 #### 3. 站点统计组件（`type: "site-stats"`）
-```typescript
+```typescript title="src/config.ts"
 {
   type: "site-stats",
   enable: true,
@@ -267,7 +201,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 
 ### 四、常见配置场景示例
 #### 场景 1：仅显示左侧栏，隐藏右侧栏
-```typescript
+```typescript title="src/config.ts"
 export const sidebarLayoutConfig: SidebarLayoutConfig = {
   position: "unilateral", // 单侧模式
   components: [
@@ -281,7 +215,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 ```
 
 #### 场景 2：移动端隐藏侧边栏，桌面端显示双侧
-```typescript
+```typescript title="src/config.ts"
 responsive: {
   breakpoints: { mobile: 768, tablet: 1280, desktop: 1280 },
   layout: {
@@ -293,7 +227,7 @@ responsive: {
 ```
 
 #### 场景 3：调整组件顺序，分类组件排在最前
-```typescript
+```typescript title="src/config.ts"
 components: [
   { type: "categories", enable: true, order: 1, ... }, // order 设为 1，排在第一位
   { type: "profile", enable: true, order: 2, ... }, // 个人资料排在第二位

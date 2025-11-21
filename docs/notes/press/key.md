@@ -37,7 +37,7 @@ permalink: /press/key/
 
 在文章的 Front Matter 中添加以下配置：
 
-```markdown
+```markdown title="encrypted-example.md"
 ---
 title: '这是一篇加密文章'
 encrypted: true

@@ -12,7 +12,7 @@ Banner配置位于 `src/config.ts` 文件中的 `banner` 对象，控制博客�
 
 ### Banner配置
 
-```typescript
+```typescript title="src/config.ts"
 banner: {
 		// 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
 		src: {

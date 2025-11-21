@@ -6,15 +6,15 @@ permalink: /Sidepanel/calendar/
 
 ## 日历侧边栏配置说明
 这里补充一下日历侧边栏组件的配置说明，其他配置项请参考基础定位配置。
-```typescript
+```typescript title="src/config.ts"
 {
-		type: "calendar",
-		enable: true,
-		order: 6,
-		position: "top",
-		sidebar: "right",
-		class: "onload-animation",
-		animationDelay: 250,
+	type: "calendar",
+	enable: true,
+	order: 6,
+	position: "top",
+	sidebar: "right",
+	class: "onload-animation",
+	animationDelay: 250,
 },
 ```
 
@@ -81,7 +81,7 @@ permalink: /Sidepanel/calendar/
 
 #### 示例 1：基本日历配置
 
-```typescript
+```typescript title="src/config.ts"
 // 位置配置
 {
     type: "calendar",
@@ -96,7 +96,7 @@ permalink: /Sidepanel/calendar/
 
 #### 示例 2：设置在左侧栏显示
 
-```typescript
+```typescript title="src/config.ts"
 {
     type: "calendar",
     enable: true,
@@ -110,7 +110,7 @@ permalink: /Sidepanel/calendar/
 
 #### 示例 3：禁用日历组件
 
-```typescript
+```typescript title="src/config.ts"
 {
     type: "calendar",
     enable: false, // 禁用日历组件
@@ -132,7 +132,7 @@ permalink: /Sidepanel/calendar/
 
 在 Markdown 文章的 frontmatter 中设置日期：
 
-```yaml
+```yaml title="content/posts/my-post.md"
 ---
 title: "我的技术博客"
 date: 2023-01-15 # 使用标准日期格式
@@ -145,7 +145,7 @@ tags: ["编程"]
 
 在 `siteConfig` 中设置时区，确保日期计算准确：
 
-```typescript
+```typescript title="src/config.ts"
 export const siteConfig: SiteConfig = {
     // ...其他配置...
     timeZone: 8, // 设置时区，例如 +8 表示东八区（北京时间）

@@ -8,7 +8,7 @@ permalink: /Feature/sakura/
 
 樱花飘落特效配置位于 `src/config.ts` 文件中的 `sakuraConfig` 对象，控制博客页面的樱花飘落效果。
 
-```typescript
+```typescript title="src/config.ts"
 export const sakuraConfig: SakuraConfig = {
 	enable: false, // 默认关闭樱花特效
 	sakuraNum: 21, // 樱花数量

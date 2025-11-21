@@ -42,7 +42,7 @@ Mizuki 主题内置了一个简洁的设备展示（Devices）页面，用于展
 
 打开 `src/data/devices.ts`，你会看到类似下面的代码结构：
 
-```typescript
+```typescript title="src/data/devices.ts"
 export interface Device {
 	name: string;
 	image: string;
@@ -129,7 +129,7 @@ export const devicesData: DeviceCategory = {
 
     修改后的 `devicesData` 对象会是这样：
 
-    ```typescript
+    ```typescript title="src/data/devices.ts"
     export const devicesData: DeviceCategory = {
       OnePlus: [
         // ... OnePlus 设备 ...
@@ -197,7 +197,7 @@ export const devicesData: DeviceCategory = {
 
 要在导航栏中显示设备链接，请确保在 `src/config.ts` 的 `navBarConfig` 中包含了设备链接：
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
@@ -210,7 +210,7 @@ export const navBarConfig: NavBarConfig = {
 
 或者手动添加设备链接：
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,

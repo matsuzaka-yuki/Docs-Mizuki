@@ -13,8 +13,11 @@ permalink: /guide/intro/
 
 如果能给我一个star那将是对我莫大的鼓励。使用这个主题之前，你应该明白它是一个Astro主题，它的基本逻辑离不开Astro，关于如何新建分类，如何新建标签这些问题应该在使用之前就从互联网或官方文档了解详情🔎。  
 
+<CardGrid>
+  <RepoCard repo="matsuzaka-yuki/Mizuki" />
+  <RepoCard repo="matsuzaka-yuki/Mizuki-Content" />
+</CardGrid>
 
-主题 GitHub: [https://github.com/matsuzaka-yuki/Mizuki](https://github.com/matsuzaka-yuki/Mizuki)
 
 QQ群1007524064 (主题交流群)  
 Discord频道(面向全世界的Mizuki用户): [https://discord.gg/MqW6TcQtVM](https://discord.gg/MqW6TcQtVM)

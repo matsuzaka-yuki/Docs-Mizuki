@@ -117,9 +117,7 @@ category: Web Development
 ### 图片路径最佳实践
 在子文件夹方法中，推荐使用相对路径引用图片：
 ```yaml
-image:
-  url: './cover.jpg'  # 相对于当前文件夹
-  alt: '文章封面图片描述'
+image: './cover.jpg'
 ```
 
 ### 完整示例
@@ -168,13 +166,18 @@ pubDate: 2025-01-20
 
 使用这种方法，你可以将文章相关的所有资源都放在同一个文件夹中，便于管理：
 
-```
-src/content/posts/my-complex-post/
-├── index.md
-├── image1.png
-├── image2.jpg
-└── data.json
-```
+::: file-tree
+
+- src
+  - content
+    - posts
+      - my-complex-post
+        - index.md
+        - image1.png
+        - image2.jpg
+        - data.json
+
+:::
 
 在文章中引用图片时，可以直接使用相对路径：
 
@@ -187,19 +190,23 @@ src/content/posts/my-complex-post/
 
 你可以在`src/content/posts/`目录下创建多个文件夹，每个文件夹代表一篇文章。例如：
 
-```
-src/content/posts/
-├── my-first-post/
-│   ├── index.md
-│   └── cover.jpg
-├── my-second-post/
-│   ├── index.md
-│   ├── image1.png
-│   └── image2.png
-└── my-third-post/
-    ├── index.md
-    └── data.json
-```
+::: file-tree
+
+- src
+  - content
+    - posts
+      - my-first-post
+        - index.md
+        - cover.jpg
+      - my-second-post
+        - index.md
+        - image1.png
+        - image2.png
+      - my-third-post
+        - index.md
+        - data.json
+
+:::
 
 每篇文章都有自己的独立文件夹，便于管理和维护。
 

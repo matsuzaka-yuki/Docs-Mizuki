@@ -7,7 +7,7 @@ permalink: /Basic-Layout/navBarConfig/
 
 顶栏导航配置位于 `src/config.ts` 文件中的 `navBarConfig` 对象，控制博客顶部导航栏的显示设置,手机端表现为抽屉菜单。
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,

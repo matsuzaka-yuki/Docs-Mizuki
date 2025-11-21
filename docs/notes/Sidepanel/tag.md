@@ -6,19 +6,19 @@ permalink: /Sidepanel/tag/
 
 ## 标签侧边栏配置说明
 这里补充一下标签侧边栏组件的配置说明,其他配置项请参考基础定位配置。
-```typescript
+```typescript title="src/config.ts"
 {
-			type: "tags",
-			enable: true,
-			order: 5,
-			position: "top",
-			sidebar: "left",
-			class: "onload-animation",
-			animationDelay: 250,
-			responsive: {
-				collapseThreshold: 20,
-			},
+		type: "tags",
+		enable: true,
+		order: 5,
+		position: "top",
+		sidebar: "left",
+		class: "onload-animation",
+		animationDelay: 250,
+		responsive: {
+			collapseThreshold: 20,
 		},
+	},
 ```
 我来详细解析标签侧边栏组件（`type: "tags"`）中的 `responsive` 配置,其他配置项请参考基础定位配置。
 
@@ -28,7 +28,7 @@ permalink: /Sidepanel/tag/
 
 #### **1. 折叠阈值 (`collapseThreshold`)**
 
-```typescript
+```typescript title="src/config.ts"
 responsive: {
     collapseThreshold: 20,
 },
@@ -36,8 +36,8 @@ responsive: {
 
 *   **作用**: 这个属性用于设置一个**数量阈值**。当你的博客文章标签总数超过这个阈值时，标签组件会自动从**展开状态**切换为**折叠状态**。
 *   **详细解释**:
-    *   **当标签总数 `<=` `collapseThreshold` 时**: 标签组件会以“展开”的形式显示，所有标签都会平铺出来，用户可以一目了然地看到所有标签并点击。
-    *   **当标签总数 `>` `collapseThreshold` 时**: 标签组件会自动“折叠”，只显示一部分标签（例如，前几个），并提供一个可点击的展开/折叠按钮（通常显示为 “显示全部” / “收起”）。用户需要点击该按钮才能看到完整的标签列表。
+    *   **当标签总数 `<=` `collapseThreshold` 时**: 标签组件会以"展开"的形式显示，所有标签都会平铺出来，用户可以一目了然地看到所有标签并点击。
+    *   **当标签总数 `>` `collapseThreshold` 时**: 标签组件会自动"折叠"，只显示一部分标签（例如，前几个），并提供一个可点击的展开/折叠按钮（通常显示为 "显示全部" / "收起"）。用户需要点击该按钮才能看到完整的标签列表。
 *   **配置示例**:
     *   如果设置 `collapseThreshold: 10`，而你的博客有 15 个标签，那么标签组件默认会折叠，只显示部分标签。
     *   如果你的博客只有 8 个标签，那么标签组件会默认展开，显示所有 8 个标签。
@@ -56,7 +56,7 @@ responsive: {
     *   **想禁用折叠功能**：虽然没有直接的 `disableCollapse` 开关，但将 `collapseThreshold` 设置为一个极小的负数（如 `-1`）通常可以达到同样的效果，因为标签总数永远不会小于 `-1`，所以组件会一直保持展开状态。
 
 **配置示例（总是展开）**:
-```typescript
+```typescript title="src/config.ts"
 {
     type: "tags",
     enable: true,

@@ -83,7 +83,7 @@ permalink: /special/gallery/
 :::
 
 ### 配置示例
-```json
+```json title="info.json"
 {
   "title": "我的旅行相册",
   "description": "2024年夏天的美好回忆",
@@ -122,7 +122,7 @@ permalink: /special/gallery/
 外链模式需要在 `info.json` 中完整定义所有图片信息。
 
 ### 基本配置
-```json
+```json title="info.json"
 {
   "mode": "external",
   "title": "外链相册示例",
@@ -137,7 +137,7 @@ permalink: /special/gallery/
 ```
 
 ### 完整配置示例
-```json
+```json title="info.json"
 {
   "mode": "external",
   "title": "风景摄影集",
@@ -247,7 +247,7 @@ permalink: /special/gallery/
 ## 完整配置示例
 
 ### 示例1：本地模式相册
-```json
+```json title="info.json"
 {
   "title": "家庭聚会",
   "description": "2024年春节家庭聚会的温馨时光",
@@ -260,7 +260,7 @@ permalink: /special/gallery/
 ```
 
 ### 示例2：外链模式相册
-```json
+```json title="info.json"
 {
   "mode": "external",
   "title": "街头摄影",
@@ -289,7 +289,7 @@ permalink: /special/gallery/
 ```
 
 ### 示例3：隐藏的外链相册
-```json
+```json title="info.json"
 {
   "mode": "external",
   "hidden": true,

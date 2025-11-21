@@ -42,7 +42,7 @@ Mizuki 主题内置了一个美观的友情链接（Friends）页面，用于展
 
 打开 `src/data/friends.ts`，你会看到类似下面的代码结构：
 
-```typescript
+```typescript title="src/data/friends.ts"
 export interface FriendItem {
 	id: number;
 	title: string;
@@ -112,7 +112,7 @@ export const friendsData: FriendItem[] = [
 
     修改后的 `friendsData` 数组会是这样：
 
-    ```typescript
+    ```typescript title="src/data/friends.ts"
     export const friendsData: FriendItem[] = [
       {
         id: 1,
@@ -156,7 +156,7 @@ export const friendsData: FriendItem[] = [
 
 友情链接页面支持随机排序功能，确保所有链接都有平等的展示机会：
 
-```typescript
+```typescript title="src/data/friends.ts"
 // 获取随机排序的友情链接数据
 export function getShuffledFriendsList(): FriendItem[] {
 	const shuffled = [...friendsData];
@@ -204,7 +204,7 @@ export function getShuffledFriendsList(): FriendItem[] {
 
 要在导航栏中显示友情链接，请确保在 `src/config.ts` 的 `navBarConfig` 中包含了友情链接：
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
@@ -217,7 +217,7 @@ export const navBarConfig: NavBarConfig = {
 
 或者手动添加友情链接：
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,

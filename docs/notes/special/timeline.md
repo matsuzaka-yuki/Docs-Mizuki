@@ -41,7 +41,7 @@ Mizuki 主题内置了一个专业的时间线（Timeline）页面，用于按�
 
 打开 `src/data/timeline.ts`，你会看到类似下面的代码结构：
 
-```typescript
+```typescript title="timeline.ts"
 export interface TimelineItem {
 	id: string;
 	title: string;
@@ -150,7 +150,7 @@ export const timelineData: TimelineItem[] = [
 
     修改后的 `timelineData` 数组会是这样：
 
-    ```typescript
+    ```typescript title="timeline.ts"
     export const timelineData: TimelineItem[] = [
       {
         id: "current-study",
@@ -241,7 +241,7 @@ export const timelineData: TimelineItem[] = [
 
 要在导航栏中显示时间线链接，请确保在 `src/config.ts` 的 `navBarConfig` 中包含了时间线链接：
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
@@ -254,7 +254,7 @@ export const navBarConfig: NavBarConfig = {
 
 或者手动添加时间线链接：
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,

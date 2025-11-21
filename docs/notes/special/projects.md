@@ -42,7 +42,7 @@ Mizuki 主题内置了一个专业的项目展示（Projects）页面，用于�
 
 打开 `src/data/projects.ts`，你会看到类似下面的代码结构：
 
-```typescript
+```typescript title="src/data/projects.ts"
 export interface Project {
 	id: string;
 	title: string;
@@ -144,7 +144,7 @@ export const projectsData: Project[] = [
 
     修改后的 `projectsData` 数组会是这样：
 
-    ```typescript
+    ```typescript title="src/data/projects.ts"
     export const projectsData: Project[] = [
       {
         id: "mizuki-blog",
@@ -241,7 +241,7 @@ export const projectsData: Project[] = [
 
 要在导航栏中显示项目链接，请确保在 `src/config.ts` 的 `navBarConfig` 中包含了项目链接：
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
@@ -254,7 +254,7 @@ export const navBarConfig: NavBarConfig = {
 
 或者手动添加项目链接：
 
-```typescript
+```typescript title="src/config.ts"
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
