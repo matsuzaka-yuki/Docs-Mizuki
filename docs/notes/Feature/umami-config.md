@@ -22,7 +22,7 @@ Umami 是一个开源的网站分析工具，具有以下特点：
 ### 1. 注册并创建 Umami 账户
 
 首先，您需要注册一个 Umami 账户：
-1. 访问 [Umami 官网](https://umami.is/) 或使用自建的 Umami 服务(V3版本暂时没开源)
+1. 访问 [Umami 官网](https://umami.is/) 或使用自建的 Umami 服务
 2. 注册账户并登录
 3. 创建一个新的网站，获取网站ID
 

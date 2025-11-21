@@ -61,14 +61,14 @@ npx serve dist -p 8080
 
 ## 第四步：部署到不同平台
 
-现在你可以将 `.vuepress/dist` 文件夹部署到各种平台。以下是几种常见平台的部署方法：
+现在你可以将 `dist` 文件夹部署到各种平台。以下是几种常见平台的部署方法：
 
 ### 方案一：传统虚拟主机
 
 大多数虚拟主机都支持 FTP/SFTP 上传文件：
 
 1. 使用 FTP 客户端（如 FileZilla）连接你的虚拟主机
-2. 将 `.vuepress/dist` 文件夹中的所有文件上传到网站根目录
+2. 将 `dist` 文件夹中的所有文件上传到网站根目录
 3. 确保服务器有正确的 MIME 类型配置：
    - `.html` → `text/html`
    - `.css` → `text/css`
@@ -83,14 +83,14 @@ npx serve dist -p 8080
 
 1. 登录阿里云控制台，创建 OSS 存储桶
 2. 开启静态网站托管功能
-3. 将 `.vuepress/dist` 文件夹中的所有文件上传到 OSS
+3. 将 `dist` 文件夹中的所有文件上传到 OSS
 4. 配置 CDN 加速（可选）
 
 #### 腾讯云 COS
 
 1. 创建 COS 存储桶
 2. 开启静态网站功能
-3. 上传 `.vuepress/dist` 文件夹中的所有文件
+3. 上传 `dist` 文件夹中的所有文件
 4. 配置自定义域名和 CDN
 
 ### 方案三：CDN 边缘平台
@@ -105,7 +105,7 @@ npx serve dist -p 8080
    ```bash
    npm install -g upx
    upx login your-operator your-password
-   upx sync .vuepress/dist /your-bucket-name/
+   upx sync dist /your-bucket-name/
    ```
 
 ### 方案四：个人 NAS
@@ -114,7 +114,7 @@ npx serve dist -p 8080
 
 1. 登录 NAS 管理界面
 2. 创建 Web Station 或类似服务
-3. 将 `.vuepress/dist` 文件夹复制到 Web 目录
+3. 将 `dist` 文件夹复制到 Web 目录
 4. 配置端口和访问权限
 
 ### 方案五：VPS 简单部署
@@ -123,7 +123,7 @@ npx serve dist -p 8080
 
 1. 安装 Nginx 或 Apache
 2. 创建网站目录
-3. 上传 `.vuepress/dist` 文件夹内容
+3. 上传 `dist` 文件夹内容
 4. 配置简单的 Web 服务器：
 
 ```nginx title="nginx.conf"
@@ -159,7 +159,7 @@ echo "dist 文件夹位置：$(pwd)/dist"
 # 根据你的部署方式取消注释相应部分
 
 # FTP 部署（需要安装 lftp）
-# lftp -u username,password -e "mirror -R .vuepress/dist /remote/path" ftp.example.com
+# lftp -u username,password -e "mirror -R dist /remote/path" ftp.example.com
 
 # SCP 部署
 # scp -r dist/* user@server:/path/to/website/

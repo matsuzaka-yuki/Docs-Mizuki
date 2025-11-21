@@ -45,9 +45,11 @@ const Note = defineNoteConfig({
       items: [
         { text: 'Vercel', link: 'deploy/Vercel/', icon: 'ri:vercel-line' ,badge: { type: 'warning', text: '推荐' } },
         { text: 'Netlify', link: 'deploy/Netlify/', icon: 'ri:cloud-line' },
-        { text: 'GitHub Pages', link: 'deploy/Github/', icon: 'ri:github-line' },
+        { text: 'GitHub Pages', link: 'deploy/Github/', icon: 'ri:github-line' ,badge: { type: 'danger', text: '不推荐' },},
+        { text: 'Cloudflare Pages', link: 'deploy/Cloudflare/', icon: 'ri:cloud-line'},
         { text: 'EdgeOne Pages', link: 'deploy/Edge/', icon: 'ri:cloud-line', badge: { type: 'warning', text: '推荐' } },
         { text: '服务器部署', link: 'deploy/server/', icon: 'ri:server-line', badge: { type: 'info', text: '入门' } },
+        { text: 'Docker部署', link: 'deploy/docker/', icon: 'ri:ship-line' },
         { text: '本地构建', link: 'deploy/local/', icon: 'ri:computer-line', badge: { type: 'info', text: '入门' } },
       ],
     },
@@ -71,7 +73,6 @@ const Note = defineNoteConfig({
         { text: '纯色背景配置', link: 'layout/hide/', icon: 'ri:paint-brush-line' ,badge: { type: 'danger', text: '新' },},
       ]
     },
-        { text: '个人资料配置', link: 'Profile/', icon: 'ri:user-settings-line' },
         { text: '页脚配置', link: 'footer/', icon: 'ri:layout-bottom-line' },
         { text: '导航栏配置', link: 'navBarConfig/', icon: 'ri:menu-line' ,badge: { type: 'info', text: 'v2' },},
         { text: '自定义字体', link: 'font/', icon: 'ri:font-size-2',badge: { type: 'info', text: 'v3' }, },
@@ -156,7 +157,7 @@ const Note = defineNoteConfig({
           collapsed: true, // 是否默认折叠
           items: [
             { text: '文件', link: 'file/', icon: 'ri:file-text-line' },
-            { text: '文件夹', link: 'folder/', icon: 'ri:folder-line' },
+            { text: '文件夹', link: 'folder/', icon: 'ri:folder-line' ,badge: { type: 'danger', text: '推荐' },},
           ]
         },
         {
@@ -166,6 +167,15 @@ const Note = defineNoteConfig({
           items: [
             { text: '文章加密(可选)', link: 'key/', icon: 'ri:key-line' },
             { text: '固定链接', link: 'permalink/', icon: 'ri:link', badge: { type: 'danger', text: '新' } },
+          ]
+        },
+        {
+          text: '资源嵌入',
+          icon: 'ri:video-line',
+          collapsed: true, // 是否默认折叠
+          items: [
+            { text: 'Bilibili 视频', link: 'video/bilibili/', icon: 'ri:bilibili-line' },
+            { text: 'Youtube 视频', link: 'video/youtube/', icon: 'ri:youtube-line'},
           ]
         },
       ]
@@ -193,25 +203,38 @@ const Note = defineNoteConfig({
       prefix: '/transfer/', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
       collapsed: true, // 是否默认折叠
       items: [
-        { text: 'Gridea导入', link: 'gridea-import/', icon: 'ri:download-cloud-line' },
-        { text: 'Halo迁移', link: 'halo-to-mizuki/', icon: 'ri:exchange-line' },
-        { text: 'Hexo迁移', link: 'hexo-to-mizuki/', icon: 'ri:exchange-line' },
-        { text: 'HTML导入', link: 'html-import/', icon: 'ri:html5-line' },
-        { text: 'Hugo迁移', link: 'hugo-to-mizuki/', icon: 'ri:exchange-line' },
-        { text: 'Jekyll迁移', link: 'jekyll-to-mizuki/', icon: 'ri:exchange-line' },
-        { text: 'Markdown导入', link: 'markdown-import/', icon: 'ri:markdown-line' },
-        { text: 'Typecho迁移', link: 'typecho-to-mizuki/', icon: 'ri:exchange-line' },
-        { text: 'WordPress迁移', link: 'wordpress-to-mizuki/', icon: 'ri:wordpress-line' },
-        { text: 'Z-Blog导入', link: 'zblog-import/', icon: 'ri:download-cloud-line' },
+        { text: 'Gridea导入', link: 'gridea-import/', icon: 'ri:download-cloud-line' , badge: { type: 'info', text: '简单' },},
+        { text: 'Halo迁移', link: 'halo-to-mizuki/', icon: 'ri:exchange-line', badge: { type: 'warning', text: '中等' },},
+        { text: 'Hexo迁移', link: 'hexo-to-mizuki/', icon: 'ri:exchange-line' , badge: { type: 'info', text: '简单' },},
+        { text: 'HTML导入', link: 'html-import/', icon: 'ri:html5-line', badge: { type: 'info', text: '简单' }, },
+        { text: 'Hugo迁移', link: 'hugo-to-mizuki/', icon: 'ri:exchange-line' , badge: { type: 'info', text: '简单' },},
+        { text: 'Jekyll迁移', link: 'jekyll-to-mizuki/', icon: 'ri:exchange-line', badge: { type: 'warning', text: '中等' }, },
+        { text: 'Markdown导入', link: 'markdown-import/', icon: 'ri:markdown-line' , badge: { type: 'info', text: '简单' },},
+        { text: 'Typecho迁移', link: 'typecho-to-mizuki/', icon: 'ri:exchange-line' , badge: { type: 'warning', text: '中等' },},
+        { text: 'WordPress迁移', link: 'wordpress-to-mizuki/', icon: 'ri:wordpress-line', badge: { type: 'danger', text: '困难' },},
+        { text: 'Z-Blog导入', link: 'zblog-import/', icon: 'ri:download-cloud-line', badge: { type: 'danger', text: '困难' }, },
       ]
     },
      {
+      text: 'API 文档',
+      icon: 'ri:code-s-slash-line',
+      prefix: '/API/', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
+      collapsed: true, // 是否默认折叠
+      items: [
+        { text: 'Bangumi API', link: 'bangumi/', icon: 'ri:film-line' },
+        { text: 'Meting API', link: 'metings/', icon: 'ri:music-2-line' },
+      ]
+    },
+    {
       text: '常见问题',
       icon: 'ri:question-line',
       prefix: '/problem/', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
       collapsed: true, // 是否默认折叠
       items: [
        { text: '提问的艺术', link: 'question/', icon: 'ri:question-line' ,badge: { type: 'danger', text: '必看' },},
+       { text: 'WordPress相关问题', link: 'wordpress/', icon: 'ri:wordpress-line' },
+       { text: 'Typecho相关问题', link: 'type/', icon: 'ri:file-code-line' },
+       { text: '错误排查问题', link: 'error/', icon: 'ri:bug-line', badge: { type: 'warning', text: '常见' },},
       ]
     },
   ],
