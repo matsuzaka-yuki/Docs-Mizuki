@@ -223,6 +223,7 @@ const Note = defineNoteConfig({
       items: [
         { text: 'Bangumi API', link: 'bangumi/', icon: 'ri:film-line' },
         { text: 'Meting API', link: 'metings/', icon: 'ri:music-2-line' },
+        { text: 'PicFlow API', link: 'picflow/', icon: 'ri:image-2-line', badge: { type: 'warning', text: '新' } },
       ]
     },
     {
