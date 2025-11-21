@@ -9,21 +9,15 @@ permalink: /guide/deploy/Github/
 如果您希望将博客托管在 GitHub Pages 上，Mizuki 项目通常会包含一个 GitHub Actions 工作流，可以帮助您自动化部署过程。您需要确保在 `astro.config.mjs` 中配置正确的 `base` 路径。
 
 ### 部署到 github.io 网址
-在 `astro.config.mjs` 中配置文件设置 `site` 和 `base` 选项。
+在 `astro.config.mjs` 中配置文件设置 `base` 选项。
 
 ```astro.config.mjs title="astro.config.mjs"
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  site: 'https://astronaut.github.io',
   base: 'my-repo',
 })
 ```
-**Site**
-
-`site` 的值必须是以下之一：
-- 基于你的用户名的以下网址: `https://<username>.github.io`
-- 为 GitHub 组织的私有页面 自动生成的随机网址：`https://<random-string>.pages.github.io/`
 
 
 
@@ -38,6 +32,21 @@ export default defineConfig({
 ```
 查看更多关于配置 [`base`](https://docs.astro.build/zh-cn/reference/configuration-reference/#base) 值的信息。
 :::
+
+## 部署到自定义域名
+
+你需要在`src/config.ts`中配置`site`为你的自定义域名。
+
+```ts title="src/config.ts"
+siteURL: "https://mizuki.mysqil.com/", 
+```
+
+**Site**
+
+`site` 的值必须是以下之一：
+- 基于你的用户名的以下网址: `https://<username>.github.io`
+- 为 GitHub 组织的私有页面 自动生成的随机网址：`https://<random-string>.pages.github.io/`
+
 
 ### 在 GitHub Pages 上使用自定义域名
 ::: card title="设置一个自定义域" icon="twemoji:astonished-face"
