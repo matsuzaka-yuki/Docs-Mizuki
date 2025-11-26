@@ -10,9 +10,9 @@ permalink: /transfer/jekyll-to-mizuki/
 
 ## Mizuki 的特点
 
-Mizuki 是一个基于 VuePress 的静态博客主题，它具有以下特点：
+Mizuki 是一个基于 Astro 的静态博客主题，它具有以下特点：
 
-- **轻量级和高性能**：基于 VuePress 构建，提供快速的页面加载速度。
+- **轻量级和高性能**：基于 Astro 构建，提供快速的页面加载速度。
 - **美观的界面**：简洁、现代的设计，提供良好的阅读体验。
 - **易于配置**：通过简单的配置文件即可定制博客。
 - **Markdown 优先**：所有文章均使用 Markdown 格式编写。
@@ -48,7 +48,6 @@ tags: [Markdown, Blogging]
 category: Examples
 licenseName: "Unlicensed"
 author: emn178
-sourceLink: "https://github.com/emn178/markdown"
 draft: false
 ---
 ```
