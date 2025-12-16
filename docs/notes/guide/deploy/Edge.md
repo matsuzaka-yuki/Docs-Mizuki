@@ -46,7 +46,7 @@ EdgeOne Pages 是腾讯云提供的静态网站托管服务，支持自动部署
 
 1. **框架预设**：选择 "VuePress" 或 "静态网站"
 2. **构建命令**：修改为 `pnpm i && pnpm build`
-3. **输出目录**：设置为 `.vuepress/dist`
+3. **输出目录**：设置为 `dist`
 4. **Node.js 版本**：建议选择 18.x 或更高版本
 
 完成配置后，EdgeOne Pages 会自动开始构建你的网站。

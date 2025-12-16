@@ -78,7 +78,6 @@ font: {
   - src
     - styles
       - main.css
-  - .vuepress
     - config.ts
 
 :::

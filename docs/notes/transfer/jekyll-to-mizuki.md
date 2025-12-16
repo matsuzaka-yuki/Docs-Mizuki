@@ -159,9 +159,9 @@ def convert_jekyll_frontmatter_to_mizuki(file_path):
 
 ### 4. 静态资源迁移
 
-将 Jekyll 博客中引用的图片、附件等静态资源复制到 Mizuki 博客项目的 `docs/.vuepress/public` 目录（或您自定义的静态资源目录）下。然后，您需要更新文章中对这些静态资源的引用路径。
+将 Jekyll 博客中引用的图片、附件等静态资源复制到 Mizuki 博客项目的 `/public` 目录（或您自定义的静态资源目录）下。然后，您需要更新文章中对这些静态资源的引用路径。
 
-例如，如果 Jekyll 中引用的是 `![图片](/assets/images/my-image.webp)`，并且您将 `my-image.webp` 复制到了 `docs/.vuepress/public/images/`，那么在 Mizuki 中可能需要修改为 `![图片](/images/my-image.webp)`。
+例如，如果 Jekyll 中引用的是 `![图片](/assets/images/my-image.webp)`，并且您将 `my-image.webp` 复制到了 `docs/public/images/`，那么在 Mizuki 中可能需要修改为 `![图片](/images/my-image.webp)`。
 
 ### 5. 更新内部链接
 
