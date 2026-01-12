@@ -167,6 +167,7 @@ const Note = defineNoteConfig({
           items: [
             { text: '文章加密(可选)', link: 'key/', icon: 'ri:key-line' },
             { text: '固定链接', link: 'permalink/', icon: 'ri:link', badge: { type: 'danger', text: '新' } },
+            { text: '图片语法', link: 'image/', icon: 'ri:image-line', badge: { type: 'danger', text: '新' } },
           ]
         },
         {
