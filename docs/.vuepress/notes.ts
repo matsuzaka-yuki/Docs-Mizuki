@@ -85,6 +85,7 @@ const Note = defineNoteConfig({
       collapsed: true, // 是否默认折叠
       items: [
         { text: '目录导航配置', link: 'toc/', icon: 'ri:list-check-2' ,badge: { type: 'warning', text: '新' },},
+        { text: '分享组件配置', link: 'share/', icon: 'ri:share-line' ,badge: { type: 'warning', text: '新' },},
         { text: '编辑历史', link: 'Edit-History/', icon: 'ri:history-line' },
         { text: '版权信息配置', link: 'copyright/', icon: 'ri:copyright-line' },
         { text: '代码块配置', link: 'codeblock/', icon: 'ri:code-line' ,badge: { type: 'info', text: 'v3' },},
