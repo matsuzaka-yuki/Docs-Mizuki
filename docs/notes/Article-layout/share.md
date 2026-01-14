@@ -2,6 +2,10 @@
 title: 分享组件配置说明
 createTime: 2026/01/14 10:00:00
 permalink: /Article-layout/share/
+copyright:
+  author:
+    name: Leaf-0w0
+    url: https://github.com/Leaf-0w0
 ---
 
 分享组件配置位于 `src/config.ts` 文件中的 `share` 对象，控制博客文章内的分享组件显示设置。
