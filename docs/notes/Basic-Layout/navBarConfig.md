@@ -53,7 +53,7 @@ export const navBarConfig: NavBarConfig = {
 					icon: "material-symbols:book",
 				},
 				{
-					name: "Gallery",
+					name: "Albums",
 					url: "/albums/",
 					icon: "material-symbols:photo-library",
 				},

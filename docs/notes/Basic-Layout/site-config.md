@@ -70,18 +70,24 @@ export const siteConfig: SiteConfig = {
 
 ### 顶栏标题配置
 ```typescript
-// 顶栏标题配置
+	// 顶栏标题配置
 	navbarTitle: {
+		// 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
+		mode: "logo",
 		// 顶栏标题文本
 		text: "MizukiUI",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
 		icon: "assets/home/home.png",
+		// 网站Logo图片路径
+		logo: "assets/home/default-logo.png",
 	},
 ```
 - `navbarTitle`：控制顶栏标题的显示
+  - `mode`：显示模式，`"text-icon"` 显示图标+文本，`"logo"` 仅显示Logo
   - `text`：顶栏标题文本
   - `icon`：顶栏标题图标路径，默认使用 `public/assets/home/home.png`
     - 图标建议尺寸：32x32 像素，格式为 PNG 或 WebP
+  - `logo`：网站Logo图片路径
 
 ## 首页布局配置
 
