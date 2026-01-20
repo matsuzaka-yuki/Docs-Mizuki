@@ -136,9 +136,8 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
     - `tablet`：平板端断点（默认 1280px，屏幕宽度≥768px 且＜1280px 视为平板端）。
     - `desktop`：桌面端断点（默认 1280px，屏幕宽度≥1280px 视为桌面端）。
   - `layout`：对象，定义不同设备的侧边栏显示模式：
-    - `hidden`：不显示侧边栏（仅桌面端支持）。
-    - `drawer`：抽屉模式（侧边栏默认隐藏，点击按钮展开，移动端不支持）。
-    - `sidebar`：正常显示侧边栏（默认值，适配各设备）。
+    - `hidden`：不显示侧边栏（仅移动端、平板端支持）。
+    - `sidebar`：正常显示侧边栏（默认值，在移动端、平板端则为抽屉模式）。
 
 ---
 
