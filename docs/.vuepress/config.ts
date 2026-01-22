@@ -76,7 +76,7 @@ export default defineUserConfig({
     // },
 
     /* 站点Logo */
-    logo: '/plume.svg',
+    logo: '/favicon.png',
     
     /* 深色模式 */
     appearance: true,

@@ -11,7 +11,7 @@ config:
       name: Mizuki-Ultra
       tagline: Astro Next Theme
       text: 一个简约&功能丰富的 Astro 博客 主题
-      image: /youxi.png
+      image: /favicon.png
     
       actions:
         -

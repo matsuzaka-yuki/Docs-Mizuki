@@ -68,12 +68,13 @@ const Note = defineNoteConfig({
       prefix: '/Basic-Layout/', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
       collapsed: true, // 是否默认折叠
       items: [
-        { text: '横幅配置', link: 'layout/banner/', icon: 'ri:layout-top-line' ,badge: { type: 'danger', text: '新' },},
-        { text: '全屏布局', link: 'layout/fullscreen/', icon: 'ri:fullscreen-line' ,badge: { type: 'danger', text: '新' },},
-        { text: '纯色背景配置', link: 'layout/hide/', icon: 'ri:paint-brush-line' ,badge: { type: 'danger', text: '新' },},
+        { text: '横幅配置', link: 'layout/banner/', icon: 'ri:layout-top-line' ,badge: { type: 'warning', text: '新' },},
+        { text: '全屏布局', link: 'layout/fullscreen/', icon: 'ri:fullscreen-line' ,badge: { type: 'warning', text: '新' },},
+        { text: '纯色背景配置', link: 'layout/hide/', icon: 'ri:paint-brush-line' ,badge: { type: 'warning', text: '新' },},
       ]
     },
         { text: '页脚配置', link: 'footer/', icon: 'ri:layout-bottom-line' },
+        { text: '页面自动缩放配置', link: 'auto-res-algo/', icon: 'ri:fullscreen-exit-line' ,badge: { type: 'warning', text: '新' },},
         { text: '导航栏配置', link: 'navBarConfig/', icon: 'ri:menu-line' ,badge: { type: 'info', text: 'v2' },},
         { text: '自定义字体', link: 'font/', icon: 'ri:font-size-2',badge: { type: 'info', text: 'v3' }, },
       ]
@@ -167,8 +168,8 @@ const Note = defineNoteConfig({
           collapsed: true, // 是否默认折叠
           items: [
             { text: '文章加密(可选)', link: 'key/', icon: 'ri:key-line' },
-            { text: '固定链接', link: 'permalink/', icon: 'ri:link', badge: { type: 'danger', text: '新' } },
-            { text: '图片语法', link: 'image/', icon: 'ri:image-line', badge: { type: 'danger', text: '新' } },
+            { text: '固定链接', link: 'permalink/', icon: 'ri:link', badge: { type: 'warning', text: '新' } },
+            { text: '图片语法', link: 'image/', icon: 'ri:image-line', badge: { type: 'warning', text: '新' } },
           ]
         },
         {
@@ -185,7 +186,7 @@ const Note = defineNoteConfig({
     {
      text: '内容分离',
      icon: 'ri:database-2-line',
-     badge: { type: 'danger', text: '新' },
+     badge: { type: 'warning', text: '新' },
      prefix: '/Other/', // 使用 prefix 拼接，可以简写 下面的 items 中的 link 为相对路径
      collapsed: true, // 是否默认折叠
      items: [
