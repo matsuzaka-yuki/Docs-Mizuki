@@ -5,7 +5,7 @@ permalink: /guide/intro/
 ---
 
 
-![](/image.webp)
+![](/image.png)
 
 **欢迎使用Mizuki主题👏!**  
 
