@@ -11,7 +11,7 @@ export const commentConfig: CommentConfig = {
 	enable: false, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
 	twikoo: {
 		envId: "https://twikoo.vercel.app",
-		lang: "en", // 设置 Twikoo 评论系统语言为英文
+		lang: SITE_LANG,
 	},
 };
 ```
@@ -42,14 +42,14 @@ enable: false,
 
 ```typescript
 twikoo: {
-    envId: "https://twikoo.vercel.app",
-    lang: "en",
+		envId: "https://twikoo.vercel.app",
+		lang: SITE_LANG,
 },
 ```
 
 *   **作用**: 包含所有与 Twikoo 服务相关的配置。
 
-##### **a. 环境 ID / 部署地址 (`envId`)**
+##### **环境 ID / 部署地址 (`envId`)**
 
 ```typescript
 envId: "https://twikoo.vercel.app",
@@ -67,18 +67,6 @@ envId: "https://twikoo.vercel.app",
     3.  部署成功后，你会得到一个 URL（例如 `https://your-twikoo-app.vercel.app`），这就是你的 `envId`。
 *   **配置**: 将你部署得到的 URL 填入 `envId` 字段。
 
-##### **b. 语言设置 (`lang`)**
-
-```typescript
-lang: "en",
-```
-
-*   **作用**: 设置 Twikoo 评论区界面的显示语言。
-*   **配置**:
-    *   值为一个语言代码字符串。
-    *   支持的语言包括：`zh-CN` (简体中文), `zh-TW` (繁体中文), `en` (英文), `ja` (日文), `ko` (韩文) 等。
-    *   **建议**: 将其设置为与你博客主要语言一致的语言代码，以提供更好的用户体验。例如，如果你的博客是中文的，设置为 `"zh-CN"`。
-
 ---
 
 ### **完整配置流程**
@@ -93,19 +81,18 @@ lang: "en",
     *   找到 `commentConfig` 对象。
     *   将 `enable` 设置为 `true`。
     *   将 `twikoo.envId` 的值更新为你自己的 Twikoo 服务地址。
-    *   (可选) 将 `twikoo.lang` 设置为你 preferred 的语言。
-
+    
     **配置好的示例**:
     ```typescript
     export const commentConfig: CommentConfig = {
-    	enable: true, // 启用评论功能
+    	enable: true, // 启用评论功能。
     	twikoo: {
     		envId: "https://my-twikoo-service.vercel.app", // 替换成你自己的部署地址
-    		lang: "zh-CN", // 设置为简体中文
+    		lang: SITE_LANG,
     	},
     };
     ```
-
+    
 3.  **启动并测试**:
     *   保存 `config.ts` 文件。
     *   启动或重启你的博客项目。

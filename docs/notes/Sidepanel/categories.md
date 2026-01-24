@@ -1,33 +1,43 @@
 ---
-title: 分类小部件配置
+title: 分类组件配置
 createTime: 2025/11/20 22:14:00
 permalink: /Sidepanel/categories/
 ---
 
-## 分类侧边栏配置说明
+## 分类组件配置说明
 这里补充一下分类侧边栏组件的配置说明，其他配置项请参考基础定位配置。
+
+### 组件配置
+
 ```typescript title="src/config.ts"
 {
-		type: "categories",
-		enable: true,
-		order: 3,
-		position: "sticky",
-		sidebar: "left",
-		class: "onload-animation",
-		animationDelay: 150,
-		responsive: {
-			collapseThreshold: 5,
-		},
+	type: "categories",
+	position: "sticky",
+	class: "onload-animation",
+	animationDelay: 150,
+	responsive: {
+		collapseThreshold: 5,
+	},
 },
 ```
 
-我来详细解析分类侧边栏组件（`type: "categories"`）中的配置，其他配置项请参考基础定位配置。
+### 布局配置
 
-### **分类组件 `responsive` 配置详解**
+```typescript title="src/config.ts"
+components: {
+	left: ["profile", "announcement", "categories", "tags"],
+	right: ["site-stats", "calendar"],
+	drawer: ["profile", "announcement"],
+},
+```
+
+我来详细解析分类侧边栏组件（`type: "categories"`）的配置和使用方法，其他配置项请参考基础定位配置。
+
+### 分类组件 responsive 配置详解
 
 `responsive` 配置是一个对象，目前它只包含一个核心属性：`collapseThreshold`。
 
-#### **1. 折叠阈值 (`collapseThreshold`)**
+#### 1. 折叠阈值 (collapseThreshold)
 
 ```typescript title="src/config.ts"
 responsive: {
@@ -48,53 +58,67 @@ responsive: {
 
 ---
 
-### **分类组件功能与特点**
+### 分类组件功能与特点
 
 分类组件是博客侧边栏的核心功能之一，用于展示博客文章的分类体系，帮助访客快速浏览感兴趣的内容。这个组件通常位于公告组件下方，是访客导航博客内容的重要工具。
 
-#### **1. 基本配置解析**
+#### 1. 基本配置解析
 
 *   **`type: "categories"`**: 指定组件类型为分类组件，这是固定值。
-*   **`enable: true`**: 控制该组件是否显示，`true` 为显示，`false` 为隐藏。
-*   **`order: 3`**: 设置组件显示顺序，数值越小越靠前。通常分类组件设置为 `3`，显示在公告组件之后。
 *   **`position: "sticky"`**: 设置组件在侧边栏内的定位方式，"sticky" 表示粘性定位，随页面滚动跟随。
-*   **`sidebar: "left"`**: 设置组件所属侧边栏，"left" 为左侧栏，"right" 为右侧栏（需配合 `position: "both"`）。
 *   **`class: "onload-animation"`**: 组件的 CSS 类名，用于应用样式和动画效果。
 *   **`animationDelay: 150`**: 组件加载动画的延迟时间（单位：毫秒），设置为 150 表示在公告组件后加载。
 
----
-
-### **如何使用和调整**
-
-1.  **找到配置**: 在 `src/config.ts` 文件中找到 `sidebarLayoutConfig` 对象，然后在 `components` 数组中找到 `type: "categories"` 的那个对象。
-2.  **调整阈值**: 修改 `responsive.collapseThreshold` 的数值。
-    *   **想让分类总是展开**：可以将值设置得非常大，例如 `collapseThreshold: 999`，这样除非你的分类数量超过 999 个，否则它永远不会折叠。
-    *   **想让分类更容易折叠**：可以减小这个值，例如 `collapseThreshold: 3`，这样当分类数量超过 3 个时就会自动折叠。
-    *   **想禁用折叠功能**：虽然没有直接的 `disableCollapse` 开关，但将 `collapseThreshold` 设置为一个极小的负数（如 `-1`）通常可以达到同样的效果，因为分类总数永远不会小于 `-1`，所以组件会一直保持展开状态。
-
-**配置示例（总是展开）**:
-```typescript title="src/config.ts"
-{
-    type: "categories",
-    enable: true,
-    order: 3,
-    position: "sticky",
-    sidebar: "left",
-    class: "onload-animation",
-    animationDelay: 150,
-    responsive: {
-        collapseThreshold: 999, // 分类数量超过 999 才会折叠
-    },
-},
-```
+**布局配置**：分类组件的显示位置通过 `sidebarLayoutConfig.components` 对象配置，需要在对应侧边栏数组中添加 `"categories"`。
 
 ---
 
-### **分类管理**
+### 如何使用和调整
+
+1.  **找到配置**: 在 `src/config.ts` 文件中找到 `sidebarLayoutConfig` 对象。
+
+2.  **添加组件配置**: 在 `properties` 数组中添加分类组件的配置：
+    ```typescript
+    {
+        type: "categories",
+        position: "sticky",
+        class: "onload-animation",
+        animationDelay: 150,
+        responsive: {
+            collapseThreshold: 5,
+        },
+    }
+    ```
+
+3.  **配置布局位置**: 在 `components` 对象中设置组件所在的侧边栏：
+    ```typescript
+    components: {
+        left: ["profile", "announcement", "categories", "tags"],
+        right: ["site-stats", "calendar"],
+        drawer: ["profile", "announcement"],
+    }
+    ```
+
+4.  **调整显示顺序**: 通过修改 `order` 值调整组件在侧边栏中的显示顺序，数值越小越靠前。
+
+5.  **调整定位方式**: 修改 `position` 值设置组件在侧边栏内的定位方式：
+    *   `top`: 固定在顶部
+    *   `sticky`: 粘性定位（随滚动跟随）
+
+6.  **调整动画效果**: 修改 `animationDelay` 值调整加载动画延迟，实现组件依次加载的错落效果。
+
+7.  **调整折叠阈值**: 修改 `responsive.collapseThreshold` 的数值：
+    *   **想让分类总是展开**：可以将值设置得非常大，例如 `collapseThreshold: 999`
+    *   **想让分类更容易折叠**：可以减小这个值，例如 `collapseThreshold: 3`
+    *   **想禁用折叠功能**：将 `collapseThreshold` 设置为一个极小的负数（如 `-1`）
+
+---
+
+### 分类管理
 
 分类组件的内容是基于博客文章的分类自动生成的，不需要手动配置分类列表。要管理分类，需要在文章的 frontmatter 中设置分类。
 
-#### **1. 文章中设置分类**
+#### 1. 文章中设置分类
 
 在 Markdown 文章的 frontmatter 中添加 `categories` 字段：
 
@@ -107,7 +131,7 @@ tags: ["Vue", "JavaScript", "前端框架"]
 ---
 ```
 
-#### **2. 多级分类**
+#### 2. 多级分类
 
 支持多级分类，使用数组表示层级关系：
 
@@ -122,23 +146,25 @@ tags: ["Vue 3", "Composition API", "响应式"]
 
 ---
 
-### **配置示例**
+### 配置示例
 
 #### 示例 1：基本分类配置
 
 ```typescript title="src/config.ts"
-// 位置配置
 {
     type: "categories",
-    enable: true,
-    order: 3,
     position: "sticky",
-    sidebar: "left",
     class: "onload-animation",
     animationDelay: 150,
     responsive: {
         collapseThreshold: 5, // 分类数量超过 5 个时自动折叠
     },
+},
+
+components: {
+    left: ["profile", "announcement", "categories", "tags"],
+    right: ["site-stats", "calendar"],
+    drawer: ["profile", "announcement"],
 },
 ```
 
@@ -147,15 +173,18 @@ tags: ["Vue 3", "Composition API", "响应式"]
 ```typescript title="src/config.ts"
 {
     type: "categories",
-    enable: true,
-    order: 3,
     position: "sticky",
-    sidebar: "left",
     class: "onload-animation",
     animationDelay: 150,
     responsive: {
         collapseThreshold: -1, // 设置为负数，禁用折叠功能
     },
+},
+
+components: {
+    left: ["profile", "announcement", "categories", "tags"],
+    right: ["site-stats", "calendar"],
+    drawer: ["profile", "announcement"],
 },
 ```
 
@@ -164,39 +193,47 @@ tags: ["Vue 3", "Composition API", "响应式"]
 ```typescript title="src/config.ts"
 {
     type: "categories",
-    enable: true,
-    order: 1, // 在右侧栏中排在最前面
     position: "sticky",
-    sidebar: "right", // 设置在右侧栏
     class: "onload-animation",
     animationDelay: 150,
     responsive: {
         collapseThreshold: 8, // 右侧栏可容纳更多分类，设置较高的阈值
     },
 },
+
+components: {
+    left: ["profile", "announcement", "tags"],
+    right: ["categories", "site-stats", "calendar"],
+    drawer: ["profile", "announcement"],
+},
 ```
 
 ---
 
-### **注意事项**
+### 注意事项
 
-1.  **分类数量**: 建议控制分类数量，避免过多细分类别导致导航复杂。一般来说，5-10 个主要分类比较合适。
-2.  **分类名称**: 分类名称应简洁明了，便于用户理解。
-3.  **分类层级**: 避免过深的分类层级，建议不超过 3 级。
-4.  **位置选择**: 分类组件通常设置在左侧栏，因为用户习惯在左侧浏览导航内容。
-5.  **响应式设计**: 在移动端，分类组件可能会显示不同的样式，建议在各种设备上测试。
+1.  **布局配置**: 分类组件的显示位置由 `components` 对象控制，需要在对应侧边栏数组中添加 `"categories"`。
+2.  **移动端显示**: 由于空间限制，分类组件在移动端可能会显示不同的样式。
+3.  **分类数量**: 建议控制分类数量，避免过多细分类别导致导航复杂。一般来说，5-10 个主要分类比较合适。
+4.  **分类层级**: 避免过深的分类层级，建议不超过 3 级。
+5.  **响应式适配**: 当屏幕尺寸小于 `mobile` 断点时，侧边栏会自动切换为抽屉模式。
 
 ---
 
-### **常见问题与解决方案**
+### 常见问题与解决方案
 
 1.  **问题**: 分类组件不显示
-    *   **解决方案**: 检查 `enable` 是否设置为 `true`，确认文章中是否设置了分类。
+    *   **解决方案**: 
+        - 检查 `properties` 数组中是否添加了分类组件配置
+        - 确认 `components` 对象中对应侧边栏数组是否包含 `"categories"`
 
 2.  **问题**: 分类数量统计不正确
-    *   **解决方案**: 检查文章的 frontmatter 中 `categories` 字段是否正确设置，确保没有拼写错误。
+    *   **解决方案**: 
+        - 检查文章的 frontmatter 中 `categories` 字段是否正确设置
+        - 确保没有拼写错误
 
 3.  **问题**: 分类链接无效
-    *   **解决方案**: 检查网站的路由配置，确保分类页面可以正常访问。
+    *   **解决方案**: 
+        - 检查网站的路由配置，确保分类页面可以正常访问
 
 ---

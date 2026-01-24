@@ -1,20 +1,30 @@
 ---
-title: 日历小部件配置
+title: 日历组件配置
 createTime: 2025/11/20 22:18:00
 permalink: /Sidepanel/calendar/
 ---
 
-## 日历侧边栏配置说明
+## 日历组件配置说明
 这里补充一下日历侧边栏组件的配置说明，其他配置项请参考基础定位配置。
+
+### 组件配置
+
 ```typescript title="src/config.ts"
 {
 	type: "calendar",
-	enable: true,
-	order: 6,
 	position: "top",
-	sidebar: "right",
 	class: "onload-animation",
 	animationDelay: 250,
+},
+```
+
+### 布局配置
+
+```typescript title="src/config.ts"
+components: {
+	left: ["profile", "announcement", "categories", "tags"],
+	right: ["site-stats", "calendar"],
+	drawer: ["profile", "announcement"],
 },
 ```
 
@@ -27,12 +37,13 @@ permalink: /Sidepanel/calendar/
 #### **1. 基本配置解析**
 
 *   **`type: "calendar"`**: 指定组件类型为日历组件，这是固定值。
-*   **`enable: true`**: 控制该组件是否显示，`true` 为显示，`false` 为隐藏。
-*   **`order: 6`**: 设置组件显示顺序，数值越小越靠前。通常日历组件设置为 `6`，显示在右侧栏。
-*   **`position: "top"`**: 设置组件在侧边栏内的定位方式，"top" 表示固定在顶部。
-*   **`sidebar: "right"`**: 设置组件所属侧边栏，"right" 为右侧栏（需配合 `position: "both"`）。
+*   **`position: "top"`**: 设置组件在侧边栏内的定位方式：
+    *   `top`: 固定在顶部
+    *   `sticky`: 粘性定位（随滚动跟随）
 *   **`class: "onload-animation"`**: 组件的 CSS 类名，用于应用样式和动画效果。
-*   **`animationDelay: 250`**: 组件加载动画的延迟时间（单位：毫秒）。
+*   **`animationDelay: 250`**: 组件加载动画的延迟时间（单位：毫秒），用于实现组件依次加载的错落效果。
+
+**布局配置**：日历组件的显示位置通过 `sidebarLayoutConfig.components` 对象配置，需要在对应侧边栏数组中添加 `"calendar"`。
 
 ---
 
@@ -65,15 +76,34 @@ permalink: /Sidepanel/calendar/
 
 ### **如何使用和调整**
 
-1.  **找到配置**: 在 `src/config.ts` 文件中找到 `sidebarLayoutConfig` 对象，然后在 `components` 数组中找到 `type: "calendar"` 的那个对象。
+1.  **找到配置**: 在 `src/config.ts` 文件中找到 `sidebarLayoutConfig` 对象。
 
-2.  **调整位置和顺序**: 
-    *   修改 `order` 值调整显示顺序。
-    *   修改 `sidebar` 值设置所在侧边栏。
-    *   修改 `position` 值设置定位方式。
+2.  **添加组件配置**: 在 `properties` 数组中添加日历组件的配置：
+    ```typescript
+    {
+        type: "calendar",
+        position: "top",
+        class: "onload-animation",
+        animationDelay: 250,
+    }
+    ```
 
-3.  **调整动画效果**: 
-    *   修改 `animationDelay` 值调整加载动画延迟。
+3.  **配置布局位置**: 在 `components` 对象中设置组件所在的侧边栏：
+    ```typescript
+    components: {
+        left: ["profile", "announcement", "categories", "tags"],
+        right: ["site-stats", "calendar"], // 将日历组件添加到右侧栏
+        drawer: ["profile", "announcement"],
+    }
+    ```
+
+4.  **调整显示顺序**: 通过修改 `components` 数组中组件的顺序来调整显示顺序，数组元素越靠前，显示位置越靠前。
+
+5.  **调整定位方式**: 修改 `position` 值设置组件在侧边栏内的定位方式：
+    *   `top`: 固定在顶部
+    *   `sticky`: 粘性定位（随滚动跟随）
+
+6.  **调整动画效果**: 修改 `animationDelay` 值调整加载动画延迟，实现组件依次加载的错落效果。
 
 ---
 
@@ -82,15 +112,17 @@ permalink: /Sidepanel/calendar/
 #### 示例 1：基本日历配置
 
 ```typescript title="src/config.ts"
-// 位置配置
 {
     type: "calendar",
-    enable: true,
-    order: 6,
     position: "top",
-    sidebar: "right",
     class: "onload-animation",
     animationDelay: 250,
+},
+
+components: {
+    left: ["profile", "announcement", "categories", "tags"],
+    right: ["site-stats", "calendar"], // 日历组件默认放置于右侧栏
+    drawer: ["profile", "announcement"],
 },
 ```
 
@@ -99,26 +131,32 @@ permalink: /Sidepanel/calendar/
 ```typescript title="src/config.ts"
 {
     type: "calendar",
-    enable: true,
-    order: 7, // 调整顺序，显示在其他组件之后
     position: "sticky", // 使用粘性定位
-    sidebar: "left", // 设置在左侧栏
     class: "onload-animation",
     animationDelay: 300, // 调整动画延迟
 },
+
+components: {
+    left: ["profile", "announcement", "categories", "tags", "calendar"], // 日历组件放置于左侧栏
+    right: ["site-stats"],
+    drawer: ["profile", "announcement"],
+},
 ```
 
-#### 示例 3：禁用日历组件
+#### 示例 3：隐藏日历组件
 
 ```typescript title="src/config.ts"
 {
     type: "calendar",
-    enable: false, // 禁用日历组件
-    order: 6,
     position: "top",
-    sidebar: "right",
     class: "onload-animation",
     animationDelay: 250,
+},
+
+components: {
+    left: ["profile", "announcement", "categories", "tags"],
+    right: ["site-stats"],
+    drawer: ["profile", "announcement"],
 },
 ```
 
@@ -157,23 +195,33 @@ export const siteConfig: SiteConfig = {
 
 ### **注意事项**
 
-1.  **右侧栏配置**: 日历组件通常设置在右侧栏，需要确保 `sidebarLayoutConfig.position` 设置为 `"both"`，否则右侧栏不会显示。
+1.  **布局配置**: 日历组件的显示位置由 `components` 对象控制，需要在对应侧边栏数组中添加 `"calendar"`。
 2.  **移动端显示**: 由于空间限制，日历组件在移动端可能不会显示或显示简化版本。
 3.  **性能考虑**: 对于文章数量很多的博客，日历组件可能需要处理大量日期数据，可能影响性能。
 4.  **日期格式**: 确保所有文章的日期格式正确，否则可能导致日历标记不准确。
+5.  **响应式适配**: 当屏幕尺寸小于 `mobile` 断点时，侧边栏会自动切换为抽屉模式。
 
 ---
 
 ### **常见问题与解决方案**
 
 1.  **问题**: 日历组件不显示
-    *   **解决方案**: 检查 `enable` 是否设置为 `true`，确认 `sidebarLayoutConfig.position` 是否设置为 `"both"`（如果组件在右侧栏）。
+    *   **解决方案**: 
+        - 检查 `properties` 数组中是否添加了日历组件配置
+        - 确认 `components` 对象中对应侧边栏数组是否包含 `"calendar"`
+        - 检查侧边栏布局配置是否正确
 
 2.  **问题**: 文章日期在日历上没有标记
-    *   **解决方案**: 检查文章的 frontmatter 中 `date` 字段是否正确设置，确保日期格式为标准格式。
+    *   **解决方案**: 
+        - 检查文章的 frontmatter 中 `date` 字段是否正确设置
+        - 确保日期格式为标准 ISO 格式（如 `2023-01-15`）
+        - 检查时区设置是否正确
 
 3.  **问题**: 日历显示不正确
-    *   **解决方案**: 检查时区设置是否正确，确认服务器和客户端的时区配置一致。
+    *   **解决方案**: 
+        - 检查 `siteConfig` 中的时区设置
+        - 确认服务器和客户端的时区配置一致
+        - 验证日期计算逻辑是否正确
 
 ---
 

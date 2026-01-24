@@ -1,42 +1,51 @@
 ---
-title: 个人资料小部件配置
+title: 个人资料组件配置
 createTime: 2025/11/20 22:10:00
 permalink: /Sidepanel/profile/
 ---
 
-## 个人资料侧边栏配置说明
+## 个人资料组件配置说明
 这里补充一下个人资料侧边栏组件的配置说明，其他配置项请参考基础定位配置。
+
+### 组件配置
+
 ```typescript title="src/config.ts"
 {
-		type: "profile",
-		enable: true,
-		order: 1,
-		position: "top",
-		sidebar: "left",
-		class: "onload-animation",
-		animationDelay: 0,
+	type: "profile",
+	position: "top",
+	class: "onload-animation",
+	animationDelay: 0,
+},
+```
+
+### 布局配置
+
+```typescript title="src/config.ts"
+components: {
+	left: ["profile", "announcement", "categories", "tags"],
+	right: ["site-stats", "calendar"],
+	drawer: ["profile", "announcement"],
 },
 ```
 
 我来详细解析个人资料侧边栏组件（`type: "profile"`）的配置和使用方法，其他配置项请参考基础定位配置。
 
-### **个人资料组件功能与特点**
+### 个人资料组件功能与特点
 
 个人资料组件是博客侧边栏的核心组件之一，用于展示博主的个人信息，包括头像、名称、简介和社交媒体链接等。这个组件通常位于左侧栏顶部，是访客了解博主的第一窗口。
 
-#### **1. 基本配置解析**
+#### 1. 基本配置解析
 
 *   **`type: "profile"`**: 指定组件类型为个人资料组件，这是固定值。
-*   **`enable: true`**: 控制该组件是否显示，`true` 为显示，`false` 为隐藏。
-*   **`order: 1`**: 设置组件显示顺序，数值越小越靠前。通常个人资料组件设置为 `1`，显示在最顶部。
 *   **`position: "top"`**: 设置组件在侧边栏内的定位方式，"top" 表示固定在顶部。
-*   **`sidebar: "left"`**: 设置组件所属侧边栏，"left" 为左侧栏，"right" 为右侧栏（需配合 `position: "both"`）。
 *   **`class: "onload-animation"`**: 组件的 CSS 类名，用于应用样式和动画效果。
 *   **`animationDelay: 0`**: 组件加载动画的延迟时间（单位：毫秒），设置为 0 表示第一个加载。
 
+**布局配置**：个人资料组件的显示位置通过 `sidebarLayoutConfig.components` 对象配置，需要在对应侧边栏数组中添加 `"profile"`。
+
 ---
 
-### **个人资料内容配置**
+### 个人资料内容配置
 
 个人资料组件的内容不是在 `sidebarLayoutConfig` 中配置的，而是在 `profileConfig` 对象中配置。下面是个人资料内容的详细配置示例：
 
@@ -51,7 +60,7 @@ export const profileConfig: ProfileConfig = {
 	},
 	links: [
 		{
-			name: "Bilibli",
+			name: "Bilibili",
 			icon: "fa6-brands:bilibili",
 			url: "https://space.bilibili.com/701864046",
 		},
@@ -70,7 +79,7 @@ export const profileConfig: ProfileConfig = {
 ```
 
 
-#### **1. 头像配置 (`avatar`)**
+#### 1. 头像配置 (avatar)
 
 *   **作用**: 设置个人资料组件中显示的头像图片。
 *   **配置说明**:
@@ -79,28 +88,28 @@ export const profileConfig: ProfileConfig = {
     *   支持常见图片格式（如 `.webp`, `.jpg`, `.png` 等）。
     *   推荐使用方形图片，尺寸建议 200×200 像素或更大，以确保高分辨率显示。
 
-#### **2. 名称配置 (`name`)**
+#### 2. 名称配置 (name)
 
 *   **作用**: 设置博主名称，显示在头像下方。
 *   **配置说明**:
     *   可以使用真实姓名或网名。
     *   长度适中，避免过长导致显示问题。
 
-#### **3. 个人简介配置 (`bio`)**
+#### 3. 个人简介配置 (bio)
 
 *   **作用**: 设置博主个人简介，显示在名称下方。
 *   **配置说明**:
     *   可以是一句格言、座右铭或简短自我介绍。
     *   长度适中，避免过长影响页面美观。
 
-#### **4. 打字机效果配置 (`typewriter`)**
+#### 4. 打字机效果配置 (typewriter)
 
 *   **作用**: 为个人简介添加打字机效果，使文字逐字显示，增加动态感。
 *   **子配置项**:
     *   `enable`: 布尔值，控制是否启用打字机效果，`true` 为启用。
     *   `speed`: 数字，设置打字速度（单位：毫秒），数值越小打字速度越快。
 
-#### **5. 社交媒体链接配置 (`links`)**
+#### 5. 社交媒体链接配置 (links)
 
 *   **作用**: 添加博主的社交媒体或其他相关链接，方便访客了解更多信息。
 *   **配置说明**:
@@ -112,29 +121,65 @@ export const profileConfig: ProfileConfig = {
 
 ---
 
-### **如何使用和调整**
+### 如何使用和调整
 
 1.  **找到配置**: 
-    *   个人资料组件的位置配置在 `src/config.ts` 文件中的 `sidebarLayoutConfig.components` 数组中。
+    *   在 `src/config.ts` 文件中找到 `sidebarLayoutConfig` 对象。
     *   个人资料的内容配置在 `src/config.ts` 文件中的 `profileConfig` 对象中。
 
-2.  **调整位置和顺序**: 
-    *   在 `sidebarLayoutConfig.components` 数组中找到 `type: "profile"` 的对象。
-    *   修改 `order` 值调整显示顺序。
-    *   修改 `sidebar` 值设置所在侧边栏。
-    *   修改 `position` 值设置定位方式。
+2.  **添加组件配置**: 在 `properties` 数组中添加个人资料组件的配置：
+    ```typescript
+    {
+        type: "profile",
+        position: "top",
+        class: "onload-animation",
+        animationDelay: 0,
+    }
+    ```
 
-3.  **调整内容和样式**: 
-    *   在 `profileConfig` 对象中修改头像、名称、简介等内容。
-    *   在 `profileConfig.links` 数组中添加、删除或修改社交媒体链接。
+3.  **配置布局位置**: 在 `components` 对象中设置组件所在的侧边栏：
+    ```typescript
+    components: {
+        left: ["profile", "announcement", "categories", "tags"],
+        right: ["site-stats", "calendar"],
+        drawer: ["profile", "announcement"],
+    }
+    ```
 
-4.  **调整动画效果**: 
-    *   修改 `animationDelay` 值调整加载动画延迟。
-    *   在 `profileConfig.typewriter` 中调整打字机效果设置。
+4.  **调整定位方式**: 修改 `position` 值设置组件在侧边栏内的定位方式：
+    *   `top`: 固定在顶部
+    *   `sticky`: 粘性定位（随滚动跟随）
+
+5.  **调整动画效果**: 修改 `animationDelay` 值调整加载动画延迟，实现组件依次加载的错落效果。
+
+6.  **调整个人资料内容**: 在 `profileConfig` 对象中修改头像、名称、简介等内容：
+    ```typescript
+    export const profileConfig: ProfileConfig = {
+        avatar: "assets/images/avatar.webp",
+        name: "Matsuzaka Yuki",
+        bio: "The world is big, you have to go and see",
+        typewriter: {
+            enable: true,
+            speed: 80,
+        },
+        links: [
+            {
+                name: "Bilibili",
+                icon: "fa6-brands:bilibili",
+                url: "https://space.bilibili.com/701864046",
+            },
+            {
+                name: "GitHub",
+                icon: "fa6-brands:github",
+                url: "https://github.com/matsuzaka-yuki",
+            },
+        ],
+    };
+    ```
 
 ---
 
-### **配置示例**
+### 配置示例
 
 #### 示例 1：基本个人资料配置
 
@@ -142,12 +187,16 @@ export const profileConfig: ProfileConfig = {
 // 位置配置
 {
     type: "profile",
-    enable: true,
-    order: 1,
     position: "top",
-    sidebar: "left",
     class: "onload-animation",
     animationDelay: 0,
+},
+
+// 布局配置
+components: {
+    left: ["profile", "announcement", "categories", "tags"],
+    right: ["site-stats", "calendar"],
+    drawer: ["profile", "announcement"],
 },
 
 // 内容配置
@@ -176,8 +225,8 @@ export const profileConfig: ProfileConfig = {
 
 #### 示例 2：禁用打字机效果，添加更多链接
 
-
 ```typescript title="src/config.ts"
+// 内容配置
 export const profileConfig: ProfileConfig = {
     avatar: "/assets/avatar.webp",
     name: "李四",
@@ -212,12 +261,14 @@ export const profileConfig: ProfileConfig = {
 
 ---
 
-### **注意事项**
+### 注意事项
 
-1.  **头像图片**: 推荐使用高质量、适当大小的头像图片，以确保在各种屏幕上都能清晰显示。
-2.  **图标选择**: 链接图标需要使用 Iconify 图标集中的图标名称，可以在 [Iconify 官网](https://icon-sets.iconify.design/) 搜索可用图标。
-3.  **链接有效性**: 确保所有链接都是有效的，指向正确的地址。
-4.  **响应式设计**: 个人资料组件在不同设备上可能有不同的显示效果，建议在各种设备上测试。
-5.  **隐私考虑**: 在公开个人信息时，注意保护个人隐私，避免过度暴露敏感信息。
+1.  **布局配置**: 个人资料组件的显示位置由 `components` 对象控制，需要在对应侧边栏数组中添加 `"profile"`。
+2.  **移动端显示**: 由于空间限制，个人资料组件在移动端可能会显示不同的样式。
+3.  **头像图片**: 推荐使用高质量、适当大小的头像图片，以确保在各种屏幕上都能清晰显示。
+4.  **图标选择**: 链接图标需要使用 Iconify 图标集中的图标名称，可以在 [Iconify 官网](https://icon-sets.iconify.design/) 搜索可用图标。
+5.  **链接有效性**: 确保所有链接都是有效的，指向正确的地址。
+6.  **隐私考虑**: 在公开个人信息时，注意保护个人隐私，避免过度暴露敏感信息。
+7.  **响应式适配**: 当屏幕尺寸小于 `mobile` 断点时，侧边栏会自动切换为抽屉模式。
 
 ---
