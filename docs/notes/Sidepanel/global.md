@@ -88,8 +88,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
   | 字段             | 类型   | 作用说明                                                     |
   | ---------------- | ------ | ------------------------------------------------------------ |
   | `type`           | 字符串 | 组件类型（固定值，如 `profile` 对应个人资料、`categories` 对应分类等）。 |
-  | `enable`         | 布尔值 | 控制该组件是否显示，`true` 为显示，`false` 为隐藏。          |
-  | `order`          | 数字   | 组件显示顺序，数值越小越靠前（支持整数，如 1、2、3 依次排列）。 |
   | `position`       | 字符串 | 组件在侧边栏内的定位方式，`top` 为固定在顶部，`sticky` 为粘性定位（随滚动跟随）。 |
   | `class`          | 字符串 | 组件的 CSS 类名，用于自定义样式或绑定动画效果（如示例中的 `onload-animation`）。 |
   | `animationDelay` | 数字   | 组件加载动画的延迟时间（单位：毫秒），用于实现组件依次加载的错落效果。 |
@@ -124,8 +122,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 ```typescript title="src/config.ts"
 {
   type: "profile",
-  enable: true,
-  order: 1,
   position: "top",
   class: "onload-animation",
   animationDelay: 0,
@@ -137,8 +133,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 ```typescript title="src/config.ts"
 {
   type: "categories",
-  enable: true,
-  order: 3,
   position: "sticky",
   class: "onload-animation",
   animationDelay: 150,
@@ -153,8 +147,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 ```typescript title="src/config.ts"
 {
   type: "site-stats",
-  enable: true,
-  order: 5,
   position: "top",
   class: "onload-animation",
   animationDelay: 200,

@@ -112,12 +112,12 @@ const Note = defineNoteConfig({
       collapsed: true, // 是否默认折叠
       items: [
         { text: '基础位置配置', link: 'global/', icon: 'ri:layout-grid-line' ,badge: { type: 'info', text: 'v2' },},
-        { text: '个人资料小部件配置', link: 'profile/', icon: 'ri:user-smile-line' },
-        { text: '公告小部件配置', link: 'announcement/', icon: 'ri:notification-3-line' },
-        { text: '分类小部件配置', link: 'categories/', icon: 'ri:folder-open-line' },
-        { text: '标签小部件配置', link: 'tag/', icon: 'ri:price-tag-3-line' },
-        { text: '站点统计小部件配置', link: 'site-stats/', icon: 'ri:bar-chart-box-line' ,badge: { type: 'warning', text: '新' },},
-        { text: '日历小部件配置', link: 'calendar/', icon: 'ri:calendar-event-line' ,badge: { type: 'warning', text: '新' },},
+        { text: '个人资料组件配置', link: 'profile/', icon: 'ri:user-smile-line' },
+        { text: '公告组件配置', link: 'announcement/', icon: 'ri:notification-3-line' },
+        { text: '分类组件配置', link: 'categories/', icon: 'ri:folder-open-line' },
+        { text: '标签组件配置', link: 'tag/', icon: 'ri:price-tag-3-line' },
+        { text: '站点统计组件配置', link: 'site-stats/', icon: 'ri:bar-chart-box-line' ,badge: { type: 'warning', text: '新' },},
+        { text: '日历组件配置', link: 'calendar/', icon: 'ri:calendar-event-line' ,badge: { type: 'warning', text: '新' },},
       ]
     },
         {

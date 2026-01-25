@@ -8,6 +8,7 @@ permalink: /special/anime/
 
 Mizuki 主题内置了一个优雅的番剧（Anime）页面，支持两种数据源模式：
 - **Bangumi 模式**：自动从 Bangumi API 同步观看记录
+- **BiliBili 模式**：自动从 BiliBili API 同步观看记录
 - **本地模式**：手动管理本地番剧数据
 
 这个页面可以帮助访客了解您的动画喜好和观看进度。
@@ -36,15 +37,17 @@ Mizuki 主题内置了一个优雅的番剧（Anime）页面，支持两种数�
     *   **通常情况下，你不需要修改这个文件。**
 
 *   **内容数据**:
-    *   Bangumi 模式：通过 `getBangumiData()` 函数从 Bangumi API 获取
-    *   本地模式：`src/data/anime.ts` 文件管理
-    *   **添加、修改或删除番剧，都在这些数据源中操作。**
+    *   **Bangumi 模式**：通过 Bangumi API 自动获取数据，无需手动维护，数据来源为 Bangumi 个人观看记录
+    *   **BiliBili 模式**：通过 BiliBili API 自动获取数据，无需手动维护，数据来源为 BiliBili 个人观看记录
+    *   **本地模式**：通过 `src/data/anime.ts` 文件手动管理番剧数据，需要手动添加、修改或删除番剧条目
+    *   **数据源操作**：添加、修改或删除番剧时，应根据选择的模式在对应数据源中操作
+        *   Bangumi 模式：在 Bangumi 网站上管理观看记录
+        *   BiliBili 模式：在 BiliBili 网站上管理观看记录
+        *   本地模式：直接编辑 `src/data/anime.ts` 文件
 
 ---
 
 #### **2. Bangumi 模式配置**
-
-##### **2.1 配置文件设置**
 
 Bangumi 模式的配置是通过 `src/config.ts` 文件进行的，而不是环境变量。在 `src/config.ts` 中添加以下配置：
 
@@ -56,45 +59,58 @@ bangumi: {
 
 // 番剧模式选择
 anime: {
-  mode: "bangumi", // 番剧页面模式："bangumi" 使用Bangumi API，"local" 使用本地配置
+  mode: "bangumi", // 番剧页面模式："bangumi" 使用Bangumi API，"local" 使用本地配置，"bilibili" 使用Bilibili API
 },
 ```
 
 获取 Bangumi 用户 ID 的方法：
 1. 访问 [Bangumi](https://bgm.tv/) 并登录
 2. 进入个人主页
-3. URL 中数字部分即为用户 ID (如 https://bgm.tv/user/12345 中的 12345)
+3. URL 中数字部分即为用户 ID (如 `https://bgm.tv/user/12345`  中的 12345)
 
-##### **2.2 API 数据结构**
+---
 
-Bangumi API 返回的数据结构包含以下关键字段：
+#### **3. Bilibili 模式配置**
 
-```typescript
-interface BangumiItem {
-  name: string;         // 番剧名称
-  name_cn: string;      // 中文译名
-  images: {
-    common: string;     // 番剧封面图片URL
-  };
-  eps: number;          // 总集数
-  ep_status: number;    // 已观看集数
-}
+Bilibili 模式的配置同样通过 `src/config.ts` 文件进行。在 `src/config.ts` 中添加以下配置：
+
+```typescript title="src/config.ts"
+bilibili: {
+	vmid: "your-bilibili-vmid", // 在此处设置你的Bilibili用户ID (vmid)，例如 "1129280784"
+	fetchOnDev: false, // 是否在开发环境下获取 Bilibili 数据（默认 false）
+	SESSDATA: "", // Bilibili SESSDATA（可选，用于获取观看进度，从浏览器cookie中获取）
+	coverMirror: "", // 封面图片镜像源（可选，如果需要使用镜像源，例如 "https://images.weserv.nl/?url="）
+	useWebp: true, // 是否使用WebP格式（默认 true）
+},
+
+// 番剧模式选择
+anime: {
+  mode: "bilibili", // 番剧页面模式："bangumi" 使用Bangumi API，"local" 使用本地配置，"bilibili" 使用Bilibili API
+},
 ```
 
-##### **2.3 启用 Bangumi 模式**
+##### **3.1 配置项详解**
 
-在 `src/data/anime.ts` 中，确保 `getAnimeList()` 函数返回 Bangumi 数据：
+*   **`vmid`**: Bilibili 用户 ID，从个人空间 URL 中获取（如 `https://space.bilibili.com/1129280784` 中的 `1129280784`）
+*   **`fetchOnDev`**: 是否在开发环境下获取 Bilibili 数据，默认 `false`，建议保持默认值以避免开发时频繁请求 API
+*   **`SESSDATA`**: Bilibili 会话数据（可选），用于获取更详细的观看进度，从浏览器 cookie 中获取
+*   **`coverMirror`**: 封面图片镜像源（可选），如果需要使用镜像源加载封面图片，例如设置为 `"https://images.weserv.nl/?url="`
+*   **`useWebp`**: 是否使用 WebP 格式，默认 `true`，建议保持开启以获得更好的性能
 
-```typescript
-// 默认返回 Bangumi 数据
-export const getAnimeList = () => getBangumiData();
+##### **3.2 获取 Bilibili 用户 UID**
+
+1. 访问 `https://www.bilibili.com/` 并登录
+2. 进入个人主页
+3. 点击个人空间，URL 中 `space.bilibili.com/` 后面的数字即为用户 UID
+4. 或在个人设置中查看用户信息，找到 UID 字段
+
 ```
 
 ---
 
-#### **3. 本地模式配置**
+#### **4. 本地模式配置**
 
-##### **3.1 数据结构详解**
+##### **4.1 数据结构详解**
 
 本地番剧数据使用 `AnimeItem` 类型定义，每个条目包含以下字段：
 
@@ -134,7 +150,7 @@ export type AnimeItem = {
 *   **`startDate: string`**: (必填) 开始观看的日期，格式为 "YYYY-MM"。
 *   **`endDate: string`**: (可选) 完成观看的日期，格式为 "YYYY-MM"。对于进行中的番剧，此字段可省略。
 
-##### **3.2 切换到本地模式**
+##### **4.2 切换到本地模式**
 
 修改 `src/data/anime.ts` 中的 `getAnimeList()` 函数：
 
@@ -148,15 +164,15 @@ export const getAnimeList = () => localAnimeList;
 ```typescript
 // 番剧模式选择
 anime: {
-  mode: "local", // 番剧页面模式："bangumi" 使用Bangumi API，"local" 使用本地配置
+  mode: "local", // 番剧页面模式："bangumi" 使用Bangumi API，"local" 使用本地配置，"bilibili" 使用Bilibili API
 },
 ```
 
 ---
 
-#### **4. 操作指南**
+#### **5. 操作指南**
 
-##### **4.1 本地模式添加番剧**
+##### **5.1 本地模式添加番剧**
 
 按照以下步骤添加一个新的番剧：
 
@@ -214,20 +230,20 @@ anime: {
     ];
     ```
 
-##### **4.2 修改或删除番剧**
+##### **5.2 修改或删除番剧**
 
 *   **修改番剧**: 直接在 `localAnimeList` 数组中找到对应的番剧对象，修改其属性即可。
 *   **删除番剧**: 找到对应的番剧对象，将其从数组中完全移除。注意不要留下多余的逗号，以免造成语法错误。
 
-##### **4.3 更新 Bangumi 数据**
+##### **5.3 更新 API 数据**
 
-Bangumi 数据会自动从 API 获取，但你可以强制刷新：
+Bangumi 和 Bilibili 数据会自动从 API 获取，但你可以强制刷新：
 1. 清除浏览器缓存
 2. 重启开发服务器
 
 ---
 
-#### **5. 番剧状态说明**
+#### **6. 番剧状态说明**
 
 番剧状态分为三种：
 
@@ -248,7 +264,7 @@ Bangumi 数据会自动从 API 获取，但你可以强制刷新：
 
 ---
 
-#### **6. 最佳实践与建议**
+#### **7. 最佳实践与建议**
 
 *   **封面图片**: 使用高质量的海报图，建议使用2:3或3:4的宽高比。
 *   **评分标准**: 保持评分标准一致，避免随意打分。
@@ -260,11 +276,12 @@ Bangumi 数据会自动从 API 获取，但你可以强制刷新：
 *   **链接有效性**: 使用可靠的视频平台链接，确保链接长期有效。
 *   **模式选择**:
     *   **Bangumi 模式**：适合已有 Bangumi 账户和观看记录的用户
+    *   **Bilibili 模式**：适合已有 Bilibili 账户和观看记录的用户
     *   **本地模式**：适合不想依赖第三方服务或需要自定义数据的用户
 
 ---
 
-#### **7. 页面功能与特性**
+#### **8. 页面功能与特性**
 
 番剧页面提供以下功能：
 
@@ -279,10 +296,14 @@ Bangumi 数据会自动从 API 获取，但你可以强制刷新：
     *   自动同步 Bangumi 观看记录
     *   显示中文译名（如果可用）
     *   定期更新观看进度
+*   **Bilibili 特性** (Bilibili 模式):
+    *   自动同步 Bilibili 观看记录
+    *   显示番剧评分
+    *   定期更新观看进度
 
 ---
 
-#### **8. 导航栏配置**
+#### **9. 导航栏配置**
 
 要在导航栏中显示番剧链接，请确保在 `src/config.ts` 的 `navBarConfig` 中包含了番剧链接：
 
@@ -316,15 +337,21 @@ export const navBarConfig: NavBarConfig = {
 
 ---
 
-#### **9. 注意事项**
+#### **10. 注意事项**
 
 1. **Bangumi 模式注意事项**：
    *   确保 `config.ts` 中的 `bangumi.userId` 配置正确
-   *   API 请求可能受网络环境影响
+   *   API 请求可能受网络环境影响，建议在网络稳定时使用
    *   数据更新有一定延迟，不是实时的
    *   同时确保 `anime.mode` 设置为 `"bangumi"`
 
-2. **本地模式注意事项**：
+2. **Bilibili 模式注意事项**：
+   *   确保 `config.ts` 中的 `bilibili.vmid` 配置正确
+   *   API 请求可能受网络环境影响，建议在网络稳定时使用
+   *   数据更新有一定延迟，不是实时的
+   *   同时确保 `anime.mode` 设置为 `"bilibili"`
+
+3. **本地模式注意事项**：
    *   确保 `cover` 字段中的图片链接可正常访问
    *   `progress` 值不应超过 `totalEpisodes`
    *   修改数据后可能需要重启开发服务器
@@ -337,4 +364,4 @@ export const navBarConfig: NavBarConfig = {
 
 ---
 
-通过以上步骤，你就可以轻松地管理你的番剧页面了。选择适合你的模式（Bangumi 或本地），定期更新数据，让访客了解你的动画喜好和观看进度！
+通过以上步骤，你就可以轻松地管理你的番剧页面了。选择适合你的模式（Bangumi、Bilibili 或本地），定期更新数据，让访客了解你的动画喜好和观看进度！
