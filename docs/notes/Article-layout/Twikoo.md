@@ -119,4 +119,35 @@ envId: "https://twikoo.vercel.app",
 *   **安全与 moderation**:
     *   Twikoo 提供了评论审核、垃圾评论过滤等功能。请登录你的 Twikoo 管理后台（通常是访问 `https://你的服务地址/admin`）进行相关设置。
 
-通过以上步骤，你就可以成功地在你的博客中集成并使用 Twikoo 评论系统了。
+### **文章级评论控制**
+
+除了全局配置外，你还可以在每篇文章的 frontmatter 中单独控制评论的显示：
+
+#### **文章 frontmatter 中的 `comment` 字段**
+
+```yaml
+---
+title: My First Blog Post
+published: 2023-09-09
+description: This is the first post of my new Astro blog.
+tags: [Foo, Bar]
+category: Front-end
+draft: false
+comment: false # 禁用当前文章的评论
+---
+```
+
+*   **作用**: 控制单篇文章是否显示评论区。
+*   **配置**: 
+    *   `true` 或未设置: (默认) 继承全局评论设置。如果全局启用，则显示评论区。
+    *   `false`: 强制禁用当前文章的评论区，即使全局评论已启用。
+
+#### **评论组件显示逻辑**
+
+评论组件的显示逻辑已修改为：
+
+1.  首先检查全局评论配置 `commentConfig.enable` 是否为 `true`
+2.  然后检查文章 frontmatter 中的 `comment` 字段是否为 `false`
+3.  只有当全局启用且文章未显式禁用时，评论区才会显示
+
+通过以上步骤，你就可以成功地在你的博客中集成并使用 Twikoo 评论系统了。同时，你还可以通过文章级别的 `comment` 字段，灵活控制每篇文章的评论显示。
