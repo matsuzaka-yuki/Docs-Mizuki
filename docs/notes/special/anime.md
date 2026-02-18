@@ -76,9 +76,8 @@ Bilibili 模式的配置同样通过 `src/config.ts` 文件进行。在 `src/con
 
 ```typescript title="src/config.ts"
 bilibili: {
-	vmid: "your-bilibili-vmid", // 在此处设置你的Bilibili用户ID (vmid)，例如 "1129280784"
+	vmid: "your-bilibili-vmid", // 在此处设置你的Bilibili用户ID (uid)，例如 "1129280784"
 	fetchOnDev: false, // 是否在开发环境下获取 Bilibili 数据（默认 false）
-	SESSDATA: "", // Bilibili SESSDATA（可选，用于获取观看进度，从浏览器cookie中获取）
 	coverMirror: "", // 封面图片镜像源（可选，如果需要使用镜像源，例如 "https://images.weserv.nl/?url="）
 	useWebp: true, // 是否使用WebP格式（默认 true）
 },
@@ -93,11 +92,33 @@ anime: {
 
 *   **`vmid`**: Bilibili 用户 ID，从个人空间 URL 中获取（如 `https://space.bilibili.com/1129280784` 中的 `1129280784`）
 *   **`fetchOnDev`**: 是否在开发环境下获取 Bilibili 数据，默认 `false`，建议保持默认值以避免开发时频繁请求 API
-*   **`SESSDATA`**: Bilibili 会话数据（可选），用于获取更详细的观看进度，从浏览器 cookie 中获取
 *   **`coverMirror`**: 封面图片镜像源（可选），如果需要使用镜像源加载封面图片，例如设置为 `"https://images.weserv.nl/?url="`
 *   **`useWebp`**: 是否使用 WebP 格式，默认 `true`，建议保持开启以获得更好的性能
 
-##### **3.2 获取 Bilibili 用户 UID**
+##### **3.2 SESSDATA 环境变量配置**
+
+SESSDATA 用于获取更详细的观看进度，现在需要通过环境变量配置：
+
+1. 在项目根目录创建 `.env` 文件
+2. 添加以下配置：
+
+```env title=".env"
+# ============================================
+# B站相关配置 (用于获取观看进度)
+# ============================================
+
+# SESSDATA 的获取：
+# 1. 登录 bilibili 账号
+# 2. 打开浏览器开发者工具（F12 或 Ctrl+Shift+I）
+# 3. 找到"应用程序"(app)一栏
+# 4. 在请求头中查找 cookie 字段
+# 5. 从 cookie 中提取 sessdata 值
+
+# 环境变量名：BILI_SESSDATA     key值：sessdata
+BILI_SESSDATA=your_bilibili_sessdata
+```
+
+##### **3.3 获取 Bilibili 用户 UID**
 
 1. 访问 [Bilibili](https://www.bilibili.com/) 并登录
 2. 进入个人主页
