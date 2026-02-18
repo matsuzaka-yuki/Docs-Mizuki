@@ -60,7 +60,7 @@ draft: false
 
 ### 静态资源差异
 
-Jekyll 通常将图片等静态资源放在 `assets` 或 `images` 目录下，并通过相对路径引用。Mizuki 同样支持相对路径引用，但建议将静态资源统一放置在 VuePress 项目的 `public` 目录下，或者文章同级目录下。
+Jekyll 通常将图片等静态资源放在 `assets` 或 `images` 目录下，并通过相对路径引用。Mizuki 同样支持相对路径引用，但建议将静态资源统一放置在 Mizuki 项目的 `public` 目录下，或者文章同级目录下。
 
 ## 迁移步骤
 
@@ -68,7 +68,7 @@ Jekyll 通常将图片等静态资源放在 `assets` 或 `images` 目录下，�
 
 ### 1. 准备工作
 
-确保您已经安装了 Node.js 和 VuePress。如果您还没有 Mizuki 博客，请先按照 Mizuki 的官方文档创建一个新的 Mizuki 博客项目。
+确保您已经安装了 Node.js 和 Mizuki。如果您还没有 Mizuki 博客，请先按照 Mizuki 的官方文档创建一个新的 Mizuki 博客项目。
 
 ### 2. 文章内容迁移
 
@@ -194,7 +194,6 @@ npm run docs:dev
 
 - 检查 Frontmatter 是否正确，特别是 `title` 和 `date` 字段。
 - 检查文件路径是否正确，确保文件位于 Mizuki 配置的文章目录下。
-- 检查 VuePress 的配置，确保 `config.js` 或 `config.ts` 中没有错误。
 
 ## 高级功能迁移
 
