@@ -7,7 +7,8 @@ permalink: /Feature/umami-config/
 # Umami 统计配置教程(V3版本)
 
 Umami 是一个开源、注重隐私的网站分析工具，可以替代 Google Analytics。本教程将指导您如何在 Mizuki 主题中配置 Umami 统计功能。  
-注意：本教程适用于 Mizuki 5.1.0 或更高版本。
+
+注意：本教程适用于 Mizuki 8.2(1dcaa61) 或更高版本。
 
 ## 什么是 Umami？
 
@@ -29,75 +30,92 @@ Umami 是一个开源的网站分析工具，具有以下特点：
 ### 2. 获取必要信息
 
 在 Umami 仪表板中，您需要获取以下信息：
-- **API 密钥** (API Key)
 - **网站ID** (Website ID)
 - **跟踪脚本地址** (Tracking Script URL)
 
-### 3. 配置 Mizuki
+### 3. 配置 astro.config.mjs
 
-打开 `src/config.ts` 文件，找到 `umamiConfig` 配置项：
+打开 `astro.config.mjs` 文件，找到 `umami` 集成配置项：
 
-```typescript title="src/config.ts"
-export const umamiConfig = {
-  enabled: false, // 是否启用 Umami 统计
-  apiKey: "api_XXXXXXXXXX", // 你的 API 密钥
-  baseUrl: "https://api.umami.is", // Umami Cloud API 地址
-  scripts: `
-<script defer src="XXXX.XXX" data-website-id="ABCD1234"></script>
-  `.trim(), // 上面填你要插入的 Script，不用再去 Layout 中插入
-} as const;
+```typescript title="astro.config.mjs"
+import { umami } from "oddmisc";
+
+export default defineConfig({
+  integrations: [
+    umami({
+      shareUrl: "YOUR_SHARE_URL", // Umami 分享链接（见下方说明）如设置为 false 则禁用组件的umami访问量信息显示,不影响umami统计
+    }),
+    // ... 其他集成
+  ],
+});
 ```
 
-### 4. 修改配置参数
+:::warning Umami Cloud 用户注意
+如果您使用的是 **Umami Cloud（官方托管服务）**，请注意：
 
-根据您的 Umami 账户信息，修改以下参数：
-
-#### enabled
-设置为 `true` 以启用 Umami 统计功能：
-```typescript
-enabled: true,
+从仪表盘复制的分享链接格式通常为：
+```
+https://cloud.umami.is/share/xxxxx
 ```
 
-#### apiKey
-替换为您的实际 API 密钥：
-```typescript
-apiKey: "your_actual_api_key_here",
+**不能直接使用此链接！** 您需要：
+1. 在浏览器中手动访问该分享链接
+2. 等待页面加载完成，浏览器会自动重定向到一个新的地址
+3. 复制浏览器地址栏中最终显示的链接（格式类似 `https://cloud.umami.is/analytics/us/share/xxxxxxxxx`,具体是us还是eu取决于你注册时选择的数据中心位置）
+4. 使用这个最终重定向后的链接作为 `shareUrl` 的值
+
+:::
+
+### 4. 手动插入统计脚本到 Layout.astro
+
+打开 `src/layouts/Layout.astro` 文件，在 `<head>` 标签内添加 Umami 跟踪脚本：
+
+```astro title="src/layouts/Layout.astro"
+<head>
+  <!-- Umami 统计脚本 -->
+  <script defer src="https://analytics.umami.is/script.js" data-website-id="your-website-id"></script>
+  
+  <!-- 其他 head 内容 -->
+</head>
 ```
 
-#### baseUrl
-如果您使用 Umami Cloud，保持默认值；如果使用自建服务，请替换为您的服务地址：
-```typescript
-baseUrl: "https://api.umami.is", // Umami Cloud
-// 或者
-baseUrl: "https://your-umami-instance.com", // 自建服务
-```
+如果您使用自建 Umami 服务，请替换为您的服务地址：
 
-#### scripts
-替换为您的实际跟踪脚本，包含您的网站ID：
-```typescript
-scripts: `
-<script defer src="https://analytics.umami.is/script.js" data-website-id="your_website_id_here"></script>
-`.trim(),
+```astro
+<script defer src="https://your-umami-instance.com/script.js" data-website-id="your-website-id"></script>
 ```
 
 ### 5. 完整配置示例
 
-以下是一个完整的配置示例：
+#### astro.config.mjs
 
-```typescript tite="src/config.ts"
-export const umamiConfig = {
-  enabled: true,
-  apiKey: "api_a1b2c3d4e5f6g7h8i9j0",
-  baseUrl: "https://api.umami.is",
-  scripts: `
-<script defer src="https://analytics.umami.is/script.js" data-website-id="abcd1234-ef56-7890-abcd-ef1234567890"></script>
-  `.trim(),
-} as const;
+```typescript title="astro.config.mjs"
+import { umami } from "oddmisc";
+
+export default defineConfig({
+  integrations: [
+    umami({
+      shareUrl: "https://cloud.umami.is/analytics/us/share/pNrbzntfHm1jet1f",
+    }),
+    // ... 其他集成
+  ],
+});
+```
+
+#### Layout.astro
+
+```astro title="src/layouts/Layout.astro"
+<head>
+  <!-- Umami 统计脚本 -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="606672ff-6f67-4dc0-8006-bfc094539ecb"></script>
+  
+  <!-- 其他 head 内容 -->
+</head>
 ```
 
 ### 6. 保存并重新构建
 
-1. 保存 `src/config.ts` 文件
+1. 保存所有修改的文件
 2. 重新构建您的网站：
    ```bash
    pnpm build
@@ -117,14 +135,12 @@ export const umamiConfig = {
 
 如果配置后没有数据，请检查：
 
-1. **确认 enabled 设置为 true**
-2. **检查 API 密钥是否正确**
-3. **确认网站ID是否正确**
-4. **检查跟踪脚本地址是否正确**
-5. **查看浏览器控制台是否有错误信息**
-6. **确认 Umami 服务是否正常运行**
+1. **确认 shareUrl 配置正确**（Umami Cloud 用户请确保使用重定向后的链接）
+2. **确认网站ID是否正确**
+3. **检查跟踪脚本地址是否正确**
+4. **查看浏览器控制台是否有错误信息**
+5. **确认 Umami 服务是否正常运行**
 
 ## 隐私保护
 
 Umami 重视用户隐私，不会收集个人身份信息。您可以在您的隐私政策中添加 Umami 的使用说明，以确保透明度。
-
