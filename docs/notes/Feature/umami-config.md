@@ -30,7 +30,7 @@ Umami 是一个开源的网站分析工具，具有以下特点：
 ### 2. 获取必要信息
 
 在 Umami 仪表板中，您需要获取以下信息：
-- **网站ID** (Website ID)
+- **umami统计分享链接** (shareURL)
 - **跟踪脚本地址** (Tracking Script URL)
 
 ### 3. 配置 astro.config.mjs
