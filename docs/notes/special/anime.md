@@ -97,26 +97,67 @@ anime: {
 
 ##### **3.2 SESSDATA 环境变量配置**
 
-SESSDATA 用于获取更详细的观看进度，现在需要通过环境变量配置：
+SESSDATA 用于获取更详细的观看进度，需要通过环境变量配置：
 
+**本地构建和服务器部署配置**：
 1. 在项目根目录创建 `.env` 文件
 2. 添加以下配置：
 
 ```env title=".env"
-# ============================================
-# B站相关配置 (用于获取观看进度)
-# ============================================
-
-# SESSDATA 的获取：
-# 1. 登录 bilibili 账号
-# 2. 打开浏览器开发者工具（F12 或 Ctrl+Shift+I）
-# 3. 找到"应用程序"(app)一栏
-# 4. 在请求头中查找 cookie 字段
-# 5. 从 cookie 中提取 sessdata 值
-
-# 环境变量名：BILI_SESSDATA     key值：sessdata
 BILI_SESSDATA=your_bilibili_sessdata
 ```
+
+**SESSDATA 的获取步骤**：
+1. 登录 bilibili 账号
+2. 打开浏览器开发者工具（F12 或 Ctrl+Shift+I）
+3. 找到"应用程序"(app)一栏
+4. 在请求头中查找 cookie 字段
+5. 从 cookie 中提取 sessdata 值
+
+**环境变量说明**：
+- 环境变量名：`BILI_SESSDATA`
+- 对应值：从 cookie 中提取的 sessdata 值
+
+##### **3.2.1 通过 Serverless 平台配置环境变量**
+
+如果您使用 Serverless 平台部署项目，可以在平台控制台中配置环境变量：
+
+**Vercel 平台**：
+1. 登录 Vercel 控制台
+2. 选择您的项目
+3. 进入 "Settings" → "Environment Variables"
+4. 添加环境变量：
+   - Name: `BILI_SESSDATA`
+   - Value: 您的 Bilibili SESSDATA 值
+   - 选择适当的环境（Development/Production）
+
+**Netlify 平台**：
+1. 登录 Netlify 控制台
+2. 选择您的项目
+3. 进入 "Site settings" → "Environment variables"
+4. 添加环境变量：
+   - Key: `BILI_SESSDATA`
+   - Value: 您的 Bilibili SESSDATA 值
+
+**Cloudflare Pages 平台**：
+1. 登录 Cloudflare 控制台
+2. 选择您的 Pages 项目
+3. 进入 "Settings" → "Environment variables"
+4. 添加环境变量：
+   - Variable name: `BILI_SESSDATA`
+   - Value: 您的 Bilibili SESSDATA 值
+   - 选择适当的环境（Build/Preview/Production）
+
+**EdgeOne Pages 平台**：
+1. 登录 EdgeOne 控制台
+2. 选择您的 Pages 项目
+3. 进入 "设置" → "环境变量"
+4. 添加环境变量：
+   - 变量名: `BILI_SESSDATA`
+   - 值: 您的 Bilibili SESSDATA 值
+   - 选择适当的环境（构建/预览/生产）
+
+**注意**：无论使用哪种配置方式，确保不要将 SESSDATA 敏感信息提交到版本控制系统。
 
 ##### **3.3 获取 Bilibili 用户 UID**
 
