@@ -29,11 +29,12 @@ Mizuki 文章的核心是 Markdown 文件，但需要包含特定的 Frontmatter
 
 ## 小标题
 
-更多内容...
+更多内容... 
+
 ```
 
 ### Mizuki 格式示例：
-```yaml
+<!-- ```markdown
 ---
 title: Markdown Tutorial
 published: 2025-01-20
@@ -46,8 +47,11 @@ author: emn178
 sourceLink: "https://github.com/emn178/markdown"
 draft: false
 ---
+``` -->
 
-```yaml
+
+```markdown
+---
 title: "我的第一篇文章"
 pubDate: 2024-01-15
 updatedDate: 2024-01-16
@@ -56,7 +60,8 @@ tags: ["技术", "教程"]
 category: "技术分享"
 cover: "/images/cover.jpg"
 draft: false
-```
+---
+
 # 我的第一篇文章
 
 这是一篇纯 Markdown 格式的文章内容。
