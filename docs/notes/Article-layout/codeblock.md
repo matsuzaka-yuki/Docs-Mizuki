@@ -2,6 +2,10 @@
 title: 代码块配置说明
 createTime: 2025/11/20 20:25:15
 permalink: /Article-layout/codeblock/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 # 代码块配置说明
 

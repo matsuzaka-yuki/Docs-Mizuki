@@ -2,6 +2,10 @@
 title: Umami访问量统计配置说明
 createTime: 2025/10/20 12:36:33
 permalink: /Feature/umami-config/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # Umami 统计配置教程(V3版本)

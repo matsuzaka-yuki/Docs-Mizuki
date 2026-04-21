@@ -2,6 +2,10 @@
 title: 番剧页面
 createTime: 2025/11/20 22:28:00
 permalink: /special/anime/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ### 番剧页面配置教程

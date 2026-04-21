@@ -2,6 +2,10 @@
 title: 上次编辑卡片配置
 createTime: 2025/11/20 20:01:32
 permalink: /Article-layout/Edit-History/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ## 编辑历史

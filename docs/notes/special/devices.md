@@ -2,6 +2,10 @@
 title: 设备页面
 createTime: 2025/11/20 22:26:00
 permalink: /special/devices/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ### 设备页面配置教程

@@ -2,6 +2,10 @@
 title: Bangumi API文档
 createTime: 2025/11/21 20:15:35
 permalink: /API/bangumi/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 # Bangumi API 文档
 

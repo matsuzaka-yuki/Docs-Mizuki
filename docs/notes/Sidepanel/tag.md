@@ -2,6 +2,10 @@
 title: 标签组件配置
 createTime: 2025/11/20 22:03:16
 permalink: /Sidepanel/tag/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ## 标签组件配置说明

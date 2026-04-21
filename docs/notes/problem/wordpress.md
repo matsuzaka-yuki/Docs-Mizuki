@@ -2,6 +2,10 @@
 title: WordPress相关问题
 createTime: 2025/11/21 00:00:00
 permalink: /problem/wordpress/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # WordPress相关问题

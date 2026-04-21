@@ -2,6 +2,10 @@
 title: 时间线页面
 createTime: 2025/11/20 22:22:00
 permalink: /special/timeline/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ### 时间线页面配置教程

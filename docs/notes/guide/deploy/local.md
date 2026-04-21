@@ -2,6 +2,10 @@
 title: 本地部署
 createTime: 2025/11/21 02:12:49
 permalink: /guide/deploy/local/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 

@@ -2,6 +2,10 @@
 title: 主题介绍
 createTime: 2025/08/17 15:19:06
 permalink: /guide/intro/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 
@@ -14,7 +18,7 @@ permalink: /guide/intro/
 如果能给我一个star那将是对我莫大的鼓励。使用这个主题之前，你应该明白它是一个Astro主题，它的基本逻辑离不开Astro，关于如何新建分类，如何新建标签这些问题应该在使用之前就从互联网或官方文档了解详情🔎。  
 
 <CardGrid>
-  <RepoCard repo="matsuzaka-yuki/Mizuki" />
+  <RepoCard repo="LyraVoid/Mizuki" />
   <RepoCard repo="matsuzaka-yuki/Mizuki-Content" />
 </CardGrid>
 

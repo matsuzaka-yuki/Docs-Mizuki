@@ -2,6 +2,10 @@
 title: 导航栏配置说明
 createTime: 2025/11/20 20:35:53
 permalink: /Basic-Layout/navBarConfig/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 ## 顶栏导航配置说明
 

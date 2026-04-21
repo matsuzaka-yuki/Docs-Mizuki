@@ -2,6 +2,10 @@
 title: 部署到Github Pages
 createTime: 2025/11/21 01:56:44
 permalink: /guide/deploy/Github/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ## 部署到 GitHub Pages(不在推荐)

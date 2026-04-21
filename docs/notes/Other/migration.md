@@ -2,6 +2,10 @@
 title: 迁移说明
 createTime: 2025/11/20 23:14:37
 permalink: /Other/migration/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # Mizuki 内容迁移指南

@@ -2,6 +2,10 @@
 title: 基础配置
 createTime: 2025/08/17 17:21:41
 permalink: /Basic-Layout/site-config/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 **站点配置说明**

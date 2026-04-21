@@ -2,6 +2,10 @@
 title: Metings API文档
 createTime: 2025/11/21 20:15:35
 permalink: /API/metings/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 # Meting API 文档
 

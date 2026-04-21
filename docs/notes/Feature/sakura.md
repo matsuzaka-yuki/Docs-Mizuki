@@ -2,6 +2,10 @@
 title: 樱花飘落特效配置
 createTime: 2025/11/20 21:08:09
 permalink: /Feature/sakura/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # 樱花飘落特效配置说明

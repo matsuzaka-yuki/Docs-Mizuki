@@ -2,6 +2,10 @@
 title: 固定连接
 createTime: 2025/11/21 00:21:14
 permalink: /press/permalink/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 这是在Mizuki7.2以上加入的新特性,支持你为文章配置固定链接,优化SEO!

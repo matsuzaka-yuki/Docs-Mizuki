@@ -2,6 +2,10 @@
 title: 图表
 createTime: 2025/08/21 13:26:53
 permalink: /press/Markdown/chart/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # Mermaid 图表指南

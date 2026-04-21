@@ -2,6 +2,10 @@
 title: 友链页面
 createTime: 2025/08/17 17:21:41
 permalink: /special/friends/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ### 友链页面配置教程

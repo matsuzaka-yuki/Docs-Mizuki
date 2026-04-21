@@ -2,6 +2,10 @@
 title: EdgeOne Pages 部署
 createTime: 2025/11/21 02:01:00
 permalink: /guide/deploy/Edge/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # 部署到 EdgeOne Pages

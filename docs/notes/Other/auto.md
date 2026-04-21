@@ -2,6 +2,10 @@
 title: 自动构建
 createTime: 2025/11/20 23:13:50
 permalink: /Other/auto/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # 内容仓库更新自动触发构建 - 快速参考

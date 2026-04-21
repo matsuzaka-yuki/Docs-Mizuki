@@ -2,6 +2,10 @@
 title: B站视频嵌入
 createTime: 2025/11/21 20:49:42
 permalink: /press/video/bilibili/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # B站视频嵌入

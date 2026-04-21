@@ -2,6 +2,10 @@
 title: 内容分离
 createTime: 2025/11/20 23:07:41
 permalink: /Other/separation/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # Mizuki 内容分离完整指南

@@ -2,6 +2,10 @@
 title: Banner配置
 createTime: 2025/11/20 14:46:50
 permalink: /Basic-Layout/layout/banner/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 **Banner配置说明**

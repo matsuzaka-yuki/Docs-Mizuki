@@ -2,6 +2,10 @@
 title: 提问的艺术
 createTime: 2025/11/20 23:52:25
 permalink: /problem/question/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ## 一、提问前必做准备（核心前提）

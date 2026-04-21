@@ -2,6 +2,10 @@
 title: 部署到Vercel
 createTime: 2025/11/21 01:54:40
 permalink: /guide/deploy/Vercel/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ## 如何部署到 Vercel

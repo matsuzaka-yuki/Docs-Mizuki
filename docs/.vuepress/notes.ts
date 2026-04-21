@@ -91,6 +91,7 @@ const Note = defineNoteConfig({
         { text: '版权信息配置', link: 'copyright/', icon: 'ri:copyright-line' },
         { text: '代码块配置', link: 'codeblock/', icon: 'ri:code-line' ,badge: { type: 'info', text: 'v3' },},
         { text: 'Twikoo评论系统配置', link: 'Twikoo/', icon: 'ri:message-3-line' },
+        { text: 'Giscus评论系统配置', link: 'Giscus/', icon: 'ri:message-3-line' },
       ]
     },
     {

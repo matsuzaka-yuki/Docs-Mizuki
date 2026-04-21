@@ -2,6 +2,10 @@
 title: 页脚配置说明
 createTime: 2025/11/20 20:30:34
 permalink: /Basic-Layout/footer/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 # 页脚配置说明
 页脚配置位于 `src/config.ts` 文件中的 `footerConfig` 对象，控制博客底部页脚的显示设置。

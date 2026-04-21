@@ -2,6 +2,10 @@
 title: 基础位置配置
 createTime: 2025/11/20 21:30:41
 permalink: /Sidepanel/global/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 ## 全局侧边栏位置配置说明
 全局侧边栏位置配置位于 `src/config.ts` 文件中的 `SidebarLayoutConfig` 对象，控制博客的侧边栏显示位置。

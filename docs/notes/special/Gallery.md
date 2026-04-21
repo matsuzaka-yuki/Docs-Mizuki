@@ -2,6 +2,10 @@
 title: 相册页面
 createTime: 2025/08/28 17:21:41
 permalink: /special/gallery/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 # 相册系统完整使用教程
 

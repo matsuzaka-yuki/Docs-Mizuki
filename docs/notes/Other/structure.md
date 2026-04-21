@@ -2,6 +2,10 @@
 title: 结构说明
 createTime: 2025/11/20 23:12:40
 permalink: /Other/structure/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 # Mizuki 内容仓库结构说明
 

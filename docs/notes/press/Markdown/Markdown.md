@@ -2,6 +2,10 @@
 title: 基础
 createTime: 2025/11/21 01:32:59
 permalink: /press/Markdown/Markdown/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # Markdown 完全使用指南

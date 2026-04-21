@@ -2,6 +2,10 @@
 title: 自定义页面
 createTime: 2025/08/17 17:21:41
 permalink: /special/about/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 **关于页面修改教程**

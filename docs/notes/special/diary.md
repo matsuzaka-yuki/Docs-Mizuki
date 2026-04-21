@@ -2,6 +2,10 @@
 title: 日记页面
 createTime: 2025/08/17 17:21:41
 permalink: /special/diary/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 

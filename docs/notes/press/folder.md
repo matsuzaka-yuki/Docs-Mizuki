@@ -2,6 +2,10 @@
 title: 文件夹方案
 createTime: 2025/09/01 20:28:41
 permalink: /press/folder/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 

@@ -2,6 +2,10 @@
 title: 文章客户端加密
 createTime: 2025/09/01 20:29:52
 permalink: /press/key/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ## 概述

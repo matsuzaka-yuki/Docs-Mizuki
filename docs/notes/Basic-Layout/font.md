@@ -2,6 +2,10 @@
 title: 自定义字体
 createTime: 2025/11/21 00:42:07
 permalink: /Basic-Layout/font/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # 自定义字体配置

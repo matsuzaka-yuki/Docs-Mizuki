@@ -2,6 +2,10 @@
 title: 纯色背景配置
 createTime: 2025/11/20 19:38:55
 permalink: /Basic-Layout/layout/hide/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 **无图布局配置说明**

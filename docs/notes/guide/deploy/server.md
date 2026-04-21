@@ -2,6 +2,10 @@
 title: 服务器部署
 createTime: 2025/11/21 02:02:00
 permalink: /guide/deploy/server/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 
@@ -59,7 +63,7 @@ if [ -f /usr/bin/curl ];then curl -sSO https://download.bt.cn/install/install_pa
 1. 在宝塔面板的"终端"中进入网站根目录
 2. 克隆你的项目：
    ```bash
-   git clone https://github.com/matsuzaka-yuki/Mizuki.git
+   git clone https://github.com/LyraVoid/Mizuki.git
    ```
 
 ### 第五步：构建项目
@@ -165,7 +169,7 @@ cd /var/www/mizuki
 ### 第四步：克隆项目
 
 ```bash
-git clone https://github.com/matsuzaka-yuki/Mizuki.git
+git clone https://github.com/LyraVoid/Mizuki.git
 ```
 
 ### 第五步：构建项目

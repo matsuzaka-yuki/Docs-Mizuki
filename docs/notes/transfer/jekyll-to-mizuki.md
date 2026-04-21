@@ -2,6 +2,10 @@
 title: Jekyll 迁移到 Mizuki
 createTime: 2025/08/16 23:56:17
 permalink: /transfer/jekyll-to-mizuki/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # Jekyll 迁移到 Mizuki

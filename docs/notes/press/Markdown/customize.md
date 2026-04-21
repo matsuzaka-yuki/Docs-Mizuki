@@ -2,6 +2,10 @@
 title: 扩展
 createTime: 2025/11/21 01:38:59
 permalink: /press/Markdown/customize/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # Mizuki Markdown 语法说明

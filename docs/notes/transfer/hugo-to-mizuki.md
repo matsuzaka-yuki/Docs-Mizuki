@@ -2,6 +2,10 @@
 title: Hugo 迁移到 Mizuki 指南
 createTime: 2025/08/16 23:56:17
 permalink: /transfer/hugo-to-mizuki/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 

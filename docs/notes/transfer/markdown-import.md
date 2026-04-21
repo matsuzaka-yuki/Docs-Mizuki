@@ -2,6 +2,10 @@
 title:  Markdown 文件导入 Mizuki
 createTime: 2025/08/16 23:56:17
 permalink: /transfer/markdown-import/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # Markdown 文件导入 Mizuki 指南

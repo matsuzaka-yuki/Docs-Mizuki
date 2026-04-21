@@ -2,6 +2,10 @@
 title: 单文件方案
 createTime: 2025/09/01 20:29:52
 permalink: /press/file/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 # 直接在posts目录创建文章
 

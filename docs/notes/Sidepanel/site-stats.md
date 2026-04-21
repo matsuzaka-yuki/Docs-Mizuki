@@ -2,6 +2,10 @@
 title: 站点统计组件配置
 createTime: 2025/11/20 22:16:00
 permalink: /Sidepanel/site-stats/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ## 站点统计组件配置说明

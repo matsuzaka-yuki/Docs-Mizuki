@@ -2,6 +2,10 @@
 title: 日历组件配置
 createTime: 2025/11/20 22:18:00
 permalink: /Sidepanel/calendar/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ## 日历组件配置说明

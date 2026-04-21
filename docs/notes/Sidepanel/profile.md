@@ -2,6 +2,10 @@
 title: 个人资料组件配置
 createTime: 2025/11/20 22:10:00
 permalink: /Sidepanel/profile/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ## 个人资料组件配置说明

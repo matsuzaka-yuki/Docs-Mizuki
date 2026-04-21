@@ -2,6 +2,10 @@
 title: Halo 迁移到 Mizuki
 createTime: 2025/08/16 23:56:17
 permalink: /transfer/halo-to-mizuki/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # Halo 迁移到 Mizuki 指南

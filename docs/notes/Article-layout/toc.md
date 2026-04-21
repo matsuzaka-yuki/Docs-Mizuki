@@ -2,6 +2,10 @@
 title: 目录导航配置说明
 createTime: 2025/11/20 19:50:33
 permalink: /Article-layout/toc/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # 目录导航配置说明

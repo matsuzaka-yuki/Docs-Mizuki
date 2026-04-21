@@ -2,6 +2,10 @@
 title: Twikoo评论系统配置
 createTime: 2025/11/20 21:16:22
 permalink: /Article-layout/Twikoo/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 # Twikoo 评论系统配置说明
 Twikoo 评论系统配置位于 `src/config.ts` 文件中的 `commentConfig` 对象，控制博客的评论系统显示设置。
@@ -9,21 +13,36 @@ Twikoo 评论系统配置位于 `src/config.ts` 文件中的 `commentConfig` 对
 ```typescript title="src/config.ts"
 export const commentConfig: CommentConfig = {
 	enable: false, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
+	system: "twikoo", // 评论系统选择: "twikoo" | "giscus"
 	twikoo: {
 		envId: "https://twikoo.vercel.app",
 		lang: SITE_LANG,
+	},
+	giscus: {
+		repo: "your-github-username/your-repo-name",
+		repoId: "your-repo-id",
+		category: "Announcements",
+		categoryId: "your-category-id",
+		mapping: "pathname",
+		strict: "0",
+		reactionsEnabled: "1",
+		emitMetadata: "0",
+		inputPosition: "top",
+		theme: "preferred_color_scheme",
+		lang: SITE_LANG,
+		loading: "lazy",
 	},
 };
 ```
 我们来详细解析 `src/config.ts` 文件中的 `commentConfig` 对象，并为你提供一份配置教程。
 
-这个配置项用于在你的博客中集成 **Twikoo** 评论系统，让你的读者可以在文章下方发表评论和进行互动。
+这个配置项用于在你的博客中集成评论系统（支持 **Twikoo** 和 **Giscus** 两种评论系统），让你的读者可以在文章下方发表评论和进行互动。
 
 ---
 
 ### **评论系统配置教程**
 
-`commentConfig` 对象是启用和配置 Twikoo 评论功能的核心。Twikoo 是一个简洁、安全、开源的评论系统，支持多种部署方式，非常适合静态网站。
+`commentConfig` 对象是启用和配置评论功能的核心。博客支持两种评论系统：**Twikoo** 和 **Giscus**，你可以通过 `system` 字段来选择使用哪一种。
 
 #### **核心配置项详解**
 
@@ -35,10 +54,21 @@ enable: false,
 
 *   **作用**: 控制整个评论系统的开关。
 *   **配置**:
-    *   `true`: 启用评论功能。文章页面将显示 Twikoo 评论区。
+    *   `true`: 启用评论功能。文章页面将显示评论区。
     *   `false`: (默认) 禁用评论功能。评论区将不会在任何页面显示。
 
-#### **2. Twikoo 具体配置 (`twikoo`)**
+#### **2. 评论系统选择 (`system`)**
+
+```typescript
+system: "twikoo", // 评论系统选择: "twikoo" | "giscus"
+```
+
+*   **作用**: 选择要使用的评论系统。
+*   **配置**:
+    *   `"twikoo"`: (默认) 使用 Twikoo 评论系统。一个简洁、安全、开源的评论系统，支持多种部署方式。
+    *   `"giscus"`: 使用 Giscus 评论系统。基于 GitHub Discussions，适合技术博客。关于 Giscus 的详细配置，请参阅 [Giscus 配置文档](/Article-layout/Giscus/)。
+
+#### **3. Twikoo 具体配置 (`twikoo`)**
 
 ```typescript
 twikoo: {
@@ -80,15 +110,31 @@ envId: "https://twikoo.vercel.app",
     *   打开 `src/config.ts` 文件。
     *   找到 `commentConfig` 对象。
     *   将 `enable` 设置为 `true`。
+    *   确认 `system` 设置为 `"twikoo"`。
     *   将 `twikoo.envId` 的值更新为你自己的 Twikoo 服务地址。
-    
+
     **配置好的示例**:
     ```typescript
     export const commentConfig: CommentConfig = {
     	enable: true, // 启用评论功能。
+    	system: "twikoo", // 使用 Twikoo 评论系统
     	twikoo: {
     		envId: "https://my-twikoo-service.vercel.app", // 替换成你自己的部署地址
     		lang: SITE_LANG,
+    	},
+    	giscus: {
+    		repo: "your-github-username/your-repo-name",
+    		repoId: "your-repo-id",
+    		category: "Announcements",
+    		categoryId: "your-category-id",
+    		mapping: "pathname",
+    		strict: "0",
+    		reactionsEnabled: "1",
+    		emitMetadata: "0",
+    		inputPosition: "top",
+    		theme: "preferred_color_scheme",
+    		lang: SITE_LANG,
+    		loading: "lazy",
     	},
     };
     ```
@@ -105,6 +151,7 @@ envId: "https://twikoo.vercel.app",
 
 *   **评论区不显示**:
     *   检查 `enable` 是否设置为 `true`。
+    *   检查 `system` 是否设置为 `"twikoo"`。
     *   检查 `envId` 是否填写正确，并且你的 Twikoo 服务端部署成功且可以正常访问。
     *   打开浏览器开发者工具（按 F12），查看控制台（Console）是否有任何错误信息，这通常能提示问题所在（例如网络请求失败）。
 

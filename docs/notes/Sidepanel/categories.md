@@ -2,6 +2,10 @@
 title: 分类组件配置
 createTime: 2025/11/20 22:14:00
 permalink: /Sidepanel/categories/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ## 分类组件配置说明

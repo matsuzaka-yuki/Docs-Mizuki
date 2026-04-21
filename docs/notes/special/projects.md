@@ -2,6 +2,10 @@
 title: 项目页面
 createTime: 2025/11/20 22:20:00
 permalink: /special/projects/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ### 项目页面配置教程

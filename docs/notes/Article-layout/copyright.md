@@ -2,6 +2,10 @@
 title: 版权信息配置说明
 createTime: 2025/11/20 20:22:10
 permalink: /Article-layout/copyright/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # 版权信息配置说明

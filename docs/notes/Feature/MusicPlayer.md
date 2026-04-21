@@ -2,6 +2,10 @@
 title: 音乐播放器配置
 createTime: 2025/11/20 20:48:51
 permalink: /Feature/MusicPlayer/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # MusicPlayer配置说明

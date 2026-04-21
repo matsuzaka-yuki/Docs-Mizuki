@@ -2,6 +2,10 @@
 title: 常见错误
 createTime: 2025/11/21 20:33:26
 permalink: /problem/error/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 

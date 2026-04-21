@@ -2,6 +2,10 @@
 title: 公告组件配置
 createTime: 2025/11/20 22:12:00
 permalink: /Sidepanel/announcement/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ## 公告组件配置说明

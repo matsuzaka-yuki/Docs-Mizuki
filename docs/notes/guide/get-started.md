@@ -2,6 +2,10 @@
 title: 安装/使用
 createTime: 2025/08/16 23:56:17
 permalink: /guide/get-started/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 Mizuki 项目入门指南
@@ -12,7 +16,7 @@ Mizuki 项目入门指南
 
 在开始使用 Mizuki 之前，您需要确保系统满足以下要求：
 
-- **Node.js >= 20**
+- **Node.js >= 22**
 - **pnpm >= 9**
 - **Git**
 
@@ -64,7 +68,7 @@ git --version
 首先，克隆 Mizuki 项目到本地：
 
 ```bash
-git clone https://github.com/matsuzaka-yuki/mizuki.git
+git clone https://github.com/LyraVoid/Mizuki.git
 cd Mizuki
 ```
 

@@ -2,6 +2,10 @@
 title: 技能页面
 createTime: 2025/11/20 22:24:00
 permalink: /special/skills/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ### 技能页面配置教程

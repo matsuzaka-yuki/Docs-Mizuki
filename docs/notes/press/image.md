@@ -2,6 +2,10 @@
 title: 图片语法
 createTime: 2026/01/13 05:06:00
 permalink: /press/image/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 这是在Mizuki8.0以上加入的新特性，支持你为图片设置缩放比例、标题和居中对齐！

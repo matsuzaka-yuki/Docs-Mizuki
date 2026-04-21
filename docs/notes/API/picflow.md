@@ -2,6 +2,10 @@
 title: Picflow API文档
 createTime: 2025/11/21 21:30:58
 permalink: /API/picflow/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # PicFlow API v2.0 文档

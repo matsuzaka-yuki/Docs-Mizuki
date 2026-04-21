@@ -2,6 +2,10 @@
 title: Live2D配置
 createTime: 2025/08/17 17:21:41
 permalink: /Feature/pio/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 ::: tip 提示

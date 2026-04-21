@@ -2,6 +2,10 @@
 title: Cloudflare Pages 部署
 createTime: 2025/11/21 12:00:00
 permalink: /guide/deploy/Cloudflare/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # Cloudflare Pages 部署指南

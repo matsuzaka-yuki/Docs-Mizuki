@@ -2,6 +2,10 @@
 title: Typecho相关问题
 createTime: 2025/11/21 00:00:00
 permalink: /problem/type/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 
 # Typecho相关问题

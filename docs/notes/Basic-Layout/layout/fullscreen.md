@@ -2,6 +2,10 @@
 title: 全屏壁纸配置
 createTime: 2025/11/20 14:57:49
 permalink: /Basic-Layout/layout/fullscreen/
+copyright:
+  author:
+    name: LyraVoid Team
+    url: https://github.com/LyraVoid
 ---
 **Fullscreen Wallpaper 配置说明**
 
